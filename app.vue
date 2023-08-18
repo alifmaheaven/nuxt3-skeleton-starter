@@ -1,5 +1,18 @@
+<script setup>
+// import
+import { ref } from "vue";
+
+// define
+
+// data
+
+// methods
+</script>
+
 <template>
   <div>
-    <NuxtWelcome />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </div>
 </template>
