@@ -7,11 +7,20 @@ export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt',
   ],
+  css: ['~/assets/css/main.css', '~/assets/scss/main.scss'],
   runtimeConfig: {
     MODE: process.env.NUXT_MODE, // important
     public: {
       BASE_URL_PUBLIC: process.env.NUXT_BASE_URL_PUBLIC,
       TOKEN_EXPIRES_IN_PUBLIC: Number(process.env.NUXT_TOKEN_EXPIRES_IN_PUBLIC), // important
+    },
+  },
+  postcss: {
+    plugins: {
+      'postcss-import': {},
+      'tailwindcss/nesting': {},
+      tailwindcss: {},
+      autoprefixer: {},
     },
   },
 })

@@ -8,5 +8,5 @@ export default defineNuxtRouteMiddleware((to, from) => {
   // if (to.path !== '/') {
   //   return navigateTo('/')
   // }
-  console.log('to', to)
+  // console.log('to', to)
 })

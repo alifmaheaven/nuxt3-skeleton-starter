@@ -2,14 +2,14 @@ import { defineStore } from "pinia";
 
 export const useLayout = defineStore('layout', {
   state: () => ({
-    alerts: [],
+    dark_data: false,
   }),
   getters: {
-    getAlerts: (state) => state.alerts,
+    dark: (state) => state.dark_data,
   },
   actions: {
-    addAlert(alert) {
-      this.alerts.push(alert)
+    darkModeSwitch() {
+      this.dark_data = !this.dark_data
     }
   }
 })
