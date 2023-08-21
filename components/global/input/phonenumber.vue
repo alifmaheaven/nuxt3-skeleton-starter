@@ -1,7 +1,7 @@
 <script setup>
 import { computed, toRef, ref, useSlots } from "vue";
 import { useField } from "vee-validate";
-import axios from "@/api";
+// import axios from "@/api";
 
 const props = defineProps({
   value: {
@@ -99,19 +99,19 @@ const onlynumber = (e) => {
 let params = {
   per_page: 9999,
 };
-axios({
-  url: `${import.meta.env.VITE_API_BASE_URL_ORGANISATIONS}/api/codes/${
-    props.isareas ? "areas" : "countries"
-  }`,
-  params: params,
-  method: "GET",
-})
-  .then((result) => {
-    phonecoderesult.value = result.data.data;
-  })
-  .catch((err) => {
-    console.log("error", err);
-  });
+// axios({
+//   url: `${import.meta.env.VITE_API_BASE_URL_ORGANISATIONS}/api/codes/${
+//     props.isareas ? "areas" : "countries"
+//   }`,
+//   params: params,
+//   method: "GET",
+// })
+//   .then((result) => {
+//     phonecoderesult.value = result.data.data;
+//   })
+//   .catch((err) => {
+//     console.log("error", err);
+//   });
 
 const phoneformarter = (phoneNumber) => {
   const cleaned = ("" + phoneNumber).replace(/\D/g, "").split("");
