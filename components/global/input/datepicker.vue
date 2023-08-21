@@ -1,13 +1,13 @@
 <script setup>
 import { computed, toRef, useSlots, ref } from "vue";
 import { useField } from "vee-validate";
-import { useDarkModeStore } from "@/stores/dark-mode";
+// import { useDarkModeStore } from "@/stores/dark-mode";
 
 import VueDatePicker from "@vuepic/vue-datepicker";
 import "@vuepic/vue-datepicker/dist/main.css";
 
-const darkModeStore = useDarkModeStore();
-const darkMode = computed(() => darkModeStore.darkMode);
+// const darkModeStore = useDarkModeStore();
+// const darkMode = computed(() => darkModeStore.darkMode);
 
 const emit = defineEmits();
 
@@ -141,7 +141,7 @@ const formatDate = (date) => {
         :min-date="min ? new Date(min) : null"
         :max-date="max ? new Date(max) : null"
         :start-time="startTime"
-        :dark="darkMode"
+        :dark="false"
         @blur="handleBlur"
       >
       </VueDatePicker>

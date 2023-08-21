@@ -78,7 +78,12 @@ const submitCreateUpdate = handleSubmit(async (values, { resetForm }) => {
             label="Username"
             placeholder="Username"
           />
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <globalInputDatepicker
+            name="date"
+            label="Date"
+            placeholder="Date"
+          />
+          <v-btn size="small">Submit</v-btn>
         </form>
       </div>
       <div class="px-6 py-4">
