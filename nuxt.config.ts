@@ -6,9 +6,8 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@pinia/nuxt',
-    '@nuxtjs/tailwindcss',
   ],
-  css: ['vuetify/lib/styles/main.sass'],
+  css: ['~/assets/css/main.css', '~/assets/scss/main.scss'],
   runtimeConfig: {
     MODE: process.env.NUXT_MODE, // important
     public: {
@@ -16,12 +15,12 @@ export default defineNuxtConfig({
       TOKEN_EXPIRES_IN_PUBLIC: Number(process.env.NUXT_TOKEN_EXPIRES_IN_PUBLIC), // important
     },
   },
-  build: {
-    transpile: ['vuetify'],
-  },
-  vite: {
-    define: {
-      'process.env.DEBUG': false,
+  postcss: {
+    plugins: {
+      'postcss-import': {},
+      'tailwindcss/nesting': {},
+      tailwindcss: {},
+      autoprefixer: {},
     },
   },
 })

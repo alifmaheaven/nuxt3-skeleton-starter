@@ -3,6 +3,7 @@ import defaultTheme from 'tailwindcss/defaultTheme'
 import colors from 'tailwindcss/colors'
 
 export default <Partial<Config>>{
+  mode: "jit",
   darkMode: 'class',
   content: [
     './components/**/*.{vue,js,ts}',
@@ -64,5 +65,11 @@ export default <Partial<Config>>{
       },
     },
   },
+  backgroundColor: (theme: any) => ({
+    ...theme('colors'),
+  }),
+  borderColor: (theme: any) => ({
+    ...theme('colors'),
+  }),
   plugins: [require("@tailwindcss/forms")],
 }

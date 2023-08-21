@@ -40,6 +40,28 @@ const { handleSubmit, resetForm, setValues } = useForm({
 });
 
 // data
+const header = ref({
+  no: "No",
+  name: "Nama panjang",
+  umur: "Umur sebenarnya",
+});
+
+const rows = ref([
+  {
+    no: 1,
+    name: "kacong",
+    umur: 12,
+  },
+]);
+
+const pagination = reactive({
+  count: 5,
+  current_page: 1,
+  links: {},
+  per_page: 10,
+  total: 5,
+  total_pages: 1,
+});
 
 // methods
 
@@ -58,7 +80,33 @@ const submitCreateUpdate = handleSubmit(async (values, { resetForm }) => {
 
 <template>
   <div class="p-4">
-    <div class="w-full max-w-sm rounded overflow-hidden shadow-lg mb-4">
+    <globalTableCustom :header-names="header" :rows="rows">
+      <template #no="{ row, index }">
+        <span>
+          {{
+            (parseInt(pagination.current_page) - 1) *
+              parseInt(pagination.per_page) +
+            parseInt(index) +
+            1
+          }}
+        </span>
+      </template>
+      <template #month_duration="{ row, index }">
+        <span>{{ Math.floor(row?.month_duration) }}</span>
+      </template>
+    </globalTableCustom>
+    <globalPaginationCustom 
+      :total-page="pagination.total_pages"
+      :current-page="pagination.current_page"
+      :per-page="pagination.per_page"
+      @change="getData"
+      @update:perPage="(value) => (pagination.per_page = value)"
+      @update:currentPage="(value) => (pagination.current_page = value)"
+    >
+    </GlobalPaginationCustom>
+    <div
+      class="w-full max-w-sm rounded overflow-hidden shadow-lg mb-4 border border-red-500"
+    >
       <img
         class="w-full"
         src="https://tailwindcss.com/img/card-top.jpg"
@@ -80,12 +128,9 @@ const submitCreateUpdate = handleSubmit(async (values, { resetForm }) => {
             label="Username"
             placeholder="Username"
           />
-          <globalInputDatepicker
-            name="date"
-            label="Date"
-            placeholder="Date"
-          />
-          <v-btn type="submit" size="small">Submit</v-btn>
+          <globalInputDatepicker name="date" label="Date" placeholder="Date" />
+          <button class="btn btn-primary">Submit</button>
+          <button>oopen modal</button>
         </form>
       </div>
       <div class="px-6 py-4">
@@ -95,6 +140,12 @@ const submitCreateUpdate = handleSubmit(async (values, { resetForm }) => {
       </div>
     </div>
   </div>
+  <GlobalModalCustom
+    :isOpen="true"
+    :title="'ini title'"
+    :body="'ini body'"
+    :footer="'ini footer'"
+  />
 </template>
 
 <style lang="postcss" scoped>
