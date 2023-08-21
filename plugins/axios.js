@@ -52,11 +52,11 @@ export default defineNuxtPlugin((nuxtApp) => {
       return new Promise(function () {
         /*resolve, reject*/
         useAuth().setLoading(false);
-        if (
-          err.response.status === 401 &&
-          err.config &&
-          !err.config.__isRetryRequest
-        ) {
+        // if (
+        //   err.response.status === 401 &&
+        //   err.config &&
+        //   !err.config.__isRetryRequest
+        // ) {
         //   createToast(
         //     {
         //       title: "Sorry",
@@ -79,9 +79,9 @@ export default defineNuxtPlugin((nuxtApp) => {
         //     console.log("error", error);
         //   }
         //   // you can also redirect to /login if needed !
-        }
+        // }
         // err.response.data = JSON.parse(decrypt(err.response.data.data));
-        console.log(err);
+        // console.log(err);
         throw err;
       });
     }

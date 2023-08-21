@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@pinia/nuxt',
+    '@nuxtjs/tailwindcss',
   ],
   runtimeConfig: {
     MODE: process.env.NUXT_MODE, // important
