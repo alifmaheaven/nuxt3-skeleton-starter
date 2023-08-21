@@ -29,10 +29,12 @@ const auth = computed(() => authStore.auth);
 
 const validationSchema = yup.object({
   username: yup.string().required().label("Username"),
+  date: yup.string().required().label("Date"),
 });
 const { handleSubmit, resetForm, setValues } = useForm({
   initialValues: {
     username: "",
+    date: "",
   },
   validationSchema: validationSchema,
 });
@@ -83,7 +85,7 @@ const submitCreateUpdate = handleSubmit(async (values, { resetForm }) => {
             label="Date"
             placeholder="Date"
           />
-          <v-btn size="small">Submit</v-btn>
+          <v-btn type="submit" size="small">Submit</v-btn>
         </form>
       </div>
       <div class="px-6 py-4">
