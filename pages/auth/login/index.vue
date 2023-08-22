@@ -141,6 +141,7 @@ const submitCreateUpdate = handleSubmit(async (values, { resetForm }) => {
         <span class="badge">#winter</span>
       </div>
     </div>
+    <GlobalChartCustom />
   </div>
   <!-- <GlobalModalCustom
     :isOpen="true"
