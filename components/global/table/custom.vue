@@ -110,11 +110,11 @@
           <td v-if="!!isLoading" :colspan="Object.keys(headerNames).length">
             <div class="flex justify-center items-center">
               <span v-if="!!isLoading">Loading</span>
-              <LoadingIcon
+              <!-- <LoadingIcon
                 v-if="!!isLoading"
                 icon="spinning-circles"
                 class="w-4 h-4 ml-2"
-              />
+              /> -->
             </div>
           </td>
         </tr>

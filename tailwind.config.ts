@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss'
 import defaultTheme from 'tailwindcss/defaultTheme'
 import colors from 'tailwindcss/colors'
+const tailwindForms = require('@tailwindcss/forms');
 
 export default <Partial<Config>>{
   mode: "jit",
@@ -29,13 +30,15 @@ export default <Partial<Config>>{
         '8xl': '90rem',
       },
       colors: {
-        primary: {
-          DEFAULT:'var(--color-primary)'
-        },
-        // secondary: 'rgba(var(--color-secondary), <alpha-value>)',
-        secondary: {
-          DEFAULT:'var(--color-secondary)'
-        },
+        primary: "var(--color-primary)",
+        secondary: "var(--color-secondary)",
+        success: "var(--color-success)",
+        info: "var(--color-info)",
+        warning: "var(--color-warning)",
+        pending: "var(--color-pending)",
+        danger: "var(--color-danger)",
+        light: "var(--color-light)",
+        dark: "var(--color-dark)",
         transparent: 'transparent',
         black: colors.black,
         white: colors.white,
@@ -58,10 +61,25 @@ export default <Partial<Config>>{
           700: 'var(--color-slate-700)',
           800: 'var(--color-slate-800)',
           900: 'var(--color-slate-900)',
-        }
+        },
+        darkmode: {
+          50: "var(--color-darkmode-50)",
+          100: "var(--color-darkmode-100)",
+          200: "var(--color-darkmode-200)",
+          300: "var(--color-darkmode-300)",
+          400: "var(--color-darkmode-400)",
+          500: "var(--color-darkmode-500)",
+          600: "var(--color-darkmode-600)",
+          700: "var(--color-darkmode-700)",
+          800: "var(--color-darkmode-800)",
+          900: "var(--color-darkmode-900)",
+        },
       },
       fontFamily: {
         sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+      },
+      container: {
+        center: true,
       },
     },
   },
@@ -71,5 +89,7 @@ export default <Partial<Config>>{
   borderColor: (theme: any) => ({
     ...theme('colors'),
   }),
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [
+    tailwindForms
+  ],
 }
