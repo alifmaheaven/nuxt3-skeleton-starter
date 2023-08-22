@@ -140,12 +140,12 @@ const submitCreateUpdate = handleSubmit(async (values, { resetForm }) => {
       </div>
     </div>
   </div>
-  <GlobalModalCustom
+  <!-- <GlobalModalCustom
     :isOpen="true"
     :title="'ini title'"
     :body="'ini body'"
     :footer="'ini footer'"
-  />
+  /> -->
 </template>
 
 <style lang="postcss" scoped>
