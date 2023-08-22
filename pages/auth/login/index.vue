@@ -141,13 +141,9 @@ const submitCreateUpdate = handleSubmit(async (values, { resetForm }) => {
         <span class="badge">#winter</span>
       </div>
     </div>
+    <GlobalChartCustom />
   </div>
-  <!-- <GlobalModalCustom
-    :isOpen="true"
-    :title="'ini title'"
-    :body="'ini body'"
-    :footer="'ini footer'"
-  /> -->
+  <GlobalModalCustom/>
 </template>
 
 <style lang="postcss" scoped>
