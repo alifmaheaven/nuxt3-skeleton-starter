@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@pinia/nuxt',
+    'nuxt-icon' // use: <Icon name="uil:github" color="black" /> icon source : https://icones.js.org/
   ],
   css: ['~/assets/css/main.css', '~/assets/scss/main.scss'],
   runtimeConfig: {

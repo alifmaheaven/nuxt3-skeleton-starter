@@ -130,7 +130,9 @@ const submitCreateUpdate = handleSubmit(async (values, { resetForm }) => {
           />
           <globalInputDatepicker name="date" label="Date" placeholder="Date" />
           <button class="btn btn-primary">Submit</button>
-          <button>oopen modal</button>
+          <button>oopen modal 
+            <Icon name="uil:github" color="black" />
+          </button>
         </form>
       </div>
       <div class="px-6 py-4">
