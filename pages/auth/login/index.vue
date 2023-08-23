@@ -65,13 +65,13 @@ const pagination = reactive({
 
 // methods
 
-const testFunction = () => {
-  // $api.get('/api/v1/test').then((response) => {
-  //   console.log(response);
-  // });
-  // authStore.setUserData();
+const getData = () => {
+  $api.get('/api/v1/test').then((response) => {
+    console.log(response);
+  });
+  authStore.setUserData();
 };
-testFunction();
+getData();
 
 const submitCreateUpdate = handleSubmit(async (values, { resetForm }) => {
   console.log("ini valuenya", values);

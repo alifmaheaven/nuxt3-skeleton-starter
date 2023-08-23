@@ -7,9 +7,9 @@ export const useAuth = defineStore("auth", {
   state: () => ({
     user_data: null,
     token_data:
-      nuxtStorage.localStorage.getData("token") ||
+      nuxtStorage?.localStorage?.getData("token") ||
       "",
-    isAuth_data: false || nuxtStorage.localStorage.getData("token"),
+    isAuth_data: false || nuxtStorage?.localStorage?.getData("token"),
     isLoading_data: false,
   }),
   getters: {
