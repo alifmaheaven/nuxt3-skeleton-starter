@@ -80,6 +80,9 @@ const submitCreateUpdate = handleSubmit(async (values, { resetForm }) => {
 
 <template>
   <div class="p-4">
+    <nuxt-img
+      src="logo.png"
+    />
     <globalTableCustom :header-names="header" :rows="rows">
       <template #no="{ row, index }">
         <span>
