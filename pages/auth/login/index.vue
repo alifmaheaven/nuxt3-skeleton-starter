@@ -2,9 +2,6 @@
 // layout
 definePageMeta({
   layout: "autenticated",
-});
-
-definePageMeta({
   middleware: [
     function (to, from) {
       // Custom inline middleware
@@ -62,6 +59,21 @@ const pagination = reactive({
   total: 5,
   total_pages: 1,
 });
+
+const data_chart_bar = [
+  { name: "Laptop", total: 30 },
+  { name: "Printer", total: 41 },
+  { name: "Speaker", total: 30 },
+  { name: "Projector", total: 30 },
+  { name: "Monitor", total: 49 },
+  { name: "Tablet", total: 40 },
+];
+
+const data_chart_donut = [
+  { name: "Idle", total: 198 },
+  { name: "Pre-order", total: 22 }
+];
+
 
 // methods
 
@@ -144,7 +156,8 @@ const submitCreateUpdate = handleSubmit(async (values, { resetForm }) => {
         <span class="badge">#winter</span>
       </div>
     </div>
-    <GlobalChartCustom />
+    <GlobalChartBar chart_id="chart bar" :chart_data="data_chart_bar" :chart_colors="['#F63D68']" chart_width="300" chart_height="300" />
+    <GlobalChartDonut chart_id="chart donut" :chart_data="data_chart_donut" :chart_colors="['#E31B53', '#FEA3B4']" chart_width="300" chart_height="300" />
   </div>
   <GlobalModalCustom/>
 </template>
