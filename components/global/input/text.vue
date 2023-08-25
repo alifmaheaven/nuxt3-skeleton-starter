@@ -47,7 +47,7 @@ const {
 </script>
 
 <template>
-  <div class="mb-6 last:mb-0" :class="{ success: meta.valid }">
+  <div class="mb-6 last:mb-0 w-full" :class="{ success: meta.valid }">
     <label
       v-if="label"
       :for="name"
@@ -66,7 +66,7 @@ const {
         :id="name"
         :name="name"
         type="text"
-        class="form-control w-full block"
+        class="w-full block bg-white rounded-[9px] shadow border border-gray-300"
         :class="{
           'border-red-500 dark:border-red-500': !!errorMessage,
           'pl-10': !!icon,
@@ -78,23 +78,11 @@ const {
         @input="handleChange"
         @blur="handleBlur"
       />
-
-      <!-- <BaseIcon
-        v-if="icon"
-        :path="icon"
-        w="w-10"
-        h="h-12"
-        class="absolute top-0 left-0 z-10 pointer-events-none text-gray-500 dark:text-slate-400"
-      /> -->
-      <!-- <div class="absolute inset-y-0 right-0 flex items-center px-3 text-gray-600">
-        <i class="fa fa-eye" :class="iconClasses"></i>
-      </div> -->
-
       <div
         v-if="icon"
-        class="absolute inset-y-0 left-0 flex items-center px-3 text-gray-600"
+        class="absolute inset-y-0 left-0 flex items-center px-3 text-gray-500"
       >
-        <component :is="icon" />
+        <Icon :name="icon" class="w-5 h-5" />
       </div>
     </div>
     <div

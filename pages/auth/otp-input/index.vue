@@ -25,13 +25,11 @@ const authStore = useAuth();
 const auth = computed(() => authStore.auth);
 
 const validationSchema = yup.object({
-  username: yup.string().required().label("Username"),
-  password: yup.string().required().label("Password"),
+  otp: yup.string().required().label("Otp"),
 });
 const { handleSubmit, resetForm, setValues } = useForm({
   initialValues: {
-    username: "",
-    password: "",
+    otp: "",
   },
   validationSchema: validationSchema,
 });
@@ -39,6 +37,7 @@ const { handleSubmit, resetForm, setValues } = useForm({
 // data
 
 // methods
+
 const getData = () => {
   $api.get("/api/v1/test").then((response) => {
     console.log(response);
@@ -64,26 +63,22 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
           class="w-14 h-14 p-3.5 bg-white rounded-xl shadow border border-gray-200 justify-center items-center inline-flex"
         >
           <Icon
-            name="ic:outline-log-in"
+            name="mdi:shield-key"
             class="w-7 h-7 relative flex-col justify-start items-start flex"
           />
         </div>
         <div
-          class="self-stretch h-[60px] flex-col justify-center items-start gap-3 flex"
+          class="self-stretch h-full flex-col justify-center items-start gap-3 flex"
         >
           <div
-            class="self-stretch h-[60px] flex-col justify-start items-start gap-1 flex"
+            class="self-stretch h-full flex-col justify-start items-start gap-1 flex"
           >
             <div
               class="self-stretch text-center text-gray-900 text-2xl font-semibold leading-loose"
             >
-              Selamat Datang Kembali!
+              Masukan Kode OTP
             </div>
-            <div
-              class="self-stretch text-center text-slate-600 text-base font-normal leading-normal"
-            >
-              Mohon masukkan kredensial Anda di bawah ini
-            </div>
+            <div class="w-full text-center text-slate-600 text-base font-normal leading-normal">Kode OTP telah dikirimkan melalui email dan SMS Anda</div>
           </div>
         </div>
       </div>
@@ -94,49 +89,30 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
         <div
           class="self-stretch min-h-min flex-col justify-start items-start flex"
         >
-          <globalInputText
-            icon="icon-park-outline:mail"
-            name="username"
-            placeholder="Masukkan username"
-          />
-          <globalInputPassword
-            icon="icon-park-outline:lock"
-            name="password"
-            placeholder="Masukkan password"
+          <globalInputPin
+            name="otp"
+            placeholder="Masukkan Email"
+            type="otp"
           />
         </div>
-        <div
-          class="self-stretch min-h-min flex-col justify-start items-start gap-3 flex"
-        >
-          <GlobalButton
-            buttonClass="self-stretch px-5 py-3 bg-gray-600 rounded-lg shadow border border-gray-600 justify-center items-center gap-2 inline-flex text-white text-base font-semibold leading-normal"
-            buttonType="submit"
-          >
-            Masuk
-          </GlobalButton>
-        </div>
-        <div
-          class="self-stretch h-[52px] flex-col justify-start items-center gap-3 flex"
-        >
-          <div
-            class="self-stretch justify-center items-center gap-1 inline-flex"
-          >
-            <div class="text-slate-600 text-sm font-normal leading-tight">
-              Belum memiliki akun?
+        <div class="w-full text-slate-600 text-sm font-normal leading-tight">Jangan berikan kode OTP kepada siapapun.</div>
+        <div class="w-full h-full justify-end items-center gap-3 inline-flex">
+            <div class="justify-start items-start flex">
+                <div class="px-5 py-3 rounded-lg justify-center items-center gap-2 flex">
+                    <div class="justify-start items-start flex">
+                        <div class="px-2 py-0.5 bg-gray-50 rounded-2xl border border-gray-200 justify-start items-center flex">
+                            <div class="text-center text-slate-700 text-xs font-medium leading-[18px]">5</div>
+                        </div>
+                    </div>
+                    <div class="text-gray-300 text-base font-semibold leading-normal">Kirim Ulang</div>
+                </div>
             </div>
-            <div class="justify-center items-center gap-2 flex">
-              <div class="text-gray-700 text-sm font-semibold leading-tight">
-                Daftar sekarang
-              </div>
-            </div>
-          </div>
-          <div class="justify-center items-start gap-1 inline-flex">
-            <div class="justify-center items-center gap-2 flex">
-              <NuxtLink to="/auth/forgot-password" class="text-gray-700 text-sm font-semibold leading-tight">
-                Lupa password
-              </NuxtLink>
-            </div>
-          </div>
+            <GlobalButton
+              buttonClass="px-5 py-3 bg-gray-600 rounded-lg shadow border border-gray-600 justify-center items-center gap-2 flex text-white text-base font-semibold leading-normal"
+              buttonType="submit"
+            >
+              Konfimasi
+            </GlobalButton>
         </div>
       </form>
     </div>
