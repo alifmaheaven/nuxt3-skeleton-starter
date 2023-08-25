@@ -156,6 +156,7 @@ const submitCreateUpdate = handleSubmit(async (values, { resetForm }) => {
         <span class="badge">#winter</span>
       </div>
     </div>
+    <GlobalInputSearch placeholder="Search" class="w-[25%]" />
     <GlobalChartBar chart_id="chart bar" :chart_data="data_chart_bar" :chart_colors="['#F63D68']" chart_width="300" chart_height="300" />
     <GlobalChartDonut chart_id="chart donut" :chart_data="data_chart_donut" :chart_colors="['#E31B53', '#FEA3B4']" chart_width="300" chart_height="300" />
   </div>
