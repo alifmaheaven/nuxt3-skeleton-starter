@@ -13,7 +13,7 @@ const props = defineProps({
   },
   label: {
     type: String,
-    required: true,
+    required: false,
   },
   placeholder: {
     type: String,

@@ -15,7 +15,7 @@ const props = defineProps({
   },
   label: {
     type: String,
-    required: true,
+    required: false,
   },
   placeholder: {
     type: String,
@@ -69,7 +69,7 @@ const resetField = () => {
 </script>
 
 <template>
-  <div class="mb-6 last:mb-0" :class="{ success: meta.valid }">
+  <div class="mb-6 last:mb-0 w-full h-full" :class="{ success: meta.valid }">
     <label
       v-if="label"
       :for="name"
@@ -83,9 +83,95 @@ const resetField = () => {
       </span>
       {{ label }}</label
     >
-    <div>
-      <div class="relative">
-        <div class="flex items-center justify-center w-full">
+    <div class="h-full">
+        <label
+          :class="{
+              'border-red-500 ': !!errorMessage,
+              'border-gray-700': !!!errorMessage,
+              'is-disabled bg-gray-400 cursor-not-allowed': disabled,
+          }"
+          class="h-full self-stretch grow shrink basis-0 bg-white rounded-[10px] border border-gray-200 flex-col justify-center items-center flex"
+        >
+        <div
+            v-if="!!inputValue"
+            @click="resetField()"
+            class="w-full h-full flex-col justify-center items-center gap-4 flex cursor-pointer group hover:bg-red-700 rounded-[10px]"
+          >
+            <div
+              class="self-stretch h-[94px] flex-col justify-start items-center gap-3 flex"
+            >
+              <div
+                class="w-10 h-10 p-2.5 bg-white group-hover:hidden rounded-lg shadow border border-gray-200 justify-center items-center inline-flex"
+              >
+                <Icon name="mdi:file-document-outline" class="w-5 h-5 relative flex-col justify-start items-start block group-hover:hidden"/>
+              </div>
+              <div
+                class="w-10 h-10 p-2.5 bg-white group-hover:block group-hover:bg-red-950 rounded-lg shadow border border-gray-200 justify-center items-center inline-flex hidden"
+              >
+                <Icon name="mdi:file-remove-outline" class="w-5 h-5 relative flex-col justify-start items-start hidden group-hover:block text-white"/>
+              </div>
+              <div
+                class="self-stretch h-[42px] flex-col justify-start items-center gap-1 flex"
+              >
+                <div
+                  class="self-stretch text-center text-slate-600 text-xs font-normal leading-[18px]"
+                >
+                  <span class="text-sm group-hover:hidden font-bold">{{ check(inputValue) }}</span>
+                  <span class="text-xl hidden group-hover:block text-white">Click to delete existing file!</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            v-if="!!!inputValue"
+            class="w-full h-full flex-col justify-center items-center gap-4 flex cursor-pointer hover:bg-slate-100 rounded-[10px]"
+          >
+            <div
+              class="self-stretch h-[94px] flex-col justify-start items-center gap-3 flex"
+            >
+              <div
+                class="w-10 h-10 p-2.5 bg-white rounded-lg shadow border border-gray-200 justify-center items-center inline-flex"
+              >
+                <Icon name="ph:cloud-arrow-up-duotone" class="w-5 h-5 relative flex-col justify-start items-start flex"/>
+              </div>
+              <div
+                class="self-stretch h-[42px] flex-col justify-start items-center gap-1 flex"
+              >
+                <div
+                  class="self-stretch justify-center items-start gap-1 inline-flex"
+                >
+                  <div class="justify-center items-center gap-2 flex">
+                    <div
+                      class="text-gray-700 text-sm font-semibold leading-tight"
+                    >
+                      Klik untuk unggah
+                    </div>
+                  </div>
+                  <div
+                    class="text-slate-600 text-sm font-normal leading-tight"
+                  >
+                    atau drag & drop
+                  </div>
+                </div>
+                <div
+                  class="self-stretch text-center text-slate-600 text-xs font-normal leading-[18px]"
+                >
+                  PDF, DOC, DOCX. (max: 10MB)
+                </div>
+              </div>
+            </div>
+          </div>
+          <input
+              v-if="!!!inputValue && !disabled"
+              :id="name"
+              :name="name"
+              type="file"
+              class="hidden"
+              @change="handleChange"
+              @blur="handleBlur"
+            />
+        </label>
+        <!-- <div class="flex items-center justify-center w-full">
           <label
             :class="{
               'border-red-500 ': !!errorMessage,
@@ -114,15 +200,6 @@ const resetField = () => {
               class="h-full w-full text-center flex flex-col items-center justify-center"
             >
               <div class="flex flex-auto max-h-48 w-2/5 mx-auto">
-                <!-- <img class="has-mask h-36 object-center p-1" src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&amp;ext=jpg" alt="freepik image"> -->
-
-                <!-- <BaseIcon
-                  :path="mdiFileUpload"
-                  w="w-4/5"
-                  h="h-4/5"
-                  size="100"
-                  class="has-mask h-36 object-center p-1"
-                /> -->
                 <FilePlusIcon class="has-mask w-4/5 h-4/5 object-center p-1" />
               </div>
               <p class="pointer-none">
@@ -134,18 +211,8 @@ const resetField = () => {
                 from your computer
               </p>
             </div>
-            <input
-              v-if="!!!inputValue && !disabled"
-              :id="name"
-              :name="name"
-              type="file"
-              class="hidden"
-              @change="handleChange"
-              @blur="handleBlur"
-            />
           </label>
-        </div>
-      </div>
+        </div> -->
     </div>
     <div
       v-if="!!errorMessage"

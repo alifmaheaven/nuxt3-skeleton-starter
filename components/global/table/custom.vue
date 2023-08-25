@@ -52,8 +52,8 @@
       </template>
   -->
   <div class="overflow-x-auto w-full">
-    <table class="table table-bordered table-mobile">
-      <thead class="bg-primary text-white">
+    <table class="min-w-full border table table-bordered table-mobile">
+      <thead class="h-11 px-6 py-3 bg-slate-50 border border-gray-200 text-slate-500">
         <tr>
           <th
             v-for="(header, index) in Object.keys(headerNames)"
@@ -66,7 +66,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(row, index) in rows" :key="index">
+        <tr class="h-[72px] px-6 py-3 border border-gray-200 text-slate-700" v-for="(row, index) in rows" :key="index">
           <template v-if="!!!isLoading">
             <td
               v-if="index_show_detail == index"

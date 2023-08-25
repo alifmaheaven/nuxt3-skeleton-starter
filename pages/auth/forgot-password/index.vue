@@ -25,13 +25,11 @@ const authStore = useAuth();
 const auth = computed(() => authStore.auth);
 
 const validationSchema = yup.object({
-  username: yup.string().required().label("Username"),
-  password: yup.string().required().label("Password"),
+  email: yup.string().email().required().label("Email"),
 });
 const { handleSubmit, resetForm, setValues } = useForm({
   initialValues: {
-    username: "",
-    password: "",
+    email: "",
   },
   validationSchema: validationSchema,
 });
@@ -39,6 +37,7 @@ const { handleSubmit, resetForm, setValues } = useForm({
 // data
 
 // methods
+
 const getData = () => {
   $api.get("/api/v1/test").then((response) => {
     console.log(response);
@@ -69,21 +68,17 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
           />
         </div>
         <div
-          class="self-stretch h-[60px] flex-col justify-center items-start gap-3 flex"
+          class="self-stretch h-full flex-col justify-center items-start gap-3 flex"
         >
           <div
-            class="self-stretch h-[60px] flex-col justify-start items-start gap-1 flex"
+            class="self-stretch h-full flex-col justify-start items-start gap-1 flex"
           >
             <div
               class="self-stretch text-center text-gray-900 text-2xl font-semibold leading-loose"
             >
-              Selamat Datang Kembali!
+              Atur Ulang Password
             </div>
-            <div
-              class="self-stretch text-center text-slate-600 text-base font-normal leading-normal"
-            >
-              Mohon masukkan kredensial Anda di bawah ini
-            </div>
+            <div class="w-96 text-center text-slate-600 text-base font-normal leading-normal">Tautan telah dikirimkan. Pastikan email tepat dan periksa kembali kolom spam</div>
           </div>
         </div>
       </div>
@@ -96,13 +91,8 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
         >
           <globalInputText
             icon="icon-park-outline:mail"
-            name="username"
-            placeholder="Masukkan username"
-          />
-          <globalInputPassword
-            icon="icon-park-outline:lock"
-            name="password"
-            placeholder="Masukkan password"
+            name="email"
+            placeholder="Masukkan Email"
           />
         </div>
         <div
@@ -116,24 +106,18 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
           </GlobalButton>
         </div>
         <div
-          class="self-stretch h-[52px] flex-col justify-start items-center gap-3 flex"
+          class="self-stretch h-full flex-col justify-center items-center gap-3 flex"
         >
-          <div
-            class="self-stretch justify-center items-center gap-1 inline-flex"
-          >
-            <div class="text-slate-600 text-sm font-normal leading-tight">
-              Belum memiliki akun?
-            </div>
-            <div class="justify-center items-center gap-2 flex">
-              <div class="text-gray-700 text-sm font-semibold leading-tight">
-                Daftar sekarang
-              </div>
-            </div>
-          </div>
           <div class="justify-center items-start gap-1 inline-flex">
             <div class="justify-center items-center gap-2 flex">
-              <NuxtLink to="/auth/forgot-password" class="text-gray-700 text-sm font-semibold leading-tight">
-                Lupa password
+              <NuxtLink to="/auth/login" class="text-gray-700 text-sm font-semibold leading-tight">
+                <Icon
+                  name="ph:arrow-left-bold"
+                  class="w-5 h-5 relative flex-col justify-start items-start flex"
+                />
+                <span>
+                  Kembali
+                </span>
               </NuxtLink>
             </div>
           </div>

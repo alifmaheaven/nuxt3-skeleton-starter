@@ -40,7 +40,7 @@ const currentPageChange = (value) => {
 </script>
 
 <template>
-   <!-- how to use 
+  <!-- how to use 
     const pagination = reactive({
       count: 5,
       current_page: 1,
@@ -61,6 +61,79 @@ const currentPageChange = (value) => {
     </pagination-custom>
     --->
   <div
+    class="w-full h-20 p-5 border-t border-gray-200 justify-between items-center gap-5 inline-flex"
+  >
+    <div
+      @click="currentPage != 1 && currentPageChange(currentPage - 1)"
+      class="px-3.5 py-2 bg-white rounded-lg shadow border border-gray-300 justify-center items-center gap-2 flex cursor-pointer hover:bg-slate-300"
+    >
+      <Icon name="ph:arrow-left-bold" class="w-5 h-5 relative"></Icon>
+      <div class="text-slate-700 text-sm font-semibold leading-tight">
+        Sebelumnya
+      </div>
+    </div>
+    <div class="justify-start items-start gap-0.5 flex">
+      <template v-for="page in totalPage" :key="page">
+        <div
+          v-if="
+            page === 1 ||
+            page === totalPage ||
+            (page >= currentPage - 2 && page <= currentPage + 2)
+          "
+          :active="page === perPage"
+          class="w-10 h-10 rounded-[20px] justify-center items-center flex cursor-pointer hover:bg-slate-300"
+          :class="{ 'bg-slate-100': page === currentPage }"
+        >
+          <div
+            v-if="page != currentPage"
+            @click="currentPageChange(page)"
+            class="w-10 self-stretch p-3 rounded-[20px] justify-center items-center inline-flex"
+          >
+            <div
+              class="text-center text-slate-800 text-sm font-medium leading-tight"
+            >
+              {{ page }}
+            </div>
+          </div>
+          <div
+            v-else
+            class="w-10 self-stretch p-3 rounded-[20px] justify-center items-center inline-flex"
+          >
+            <div
+              class="text-center text-slate-800 text-sm font-medium leading-tight"
+            >
+              {{ page }}
+            </div>
+          </div>
+        </div>
+        <div
+          v-else-if="page >= currentPage - 3 && page <= currentPage + 3"
+          class="w-10 h-10 rounded-[20px] justify-center items-center flex"
+        >
+          <div
+            class="w-10 self-stretch p-3 rounded-[20px] justify-center items-center inline-flex"
+          >
+            <div
+              class="text-center text-slate-600 text-sm font-medium leading-tight"
+            >
+              ...
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+    <div
+      @click="currentPage != totalPage && currentPageChange(currentPage + 1)"
+      class="px-3.5 py-2 bg-white rounded-lg shadow border border-gray-300 justify-center items-center gap-2 flex cursor-pointer hover:bg-slate-300"
+    >
+      <div class="text-slate-700 text-sm font-semibold leading-tight">
+        Berikutnya
+      </div>
+      <div class="w-5 h-5 relative"></div>
+      <Icon name="ph:arrow-right-bold" class="w-5 h-5 relative"></Icon>
+    </div>
+  </div>
+  <!-- <div
     v-if="!!!isLoading"
     class="intro-y my-2 col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center"
   >
@@ -106,7 +179,7 @@ const currentPageChange = (value) => {
         {{ item }}
       </option>
     </select>
-  </div>
+  </div> -->
 </template>
 
 <style lang="scss" scoped>

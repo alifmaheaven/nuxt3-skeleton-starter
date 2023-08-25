@@ -77,13 +77,9 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
             <div
               class="self-stretch text-center text-gray-900 text-2xl font-semibold leading-loose"
             >
-              Selamat Datang Kembali!
+              Buat Password Baru!
             </div>
-            <div
-              class="self-stretch text-center text-slate-600 text-base font-normal leading-normal"
-            >
-              Mohon masukkan kredensial Anda di bawah ini
-            </div>
+            <div class="w-96 text-center text-slate-600 text-base font-normal leading-normal">Pastikan password memiliki minimal 8 karakter yang terdiri dari huruf besar, huruf kecil, angka, dan karakter khusus</div>
           </div>
         </div>
       </div>
@@ -94,15 +90,15 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
         <div
           class="self-stretch min-h-min flex-col justify-start items-start flex"
         >
-          <globalInputText
-            icon="icon-park-outline:mail"
-            name="username"
-            placeholder="Masukkan username"
+          <globalInputPassword
+            icon="icon-park-outline:lock"
+            name="password"
+            placeholder="Masukkan Password Baru"
           />
           <globalInputPassword
             icon="icon-park-outline:lock"
             name="password"
-            placeholder="Masukkan password"
+            placeholder="Konfirmasi Password Baru"
           />
         </div>
         <div
@@ -114,29 +110,6 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
           >
             Masuk
           </GlobalButton>
-        </div>
-        <div
-          class="self-stretch h-[52px] flex-col justify-start items-center gap-3 flex"
-        >
-          <div
-            class="self-stretch justify-center items-center gap-1 inline-flex"
-          >
-            <div class="text-slate-600 text-sm font-normal leading-tight">
-              Belum memiliki akun?
-            </div>
-            <div class="justify-center items-center gap-2 flex">
-              <div class="text-gray-700 text-sm font-semibold leading-tight">
-                Daftar sekarang
-              </div>
-            </div>
-          </div>
-          <div class="justify-center items-start gap-1 inline-flex">
-            <div class="justify-center items-center gap-2 flex">
-              <NuxtLink to="/auth/forgot-password" class="text-gray-700 text-sm font-semibold leading-tight">
-                Lupa password
-              </NuxtLink>
-            </div>
-          </div>
         </div>
       </form>
     </div>
