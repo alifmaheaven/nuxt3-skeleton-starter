@@ -26,10 +26,12 @@ const auth = computed(() => authStore.auth);
 
 const validationSchema = yup.object({
   otp: yup.string().required().label("Otp"),
+  sign: yup.string().required().label("Sign"),
 });
 const { handleSubmit, resetForm, setValues } = useForm({
   initialValues: {
     otp: "",
+    sign: "",
   },
   validationSchema: validationSchema,
 });
@@ -93,6 +95,10 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
             name="otp"
             placeholder="Masukkan Email"
             type="otp"
+          />
+          <globalInputSigner
+            class="w-50 h-50"
+            name="sign"
           />
         </div>
         <div class="w-full text-slate-600 text-sm font-normal leading-tight">Jangan berikan kode OTP kepada siapapun.</div>

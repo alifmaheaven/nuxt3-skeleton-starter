@@ -53,6 +53,9 @@ dependencies:
   vue3-apexcharts:
     specifier: ^1.4.4
     version: 1.4.4(apexcharts@3.41.1)(vue@3.3.4)
+  vue3-signature:
+    specifier: ^0.2.2
+    version: 0.2.2
   yup:
     specifier: ^1.2.0
     version: 1.2.0
@@ -3165,6 +3168,10 @@ packages:
       execa: 7.2.0
       titleize: 3.0.0
     dev: true
+
+  /default-passive-events@2.0.0:
+    resolution: {integrity: sha512-eMtt76GpDVngZQ3ocgvRcNCklUMwID1PaNbCNxfpDXuiOXttSh0HzBbda1HU9SIUsDc02vb7g9+3I5tlqe/qMQ==}
+    dev: false
 
   /define-lazy-prop@2.0.0:
     resolution: {integrity: sha512-Ds09qNh8yw3khSjiJjiUInaGX9xlqZDY7JVryGxdxV7NPeuqQfplOpQ66yJFZut3jLa5zOwkXw1g9EI2uKh4Og==}
@@ -6764,6 +6771,10 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
+  /signature_pad@3.0.0-beta.4:
+    resolution: {integrity: sha512-cOf2NhVuTiuNqe2X/ycEmizvCDXk0DoemhsEpnkcGnA4kS5iJYTCqZ9As7tFBbsch45Q1EdX61833+6sjJ8rrw==}
+    dev: false
+
   /sigstore@1.9.0:
     resolution: {integrity: sha512-0Zjz0oe37d08VeOtBIuB6cRriqXse2e8w+7yIy2XSXjshRKxbc2KkhXjL229jXSxEm7UbcjS76wcJDGQddVI9A==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
@@ -7934,6 +7945,14 @@ packages:
       vue: '> 3.0.0'
     dependencies:
       apexcharts: 3.41.1
+      vue: 3.3.4
+    dev: false
+
+  /vue3-signature@0.2.2:
+    resolution: {integrity: sha512-3sNCjwTS7FB8FKNdKgLsxKUoRzsNt5hUCMExprxzUTuSDyFAlAQ07vWqLmgBL83uFvmObqrZjy5hhi/9okeLiw==}
+    dependencies:
+      default-passive-events: 2.0.0
+      signature_pad: 3.0.0-beta.4
       vue: 3.3.4
     dev: false
 
