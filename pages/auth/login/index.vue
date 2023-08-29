@@ -39,13 +39,13 @@ const { handleSubmit, resetForm, setValues } = useForm({
 // data
 
 // methods
-const getData = () => {
-  $api.get("/api/v1/test").then((response) => {
-    console.log(response);
-  });
-  authStore.setUserData();
-};
-getData();
+// const getData = () => {
+//   $api.get("/api/v1/test").then((response) => {
+//     console.log(response);
+//   });
+//   authStore.setUserData();
+// };
+// getData();
 
 const submitLogin = handleSubmit(async (values, { resetForm }) => {
   console.log("ini valuenya", values);
@@ -102,6 +102,10 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
           <globalInputPassword
             icon="icon-park-outline:lock"
             name="password"
+            placeholder="Masukkan password"
+          />
+          <GlobalInputEditor
+            name="halo"
             placeholder="Masukkan password"
           />
         </div>
