@@ -8,6 +8,7 @@
         @keyup="pushValues"
         @keypress="onlynumber"
         :id="`digit-${index}`"
+        maxlength="1"
         :class="{
           invalid : errorMessage,
         }"
@@ -118,19 +119,12 @@ const valueToInput = computed({
   },
   set: function(newValue) {
     handleChange(newValue.join("").replace(/\D/g,''));
-    // var finalinput =
-    // if(this.onlyDate){
-    //   this.$emit('input', newValue)
-    // } else {
-    //   var finalValue = `${newValue} ${this.value ? this.value.split(" ")[1] : '00:00:00'}`;
-    //   this.$emit('input', finalValue)
-    // }
   }
 })
 
 const onlynumber = (e) => {
   var keyCode = e.which;
-  var value = e.target.value
+  // var value = e.target.value
       /*
       48-57 - (0-9)Numbers
       45 - (strip)
@@ -151,35 +145,40 @@ const onlynumber = (e) => {
 }
 
 const pushValues = (e) => {
-        var arraytoinput = valueToInput.value;
+  const arraytoinput = valueToInput.value;
+  const parent = document.getElementById('digitgroup');
+  const allChildElements = parent.querySelectorAll('input');
+  const length = arraytoinput.join("").length;
 
-        var parent = document.getElementById('digitgroup');
-        var allChildElements = parent.querySelectorAll('input');
-
-        // allChildElements[arraytoinput.join("").length].focus()
-
-        // console.log(allChildElements);
-        // console.log(e);
-
-        if(e.keyCode === 8 || e.keyCode === 37) {
-          if (arraytoinput.join("").length != 0 && allChildElements[arraytoinput.join("").length]) {
-            allChildElements[(arraytoinput.join("").length - 1)].focus()
-          }
-        } else if((e.keyCode >= 48 && e.keyCode <= 57)) {
-          if (arraytoinput.join("").length != parseInt(props.jumlahdigit) && allChildElements[arraytoinput.join("").length]) {
-            allChildElements[arraytoinput.join("").length].focus()
-          }
-        } else {
-
-        }
-
-        if (arraytoinput.join("").length != parseInt(props.jumlahdigit)) {
-          arraytoinput.pop();
-          handleChange(arraytoinput.join("").replace(/\D/g,''));
-        } else {
-          handleChange(arraytoinput.join("").replace(/\D/g,''));
-        }
+  switch (e.key) {
+    case 'Backspace':
+    case 'ArrowLeft':
+      if (length !== 0 && allChildElements[length - 1]) {
+        allChildElements[length - 1].focus();
       }
+      break;
+    default:
+      const keyCode = parseInt(e.key);
+      if (keyCode >= 0 && keyCode <= 9) {
+        if (length !== parseInt(props.jumlahdigit) && allChildElements[length]) {
+          allChildElements[length].focus();
+        } else {
+          return;
+        }
+      } else {
+        return;
+      }
+  }
+
+  if (length !== parseInt(props.jumlahdigit)) {
+    handleChange(arraytoinput.join("").replace(/\D/g,''));
+  } else {
+    handleChange(arraytoinput.join("").replace(/\D/g,''));
+  }
+  if (e.key === 'Backspace') {
+    e.preventDefault();
+  }
+}
 </script>
 
 <style scoped>
