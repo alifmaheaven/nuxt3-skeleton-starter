@@ -104,9 +104,15 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
             name="password"
             placeholder="Masukkan password"
           />
-          <GlobalInputEditor
+          <GlobalInputSelect
             name="halo"
             placeholder="Masukkan password"
+            :options="[
+              {
+                id: 'ADSTAFF',
+                name: 'ADSTAFF'
+              },
+            ]"
           />
         </div>
         <div
