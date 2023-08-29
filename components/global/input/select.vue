@@ -64,7 +64,7 @@ const dropdowninput = computed({
 </script>
 
 <template>
-  <div class="mb-6 last:mb-0" :class="{ success: meta.valid }">
+  <div class="mb-6 last:mb-0 w-full" :class="{ success: meta.valid }">
     <label
       v-if="label"
       :for="name"
@@ -111,4 +111,4 @@ const dropdowninput = computed({
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style src="@vueform/multiselect/themes/default.css"></style>
