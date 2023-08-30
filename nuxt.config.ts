@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     '@nuxt/image', // use: <nuxt-img src="logo.png" /> https://image.nuxtjs.org/
   ],
   image: {
-    dir: 'assets/images'
+    dir: 'public',
   },
   css: ['~/assets/css/main.css', '~/assets/scss/main.scss'],
   runtimeConfig: {

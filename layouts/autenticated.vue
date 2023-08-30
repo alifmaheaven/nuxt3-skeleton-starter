@@ -82,7 +82,7 @@ const sub_menu = computed(() => {
           <div class="upper-menu">
             <ul>
               <li class="my-5 flex justify-center">
-                <nuxt-img src="logo.png" />
+                <nuxt-img src="/images/logo.png" />
               </li>
               <li v-for="(value_of_menu_sidebar) in menu_sidebar" class="my-4 flex justify-center">
                 <nuxt-link
