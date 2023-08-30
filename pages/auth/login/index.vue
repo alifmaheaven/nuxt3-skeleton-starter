@@ -104,16 +104,6 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
             name="password"
             placeholder="Masukkan password"
           />
-          <GlobalInputSelect
-            name="halo"
-            placeholder="Masukkan password"
-            :options="[
-              {
-                id: 'ADSTAFF',
-                name: 'ADSTAFF'
-              },
-            ]"
-          />
         </div>
         <div
           class="self-stretch min-h-min flex-col justify-start items-start gap-3 flex"

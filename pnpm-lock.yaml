@@ -29,6 +29,9 @@ dependencies:
   axios:
     specifier: ^1.5.0
     version: 1.5.0
+  node-fetch-native:
+    specifier: ^1.4.0
+    version: 1.4.0
   nuxt-icon:
     specifier: ^0.5.0
     version: 0.5.0(vue@3.3.4)
@@ -62,6 +65,9 @@ dependencies:
   tailwindcss:
     specifier: ^3.3.3
     version: 3.3.3
+  unenv:
+    specifier: ^1.7.4
+    version: 1.7.4
   vee-validate:
     specifier: ^4.11.3
     version: 4.11.3(vue@3.3.4)
@@ -5101,7 +5107,6 @@ packages:
     resolution: {integrity: sha512-jSCU7/VB1loIWBZe14aEYHU/+1UMEHoaO7qxCOVJOw9GgH72VAWppxNcjU+x9a2k3GSIBXNKxXQFqRvvZ7vr3A==}
     engines: {node: '>=10.0.0'}
     hasBin: true
-    dev: true
 
   /mimic-fn@2.1.0:
     resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
@@ -7774,7 +7779,6 @@ packages:
       mime: 3.0.0
       node-fetch-native: 1.4.0
       pathe: 1.1.1
-    dev: true
 
   /unhead@1.3.9:
     resolution: {integrity: sha512-vzWZJW8l6dlNM5egJs3c7NMHWZ+iw2x7jCZtU2rrhwFINlKCaA3J42fvOeDxx6t5QR9dfZ96HF2AeNlCcPT+bQ==}
