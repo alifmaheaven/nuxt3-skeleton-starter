@@ -44,6 +44,27 @@ var chart_options = computed(() => {
       }
     },
     colors: props.chart_colors,
+    noData: {
+      text: 'Loading...' // Show the text where there is no data
+    },
+    responsive: [ // Change the width or height of the chart when max width is true
+      {
+        breakpoint: 1024, // @media max-width: 1024px (style for the tablet)
+        options: {
+          chart: {
+            width: '475px'
+          }
+        }
+      },
+      {
+        breakpoint: 768, // @media max-width: 768px (style for the hp)
+        options: {
+          chart: {
+            width: '300px'
+          }
+        }
+      }
+    ]
   }
 })
 
