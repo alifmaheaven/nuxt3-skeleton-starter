@@ -1,7 +1,8 @@
 <template>
   <div>
     <h1 class="text-2xl font-bold">Testing</h1>
-    <GlobalChartBar :chart_data="chart_data" chart_colors="#1A1A1A" chart_id="example-chart" chart_width="100%" chart_height="300px" />
+    <!-- <GlobalChartBar :chart_data="chart_data" chart_colors="#1A1A1A" chart_id="example-chart" chart_width="100%" chart_height="300px" /> -->
+    <GlobalInputManualcaptcha class="mt-10 w-40" />
   </div>
 </template>
 
@@ -27,8 +28,8 @@ const chart_data = computed(() => {
     }
   })
 })
+
 </script>
 
 <style lang="scss" scoped>
-
 </style>
