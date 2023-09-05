@@ -33,7 +33,7 @@ var darkMode = ref(false);
 //   }
 // });
 
-var RECAPTCHA_SITE_KEY = ref('6LcChbImAAAAAJd9r3XdlH4YXtDAESI7m8FXU22Q');
+var RECAPTCHA_SITE_KEY = ref('6LcycP8nAAAAADoBVvoYcSGaSXUkpH17P2dZB3AI');
 
 const { value: recaptchaResponse,handleChange, errorMessage, meta } = useField(
   'recaptcha',
