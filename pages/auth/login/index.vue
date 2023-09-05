@@ -104,6 +104,9 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
             name="password"
             placeholder="Masukkan password"
           />
+          <GlobalInputRecaptchav2
+            name="recaptcha"
+          />
         </div>
         <div
           class="self-stretch min-h-min flex-col justify-start items-start gap-3 flex"
