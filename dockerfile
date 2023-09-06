@@ -7,7 +7,11 @@ COPY . .
 
 RUN npm install -g pnpm
 # install node modules and build assets
-RUN pnpm install && pnpm run build
+
+COPY .env.example .env
+
+RUN pnpm install 
+RUN pnpm run build
 
 EXPOSE 3000
 
