@@ -162,11 +162,7 @@ const pushValues = (e) => {
       if (keyCode >= 0 && keyCode <= 9) {
         if (length !== parseInt(props.jumlahdigit) && allChildElements[length]) {
           allChildElements[length].focus();
-        } else {
-          return;
         }
-      } else {
-        return;
       }
   }
 
