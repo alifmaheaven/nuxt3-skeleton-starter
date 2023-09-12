@@ -3,6 +3,7 @@
     <h1 class="text-2xl font-bold">Testing</h1>
     <!-- <GlobalChartBar :chart_data="chart_data" chart_colors="#1A1A1A" chart_id="example-chart" chart_width="100%" chart_height="300px" /> -->
     <GlobalInputManualcaptcha class="mt-10 w-40" />
+    <GlobalTableRounded :table_header="table_header" :table_body="table_body" />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 definePageMeta({
   layout: "autenticated",
 });
+import dataTable from '~/assets/fakeData/dataTable.json'
 
 const data_chart = [
   { property: "Laptop", count: 30 },
@@ -19,7 +21,31 @@ const data_chart = [
   { property: "Monitor", count: 49 },
   { property: "Tablet", count: 40 },
 ];
-
+const table_header = ref([
+  '',
+  'KODE GEDUNG',
+  'ALAMAT',
+  'KOTA',
+  'LANTAI',
+  'WING',
+  'KODE RUANGAN',
+  'AKSI',
+])
+const table_body = computed(() => {
+  return dataTable.map(({
+    id, kode_gedung, alamat, kota, lantai, wing, kode_ruangan
+  }) => {
+    return {
+      id: id,
+      value1: kode_gedung,
+      value2: alamat,
+      value3: kota,
+      value4: lantai,
+      value5: wing,
+      value6: kode_ruangan,
+    }
+  })
+})
 const chart_data = computed(() => {
   return data_chart.map(({property, count}) => {
     return {
