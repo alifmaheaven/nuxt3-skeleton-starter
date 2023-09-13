@@ -2,6 +2,7 @@ import type { Config } from 'tailwindcss'
 import defaultTheme from 'tailwindcss/defaultTheme'
 import colors from 'tailwindcss/colors'
 const tailwindForms = require('@tailwindcss/forms');
+const flowbite = require('flowbite/plugin');
 
 export default <Partial<Config>>{
   mode: "jit",
@@ -90,6 +91,7 @@ export default <Partial<Config>>{
     ...theme('colors'),
   }),
   plugins: [
-    tailwindForms
+    tailwindForms,
+    flowbite,
   ],
 }

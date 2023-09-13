@@ -29,6 +29,9 @@ dependencies:
   axios:
     specifier: ^1.5.0
     version: 1.5.0
+  flowbite:
+    specifier: ^1.8.1
+    version: 1.8.1
   node-fetch-native:
     specifier: ^1.4.0
     version: 1.4.0
@@ -1632,6 +1635,10 @@ packages:
   /@polka/url@1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
+
+  /@popperjs/core@2.11.8:
+    resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
+    dev: false
 
   /@rollup/plugin-alias@5.0.0(rollup@3.28.1):
     resolution: {integrity: sha512-l9hY5chSCjuFRPsnRm16twWBiSApl2uYFLsepQYwtBuAxNMQ/1dJqADld40P0Jkqm65GRTLy/AC6hnpVebtLsA==}
@@ -3801,6 +3808,13 @@ packages:
   /flatted@3.2.7:
     resolution: {integrity: sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==}
     dev: true
+
+  /flowbite@1.8.1:
+    resolution: {integrity: sha512-lXTcO8a6dRTPFpINyOLcATCN/pK1Of/jY4PryklPllAiqH64tSDUsOdQpar3TO59ZXWwugm2e92oaqwH6X90Xg==}
+    dependencies:
+      '@popperjs/core': 2.11.8
+      mini-svg-data-uri: 1.4.4
+    dev: false
 
   /follow-redirects@1.15.2:
     resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
@@ -7685,7 +7699,7 @@ packages:
       fast-glob: 3.3.1
       local-pkg: 0.4.3
       magic-string: 0.30.3
-      mlly: 1.4.1
+      mlly: 1.4.2
       pathe: 1.1.1
       pkg-types: 1.0.3
       scule: 1.0.0
