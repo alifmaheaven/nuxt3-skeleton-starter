@@ -3,6 +3,11 @@
     <h1 class="text-2xl font-bold">Testing</h1>
     <!-- <GlobalChartBar :chart_data="chart_data" chart_colors="#1A1A1A" chart_id="example-chart" chart_width="100%" chart_height="300px" /> -->
     <GlobalInputManualcaptcha class="mt-10 w-40" />
+    <div class="flex flex-row gap-4 my-4">
+      <GlobalInputRadio :options="optionsByType" @update:value="(value)=>{}" />
+      <!-- Checkbox is not ready -->
+      <GlobalInputCheckbox :options="optionsByCategory" placeholder="Choose category" name="Category" @update:value="(value)=>{}" />
+    </div>
     <GlobalTableRounded :table_header="table_header" :table_body="table_body" />
   </div>
 </template>
@@ -21,6 +26,12 @@ const data_chart = [
   { property: "Monitor", count: 49 },
   { property: "Tablet", count: 40 },
 ];
+const optionsByType = ref([
+  "By PO", "By Non PO"
+])
+const optionsByCategory = ref([
+  "Electronic", "Furniture", "Office Supplies", "Reference Materials"
+])
 const table_header = ref([
   '',
   'KODE GEDUNG',
