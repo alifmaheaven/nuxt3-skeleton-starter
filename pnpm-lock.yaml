@@ -89,6 +89,9 @@ dependencies:
   vue3-draggable-resizable:
     specifier: ^1.6.5
     version: 1.6.5
+  vue3-lottie:
+    specifier: ^3.1.0
+    version: 3.1.0(vue@3.3.4)
   vue3-signature:
     specifier: ^0.2.2
     version: 0.2.2
@@ -7034,6 +7037,13 @@ packages:
     dependencies:
       p-locate: 5.0.0
 
+  /lodash-es@4.17.21:
+    resolution:
+      {
+        integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==,
+      }
+    dev: false
+
   /lodash.clonedeep@4.5.0:
     resolution:
       {
@@ -7130,6 +7140,13 @@ packages:
         integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==,
       }
     dev: true
+
+  /lottie-web@5.12.2:
+    resolution:
+      {
+        integrity: sha512-uvhvYPC8kGPjXT3MyKMrL3JitEAmDMp30lVkuq/590Mw9ok6pWcFCwXJveo0t5uqYw1UREQHofD+jVpdjBv8wg==,
+      }
+    dev: false
 
   /lru-cache@10.0.1:
     resolution:
@@ -11803,6 +11820,20 @@ packages:
       {
         integrity: sha512-31142E31fGNnq3HKqvmFLSsqIbhck7TyGuQWhUKrDw6DOcGAuRx4ddRjaxvT6fe7dgeKH53qAh+i0ZlWtPLl2g==,
       }
+    dev: false
+
+  /vue3-lottie@3.1.0(vue@3.3.4):
+    resolution:
+      {
+        integrity: sha512-dS6/cjEuAoN/CWYqthPjGVVaeW5jRVB1yGEcFQbBcbDfCeMlVhC7pzn0Qatdz7gasOUIvZcJCmhfUe681GwhSg==,
+      }
+    engines: { node: ">=12" }
+    peerDependencies:
+      vue: ^3.2
+    dependencies:
+      lodash-es: 4.17.21
+      lottie-web: 5.12.2
+      vue: 3.3.4
     dev: false
 
   /vue3-signature@0.2.2:

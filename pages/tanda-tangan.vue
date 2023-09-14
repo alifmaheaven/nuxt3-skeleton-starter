@@ -16,6 +16,13 @@
         @update:value="(value) => {}"
       />
     </div>
+    <Vue3Lottie
+      animationLink="/animation/success.json"
+      :height="300"
+      :width="300"
+    />
+    <!-- :loop="false" for 1 time animation -->
+    <!-- https://lottiefiles.com/ for the animation files -->
     <GlobalTableRounded :table_header="table_header" :table_body="table_body" />
   </div>
 </template>

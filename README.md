@@ -62,6 +62,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
     "tailwindcss": "^3.3.3",
     "vee-validate": "^4.11.2",
     "vue3-apexcharts": "^1.4.4",
+    "vue3-lottie": "^3.1.0",
     "yup": "^1.2.0"
 
 ## Features
@@ -74,12 +75,14 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 - [x] 📄 [Yup](https://www.npmjs.com/package/yup)
 - [x] 📄 [Vue Datepicker](https://vue3-datepicker.netlify.app/)
 - [x] 📄 [Apex Chart](https://apexcharts.com/)
+- [x] 📄 [Lottie](https://lottiefiles.com/)
 - [x] 📄 [Vue Apex Chart](https://apexcharts.com/docs/vue-charts/)
 - [x] 📄 [Nuxt Storage](https://storage.nuxtjs.org/)
 - [x] 📄 [Axios](https://axios.nuxtjs.org/)
 - [x] 📄 [Sass](https://sass-lang.com/)
 - [x] 📄 [PostCSS](https://postcss.org/)
 - [x] 📄 [vue3-apexcharts](https://apexcharts.com/docs/vue-charts/)
+- [x] 📄 [vue3-lottie](https://vue3-lottie.vercel.app/)
 - [x] 🔔 [Nuxt Icon](https://icones.js.org/)
 - [x] 📦 [PNPM](https://pnpm.io/)
 
