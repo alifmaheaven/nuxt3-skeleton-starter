@@ -1,17 +1,17 @@
 // QuillEditor
 // Mau nambah module? https://vueup.github.io/vue-quill/guide/modules.html
 
-import { QuillEditor, Quill } from '@vueup/vue-quill'
-import BlotFormatter from 'quill-blot-formatter'
-import ImageUploader from 'quill-image-uploader';
-import '@vueup/vue-quill/dist/vue-quill.snow.css';
+import { QuillEditor, Quill } from "@vueup/vue-quill";
+import BlotFormatter from "quill-blot-formatter";
+import ImageUploader from "quill-image-uploader";
+import "@vueup/vue-quill/dist/vue-quill.snow.css";
 
 export default defineNuxtPlugin((nuxtApp) => {
   const modules = [
     {
-      name: 'blotFormatter',
+      name: "blotFormatter",
       module: BlotFormatter,
-      options: {}
+      options: {},
     },
     // kalo pas upload image mau diupload dulu ke server
     // {
@@ -36,18 +36,18 @@ export default defineNuxtPlugin((nuxtApp) => {
     //     }
     //   }
     // }
-  ]
+  ];
 
   const globalOptions = {
-    debug: 'info',
+    debug: "info",
     modules: {
-      table: true,  // disable table module
+      table: true, // disable table module
     },
-    theme: 'snow'
-  }
+    theme: "snow",
+  };
   // set default globalOptions prop
   QuillEditor.props.globalOptions.default = () => globalOptions;
   QuillEditor.props.modules.default = () => modules;
   // register component
-  nuxtApp.vueApp.component('QuillEditor', QuillEditor)
-})
+  nuxtApp.vueApp.component("QuillEditor", QuillEditor);
+});

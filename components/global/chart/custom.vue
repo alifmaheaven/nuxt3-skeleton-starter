@@ -1,7 +1,13 @@
 <template>
   <div>
     <ClientOnly>
-      <apexchart :options="chart_options" :series="chart_series" type="bar" height="300" width="500" />
+      <apexchart
+        :options="chart_options"
+        :series="chart_series"
+        type="bar"
+        height="300"
+        width="500"
+      />
     </ClientOnly>
   </div>
 </template>
@@ -20,23 +26,23 @@ const data_chart = [
 
 const chart_options = {
   chart: {
-    id: 'my-chart-example',
+    id: "my-chart-example",
   },
   xaxis: {
-    categories: data_chart.map(value => value.property)
+    categories: data_chart.map((value) => value.property),
   },
   plotOptions: {
     bar: {
       borderRadius: 10,
-    }
+    },
   },
-  colors: ['#F63D68']
-}
+  colors: ["#F63D68"],
+};
 
 const chart_series = ref([
   {
-    name: 'series1',
-    data: data_chart.map(value => value.count)
-  }
-])
+    name: "series1",
+    data: data_chart.map((value) => value.count),
+  },
+]);
 </script>

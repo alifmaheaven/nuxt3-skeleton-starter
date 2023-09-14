@@ -143,13 +143,13 @@ const phoneformarter = (phoneNumber) => {
     <label
       v-if="label"
       :for="name"
-      class="form-label block mb-2"
+      class="form-label mb-2 block"
       :class="{
-        'text-red-500 font-bold': !!errorMessage,
+        'font-bold text-red-500': !!errorMessage,
       }"
     >
       <span v-if="primary">
-        <span class="text-red-500 font-bold">*</span>
+        <span class="font-bold text-red-500">*</span>
       </span>
       {{ label }}</label
     >
@@ -190,7 +190,7 @@ const phoneformarter = (phoneNumber) => {
     </div>
     <div
       v-if="!!errorMessage || !!errorMessagePrefix"
-      class="text-xs text-red-500 dark:text-red-500 mt-1"
+      class="mt-1 text-xs text-red-500 dark:text-red-500"
     >
       {{ errorMessage || errorMessagePrefix }}
     </div>

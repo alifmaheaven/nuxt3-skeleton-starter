@@ -6,7 +6,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix .",
+    "format": "prettier . --write"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
@@ -14,8 +16,13 @@
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@types/node": "^18.17.12",
     "autoprefixer": "^10.4.15",
+    "eslint": "^8.43.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-vue": "^9.15.0",
     "nuxt": "^3.7.0",
     "postcss": "^8.4.28",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.4",
     "sass": "^1.66.1",
     "tailwindcss": "^3.3.3"
   },
@@ -28,6 +35,7 @@
     "@vueup/vue-quill": "^1.2.0",
     "apexcharts": "^3.42.0",
     "axios": "^1.5.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "flowbite": "^1.8.1",
     "node-fetch-native": "^1.4.0",
     "nuxt-icon": "^0.5.0",

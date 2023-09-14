@@ -54,71 +54,80 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
 </script>
 
 <template>
-  <div class="min-w-max min-h-max justify-center items-center inline-flex">
+  <div class="inline-flex min-h-max min-w-max items-center justify-center">
     <div
-      class="grow shrink basis-0 bg-gray-50 rounded-xl shadow border border-gray-200 flex-col justify-start items-center inline-flex"
+      class="inline-flex shrink grow basis-0 flex-col items-center justify-start rounded-xl border border-gray-200 bg-gray-50 shadow"
     >
       <div
-        class="self-stretch h-[180px] p-6 flex-col justify-start items-center gap-4 flex"
+        class="flex h-[180px] flex-col items-center justify-start gap-4 self-stretch p-6"
       >
         <div
-          class="w-14 h-14 p-3.5 bg-white rounded-xl shadow border border-gray-200 justify-center items-center inline-flex"
+          class="inline-flex h-14 w-14 items-center justify-center rounded-xl border border-gray-200 bg-white p-3.5 shadow"
         >
           <Icon
             name="mdi:shield-key"
-            class="w-7 h-7 relative flex-col justify-start items-start flex"
+            class="relative flex h-7 w-7 flex-col items-start justify-start"
           />
         </div>
         <div
-          class="self-stretch h-full flex-col justify-center items-start gap-3 flex"
+          class="flex h-full flex-col items-start justify-center gap-3 self-stretch"
         >
           <div
-            class="self-stretch h-full flex-col justify-start items-start gap-1 flex"
+            class="flex h-full flex-col items-start justify-start gap-1 self-stretch"
           >
             <div
-              class="self-stretch text-center text-gray-900 text-2xl font-semibold leading-loose"
+              class="self-stretch text-center text-2xl font-semibold leading-loose text-gray-900"
             >
               Masukan Kode OTP
             </div>
-            <div class="w-full text-center text-slate-600 text-base font-normal leading-normal">Kode OTP telah dikirimkan melalui email dan SMS Anda</div>
+            <div
+              class="w-full text-center text-base font-normal leading-normal text-slate-600"
+            >
+              Kode OTP telah dikirimkan melalui email dan SMS Anda
+            </div>
           </div>
         </div>
       </div>
       <form
+        class="flex min-h-max flex-col items-center justify-start gap-8 self-stretch border-gray-200 px-20 py-12"
         @submit="submitLogin"
-        class="self-stretch min-h-max px-20 py-12 border-gray-200 flex-col justify-start items-center gap-8 flex"
       >
         <div
-          class="self-stretch min-h-min flex-col justify-start items-start flex"
+          class="flex min-h-min flex-col items-start justify-start self-stretch"
         >
-          <globalInputPin
-            name="otp"
-            placeholder="Masukkan Email"
-            type="otp"
-          />
-          <globalInputSigner
-            class="w-50 h-50"
-            name="sign"
-          />
+          <globalInputPin name="otp" placeholder="Masukkan Email" type="otp" />
+          <globalInputSigner class="w-50 h-50" name="sign" />
         </div>
-        <div class="w-full text-slate-600 text-sm font-normal leading-tight">Jangan berikan kode OTP kepada siapapun.</div>
-        <div class="w-full h-full justify-end items-center gap-3 inline-flex">
-            <div class="justify-start items-start flex">
-                <div class="px-5 py-3 rounded-lg justify-center items-center gap-2 flex">
-                    <div class="justify-start items-start flex">
-                        <div class="px-2 py-0.5 bg-gray-50 rounded-2xl border border-gray-200 justify-start items-center flex">
-                            <div class="text-center text-slate-700 text-xs font-medium leading-[18px]">5</div>
-                        </div>
-                    </div>
-                    <div class="text-gray-300 text-base font-semibold leading-normal">Kirim Ulang</div>
-                </div>
-            </div>
-            <GlobalButton
-              buttonClass="px-5 py-3 bg-gray-600 rounded-lg shadow border border-gray-600 justify-center items-center gap-2 flex text-white text-base font-semibold leading-normal"
-              buttonType="submit"
+        <div class="w-full text-sm font-normal leading-tight text-slate-600">
+          Jangan berikan kode OTP kepada siapapun.
+        </div>
+        <div class="inline-flex h-full w-full items-center justify-end gap-3">
+          <div class="flex items-start justify-start">
+            <div
+              class="flex items-center justify-center gap-2 rounded-lg px-5 py-3"
             >
-              Konfimasi
-            </GlobalButton>
+              <div class="flex items-start justify-start">
+                <div
+                  class="flex items-center justify-start rounded-2xl border border-gray-200 bg-gray-50 px-2 py-0.5"
+                >
+                  <div
+                    class="text-center text-xs font-medium leading-[18px] text-slate-700"
+                  >
+                    5
+                  </div>
+                </div>
+              </div>
+              <div class="text-base font-semibold leading-normal text-gray-300">
+                Kirim Ulang
+              </div>
+            </div>
+          </div>
+          <GlobalButton
+            button-class="px-5 py-3 bg-gray-600 rounded-lg shadow border border-gray-600 justify-center items-center gap-2 flex text-white text-base font-semibold leading-normal"
+            button-type="submit"
+          >
+            Konfimasi
+          </GlobalButton>
         </div>
       </form>
     </div>
@@ -127,7 +136,7 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
 
 <style lang="scss" scoped>
 .badge {
-  @apply inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700;
+  @apply inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700;
   &:hover {
     @apply bg-gray-300;
   }

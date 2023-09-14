@@ -46,7 +46,6 @@ const {
   meta,
 } = useField(name);
 
-
 const editorvalue = computed({
   get() {
     return inputValue.value;
@@ -55,38 +54,38 @@ const editorvalue = computed({
     handleChange(value);
   },
 });
-
 </script>
 
 <template>
-  <div class="mb-6 last:mb-0 w-full" :class="{ success: meta.valid }">
+  <div class="mb-6 w-full last:mb-0" :class="{ success: meta.valid }">
     <label
       v-if="label"
       :for="name"
-      class="form-label block mb-2"
+      class="form-label mb-2 block"
       :class="{
-        'text-red-500 font-bold': !!errorMessage,
+        'font-bold text-red-500': !!errorMessage,
       }"
     >
       <span v-if="primary">
-        <span class="text-red-500 font-bold">*</span>
+        <span class="font-bold text-red-500">*</span>
       </span>
       {{ label }}</label
     >
     <div class="relative">
       <ClientOnly>
-        <QuillEditor 
-        class="w-full block bg-white rounded-[9px] shadow border border-gray-300"
-        :disabled="disabled"
-        :readonly="readonly"
-        :class="{
-          'border-red-500 dark:border-red-500': !!errorMessage,
-          'pl-10': !!icon,
-        }"
-        v-model:content="editorvalue"
-        contentType="html" 
-        toolbar="full" 
-        theme="snow" />
+        <QuillEditor
+          v-model:content="editorvalue"
+          class="block w-full rounded-[9px] border border-gray-300 bg-white shadow"
+          :disabled="disabled"
+          :readonly="readonly"
+          :class="{
+            'border-red-500 dark:border-red-500': !!errorMessage,
+            'pl-10': !!icon,
+          }"
+          content-type="html"
+          toolbar="full"
+          theme="snow"
+        />
       </ClientOnly>
       <!-- <div
         v-if="icon"
@@ -97,7 +96,7 @@ const editorvalue = computed({
     </div>
     <div
       v-if="!!errorMessage"
-      class="text-xs text-red-500 dark:text-red-500 mt-1"
+      class="mt-1 text-xs text-red-500 dark:text-red-500"
     >
       {{ errorMessage }}
     </div>

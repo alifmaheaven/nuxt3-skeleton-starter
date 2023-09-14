@@ -51,9 +51,11 @@
         <h1>heyy</h1>
       </template>
   -->
-  <div class="overflow-x-auto w-full">
-    <table class="min-w-full border table table-bordered table-mobile">
-      <thead class="h-11 px-6 py-3 bg-slate-50 border border-gray-200 text-slate-500">
+  <div class="w-full overflow-x-auto">
+    <table class="table-bordered table-mobile table min-w-full border">
+      <thead
+        class="h-11 border border-gray-200 bg-slate-50 px-6 py-3 text-slate-500"
+      >
         <tr>
           <th
             v-for="(header, index) in Object.keys(headerNames)"
@@ -66,7 +68,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="h-[72px] px-6 py-3 border border-gray-200 text-slate-700" v-for="(row, index) in rows" :key="index">
+        <tr
+          v-for="(row, index) in rows"
+          :key="index"
+          class="h-[72px] border border-gray-200 px-6 py-3 text-slate-700"
+        >
           <template v-if="!!!isLoading">
             <td
               v-if="index_show_detail == index"
@@ -108,7 +114,7 @@
         </tr>
         <tr>
           <td v-if="!!isLoading" :colspan="Object.keys(headerNames).length">
-            <div class="flex justify-center items-center">
+            <div class="flex items-center justify-center">
               <span v-if="!!isLoading">Loading</span>
               <!-- <LoadingIcon
                 v-if="!!isLoading"

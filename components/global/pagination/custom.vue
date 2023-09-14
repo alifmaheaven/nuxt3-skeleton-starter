@@ -61,18 +61,18 @@ const currentPageChange = (value) => {
     </pagination-custom>
     --->
   <div
-    class="w-full h-20 p-5 border-t border-gray-200 justify-between items-center gap-5 inline-flex"
+    class="inline-flex h-20 w-full items-center justify-between gap-5 border-t border-gray-200 p-5"
   >
     <div
+      class="flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-3.5 py-2 shadow hover:bg-slate-300"
       @click="currentPage != 1 && currentPageChange(currentPage - 1)"
-      class="px-3.5 py-2 bg-white rounded-lg shadow border border-gray-300 justify-center items-center gap-2 flex cursor-pointer hover:bg-slate-300"
     >
-      <Icon name="ph:arrow-left-bold" class="w-5 h-5 relative"></Icon>
-      <div class="text-slate-700 text-sm font-semibold leading-tight">
+      <Icon name="ph:arrow-left-bold" class="relative h-5 w-5"></Icon>
+      <div class="text-sm font-semibold leading-tight text-slate-700">
         Sebelumnya
       </div>
     </div>
-    <div class="justify-start items-start gap-0.5 flex">
+    <div class="flex items-start justify-start gap-0.5">
       <template v-for="page in totalPage" :key="page">
         <div
           v-if="
@@ -81,26 +81,26 @@ const currentPageChange = (value) => {
             (page >= currentPage - 2 && page <= currentPage + 2)
           "
           :active="page === perPage"
-          class="w-10 h-10 rounded-[20px] justify-center items-center flex cursor-pointer hover:bg-slate-300"
+          class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-[20px] hover:bg-slate-300"
           :class="{ 'bg-slate-100': page === currentPage }"
         >
           <div
             v-if="page != currentPage"
+            class="inline-flex w-10 items-center justify-center self-stretch rounded-[20px] p-3"
             @click="currentPageChange(page)"
-            class="w-10 self-stretch p-3 rounded-[20px] justify-center items-center inline-flex"
           >
             <div
-              class="text-center text-slate-800 text-sm font-medium leading-tight"
+              class="text-center text-sm font-medium leading-tight text-slate-800"
             >
               {{ page }}
             </div>
           </div>
           <div
             v-else
-            class="w-10 self-stretch p-3 rounded-[20px] justify-center items-center inline-flex"
+            class="inline-flex w-10 items-center justify-center self-stretch rounded-[20px] p-3"
           >
             <div
-              class="text-center text-slate-800 text-sm font-medium leading-tight"
+              class="text-center text-sm font-medium leading-tight text-slate-800"
             >
               {{ page }}
             </div>
@@ -108,13 +108,13 @@ const currentPageChange = (value) => {
         </div>
         <div
           v-else-if="page >= currentPage - 3 && page <= currentPage + 3"
-          class="w-10 h-10 rounded-[20px] justify-center items-center flex"
+          class="flex h-10 w-10 items-center justify-center rounded-[20px]"
         >
           <div
-            class="w-10 self-stretch p-3 rounded-[20px] justify-center items-center inline-flex"
+            class="inline-flex w-10 items-center justify-center self-stretch rounded-[20px] p-3"
           >
             <div
-              class="text-center text-slate-600 text-sm font-medium leading-tight"
+              class="text-center text-sm font-medium leading-tight text-slate-600"
             >
               ...
             </div>
@@ -123,14 +123,14 @@ const currentPageChange = (value) => {
       </template>
     </div>
     <div
+      class="flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-3.5 py-2 shadow hover:bg-slate-300"
       @click="currentPage != totalPage && currentPageChange(currentPage + 1)"
-      class="px-3.5 py-2 bg-white rounded-lg shadow border border-gray-300 justify-center items-center gap-2 flex cursor-pointer hover:bg-slate-300"
     >
-      <div class="text-slate-700 text-sm font-semibold leading-tight">
+      <div class="text-sm font-semibold leading-tight text-slate-700">
         Berikutnya
       </div>
-      <div class="w-5 h-5 relative"></div>
-      <Icon name="ph:arrow-right-bold" class="w-5 h-5 relative"></Icon>
+      <div class="relative h-5 w-5"></div>
+      <Icon name="ph:arrow-right-bold" class="relative h-5 w-5"></Icon>
     </div>
   </div>
   <!-- <div
@@ -186,11 +186,11 @@ const currentPageChange = (value) => {
 .page-item {
   cursor: pointer;
   a.page-link {
-    @apply text-primary font-bold;
+    @apply font-bold text-primary;
   }
   &.active {
     a.page-link {
-      @apply bg-primary text-white cursor-default;
+      @apply cursor-default bg-primary text-white;
     }
   }
 }

@@ -47,17 +47,17 @@ const {
 </script>
 
 <template>
-  <div class="mb-6 last:mb-0 w-full" :class="{ success: meta.valid }">
+  <div class="mb-6 w-full last:mb-0" :class="{ success: meta.valid }">
     <label
       v-if="label"
       :for="name"
-      class="form-label block mb-2"
+      class="form-label mb-2 block"
       :class="{
-        'text-red-500 font-bold': !!errorMessage,
+        'font-bold text-red-500': !!errorMessage,
       }"
     >
       <span v-if="primary">
-        <span class="text-red-500 font-bold">*</span>
+        <span class="font-bold text-red-500">*</span>
       </span>
       {{ label }}</label
     >
@@ -66,7 +66,7 @@ const {
         :id="name"
         :name="name"
         type="text"
-        class="w-full block bg-white rounded-[9px] shadow border border-gray-300"
+        class="block w-full rounded-[9px] border border-gray-300 bg-white shadow"
         :class="{
           'border-red-500 dark:border-red-500': !!errorMessage,
           'pl-10': !!icon,
@@ -82,12 +82,12 @@ const {
         v-if="icon"
         class="absolute inset-y-0 left-0 flex items-center px-3 text-gray-500"
       >
-        <Icon :name="icon" class="w-5 h-5" />
+        <Icon :name="icon" class="h-5 w-5" />
       </div>
     </div>
     <div
       v-if="!!errorMessage"
-      class="text-xs text-red-500 dark:text-red-500 mt-1"
+      class="mt-1 text-xs text-red-500 dark:text-red-500"
     >
       {{ errorMessage }}
     </div>

@@ -4,27 +4,28 @@ import { defineStore } from "pinia";
 export const useAuth = defineStore("auth", {
   state: () => ({
     user_data: null,
-    token_data:"",
+    token_data: "",
     isAuth_data: false,
     isLoading_data: false,
   }),
   getters: {
     user(state) {
       return {
-        ...state.user_data
+        ...state.user_data,
       };
     },
-    token: (state) => state.token_data || useCookie('token').value,
-    isAuth: (state) => state.isAuth_data || useCookie('token').value,
+    token: (state) => state.token_data || useCookie("token").value,
+    isAuth: (state) => state.isAuth_data || useCookie("token").value,
     isLoading: (state) => state.isLoading_data,
   },
   actions: {
     setUserData() {
       return new Promise((resolve, reject) => {
-        useNuxtApp().$api({
-          url: "/api/user",
-          method: "GET",
-        })
+        useNuxtApp()
+          .$api({
+            url: "/api/user",
+            method: "GET",
+          })
           .then((result) => {
             this.user_data = result.data;
             resolve(result.data.data);
@@ -39,19 +40,19 @@ export const useAuth = defineStore("auth", {
       this.temp_user_data = temp_user_data;
     },
     setToken(token) {
-      useCookie('token').value = token;
+      useCookie("token").value = token;
       this.token_data = token;
       this.isAuth_data = true;
     },
     logout() {
       return new Promise(async (resolve) => {
-          useCookie('counter').value = "";
-          useCookie('token').value = "";
-          this.isAuth_data = false;
-          this.user_data = {};
-          this.token_data = "";
+        useCookie("counter").value = "";
+        useCookie("token").value = "";
+        this.isAuth_data = false;
+        this.user_data = {};
+        this.token_data = "";
 
-          resolve();
+        resolve();
       });
     },
     setLoading(isLoading) {

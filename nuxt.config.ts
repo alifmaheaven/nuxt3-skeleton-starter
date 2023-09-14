@@ -1,18 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  components: [
-    '~/components',
-  ],
+  components: ["~/components"],
   modules: [
-    '@pinia/nuxt',
-    'nuxt-icon', // use: <Icon name="uil:github" color="black" /> icon source : https://icones.js.org/
-    '@nuxt/image', // use: <nuxt-img src="logo.png" /> https://image.nuxtjs.org/
+    "@pinia/nuxt",
+    "nuxt-icon", // use: <Icon name="uil:github" color="black" /> icon source : https://icones.js.org/
+    "@nuxt/image", // use: <nuxt-img src="logo.png" /> https://image.nuxtjs.org/
   ],
   image: {
-    dir: 'public',
+    dir: "public",
   },
-  css: ['~/assets/css/main.css', '~/assets/scss/main.scss'],
+  css: ["~/assets/css/main.css", "~/assets/scss/main.scss"],
   runtimeConfig: {
     MODE: process.env.NUXT_MODE, // important
     public: {
@@ -22,11 +20,11 @@ export default defineNuxtConfig({
   },
   postcss: {
     plugins: {
-      'postcss-import': {},
-      'tailwindcss/nesting': {},
+      "postcss-import": {},
+      "tailwindcss/nesting": {},
       tailwindcss: {},
       autoprefixer: {},
-      'postcss-advanced-variables': {},
+      "postcss-advanced-variables": {},
     },
   },
-})
+});

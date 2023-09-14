@@ -92,19 +92,18 @@ const pagination = reactive({
 // methods
 </script>
 
-
 <template>
   <div>
     <div
-      class="w-full h-min-max flex-col justify-start items-start gap-1 inline-flex mb-4"
+      class="h-min-max mb-4 inline-flex w-full flex-col items-start justify-start gap-1"
     >
       <div
-        class="self-stretch text-gray-900 text-3xl font-semibold leading-full"
+        class="leading-full self-stretch text-3xl font-semibold text-gray-900"
       >
         Selamat datang, Fauzan!
       </div>
       <div
-        class="self-stretch text-slate-600 text-base font-normal leading-normal"
+        class="self-stretch text-base font-normal leading-normal text-slate-600"
       >
         Berikut ringkasan informasi terakhir tentang aktivitas tanda tangan Anda
       </div>
@@ -112,33 +111,33 @@ const pagination = reactive({
     <div class="flex flex-row">
       <div class="basis-1/2 p-1">
         <div
-          class="w-full h-full justify-center items-center gap-6 inline-flex"
+          class="inline-flex h-full w-full items-center justify-center gap-6"
         >
           <div
-            class="grow shrink basis-0 self-stretch bg-white rounded-xl border border-gray-200 flex-col justify-center items-start inline-flex shadow"
+            class="inline-flex shrink grow basis-0 flex-col items-start justify-center self-stretch rounded-xl border border-gray-200 bg-white shadow"
           >
             <div
-              class="self-stretch grow shrink basis-0 p-6 flex-col justify-center items-end gap-8 flex"
+              class="flex shrink grow basis-0 flex-col items-end justify-center gap-8 self-stretch p-6"
             >
               <div
-                class="self-stretch grow shrink basis-0 flex-col justify-center items-end gap-4 flex"
+                class="flex shrink grow basis-0 flex-col items-end justify-center gap-4 self-stretch"
               >
                 <div
-                  class="self-stretch h-[52px] flex-col justify-start items-start gap-5 flex"
+                  class="flex h-[52px] flex-col items-start justify-start gap-5 self-stretch"
                 >
                   <div
-                    class="self-stretch justify-start items-start gap-4 inline-flex"
+                    class="inline-flex items-start justify-start gap-4 self-stretch"
                   >
                     <div
-                      class="grow shrink basis-0 self-stretch flex-col justify-center items-start gap-1 inline-flex"
+                      class="inline-flex shrink grow basis-0 flex-col items-start justify-center gap-1 self-stretch"
                     >
                       <div
-                        class="self-stretch text-gray-900 text-lg font-semibold leading-7"
+                        class="self-stretch text-lg font-semibold leading-7 text-gray-900"
                       >
                         Unggah dokumen
                       </div>
                       <div
-                        class="self-stretch text-slate-600 text-sm font-normal leading-tight"
+                        class="self-stretch text-sm font-normal leading-tight text-slate-600"
                       >
                         Unggah satu atau lebih dokumen untuk ditandatangani.
                       </div>
@@ -161,28 +160,28 @@ const pagination = reactive({
       </div>
       <div class="basis-1/2 p-1">
         <div
-          class="w-full h-full justify-start items-start gap-6 inline-flex rounded-lg"
+          class="inline-flex h-full w-full items-start justify-start gap-6 rounded-lg"
         >
           <div
-            class="grow shrink basis-0 h-full justify-start items-center gap-6 flex"
+            class="flex h-full shrink grow basis-0 items-center justify-start gap-6"
           >
             <div
-              class="grow shrink basis-0 bg-white rounded-xl border border-gray-200 flex-col justify-start items-start inline-flex shadow"
+              class="inline-flex shrink grow basis-0 flex-col items-start justify-start rounded-xl border border-gray-200 bg-white shadow"
             >
               <div
-                class="self-stretch h-full p-6 flex-col justify-start items-start gap-5 flex"
+                class="flex h-full flex-col items-start justify-start gap-5 self-stretch p-6"
               >
                 <div
-                  class="self-stretch h-7 flex-col justify-start items-start gap-5 flex"
+                  class="flex h-7 flex-col items-start justify-start gap-5 self-stretch"
                 >
                   <div
-                    class="self-stretch justify-start items-start gap-4 inline-flex"
+                    class="inline-flex items-start justify-start gap-4 self-stretch"
                   >
                     <div
-                      class="grow shrink basis-0 self-stretch flex-col justify-center items-start gap-1 inline-flex"
+                      class="inline-flex shrink grow basis-0 flex-col items-start justify-center gap-1 self-stretch"
                     >
                       <div
-                        class="self-stretch text-gray-900 text-lg font-semibold leading-7"
+                        class="self-stretch text-lg font-semibold leading-7 text-gray-900"
                       >
                         Log penandatanganan
                       </div>
@@ -190,59 +189,59 @@ const pagination = reactive({
                   </div>
                 </div>
                 <div
-                  class="self-stretch h-full bg-white rounded-lg flex-col justify-center items-center gap-2 flex"
+                  class="flex h-full flex-col items-center justify-center gap-2 self-stretch rounded-lg bg-white"
                 >
                   <template v-for="data in 4">
                     <div
-                      class="self-stretch bg-white justify-center items-center inline-flex"
+                      class="inline-flex items-center justify-center self-stretch bg-white"
                     >
                       <div class="flex flex-row border-b">
                         <div
-                          class="basis-2/12 p-3 flex justify-center items-center"
+                          class="flex basis-2/12 items-center justify-center p-3"
                         >
                           <Icon
                             name="mdi:file-document-outline"
-                            class="w-10 h-10 relative"
+                            class="relative h-10 w-10"
                           ></Icon>
                         </div>
                         <div
-                          class="basis-6/12 p-3 flex justify-center items-center"
+                          class="flex basis-6/12 items-center justify-center p-3"
                         >
                           <span>Panduang_Penggunaan_Signature.pdf</span>
                         </div>
                         <div
-                          class="basis-2/12 p-3 flex justify-center items-center"
+                          class="flex basis-2/12 items-center justify-center p-3"
                         >
                           <div
-                            class="px-2 py-0.5 bg-emerald-50 rounded-2xl border border-emerald-200 justify-start items-center flex"
+                            class="flex items-center justify-start rounded-2xl border border-emerald-200 bg-emerald-50 px-2 py-0.5"
                           >
                             <div
-                              class="text-center text-emerald-700 text-xs font-medium leading-[18px]"
+                              class="text-center text-xs font-medium leading-[18px] text-emerald-700"
                             >
                               Selesai
                             </div>
                           </div>
                         </div>
                         <div
-                          class="basis-2/12 p-3 flex justify-center items-center"
+                          class="flex basis-2/12 items-center justify-center p-3"
                         >
                           <Icon
                             name="material-symbols:edit"
-                            class="w-5 h-5 relative"
+                            class="relative h-5 w-5"
                           />
                         </div>
                       </div>
                     </div>
                   </template>
                   <div
-                    class="self-stretch h-5 flex-col justify-start items-center gap-5 flex"
+                    class="flex h-5 flex-col items-center justify-start gap-5 self-stretch"
                   >
                     <div
-                      class="self-stretch justify-end items-center gap-5 inline-flex"
+                      class="inline-flex items-center justify-end gap-5 self-stretch"
                     >
-                      <div class="justify-center items-center gap-2 flex">
+                      <div class="flex items-center justify-center gap-2">
                         <div
-                          class="text-gray-700 text-sm font-semibold leading-tight"
+                          class="text-sm font-semibold leading-tight text-gray-700"
                         >
                           Lebih lengkap
                         </div>
@@ -257,7 +256,7 @@ const pagination = reactive({
       </div>
     </div>
     <div class="flex flex-row">
-      <div class="basis-12/12 p-1 w-full">
+      <div class="basis-12/12 w-full p-1">
         <globalTableCustom :header-names="header" :rows="rows">
           <template #no="{ row, index }">
             <span>
@@ -273,14 +272,20 @@ const pagination = reactive({
             <span>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                  <input
+                    id=""
+                    type="checkbox"
+                    class="form-check-input"
+                    name=""
+                    value="checkedValue"
+                    checked
+                  />
                 </label>
               </div>
             </span>
           </template>
-
         </globalTableCustom>
-        <globalPaginationCustom 
+        <globalPaginationCustom
           :total-page="pagination.total_pages"
           :current-page="pagination.current_page"
           :per-page="pagination.per_page"
@@ -288,7 +293,7 @@ const pagination = reactive({
           @update:perPage="(value) => (pagination.per_page = value)"
           @update:currentPage="(value) => (pagination.current_page = value)"
         >
-        </GlobalPaginationCustom>
+        </globalPaginationCustom>
       </div>
     </div>
     <!-- <AppAlert>

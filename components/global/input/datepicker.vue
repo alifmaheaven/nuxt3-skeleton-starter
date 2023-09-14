@@ -113,13 +113,13 @@ const formatDate = (date) => {
     <label
       v-if="label"
       :for="name"
-      class="form-label block mb-2"
+      class="form-label mb-2 block"
       :class="{
-        'text-red-500 font-bold': !!errorMessage,
+        'font-bold text-red-500': !!errorMessage,
       }"
     >
       <span v-if="primary">
-        <span class="text-red-500 font-bold">*</span>
+        <span class="font-bold text-red-500">*</span>
       </span>
       {{ label }}</label
     >
@@ -136,7 +136,7 @@ const formatDate = (date) => {
         :input-class-name="
           !!errorMessage ? 'border-red-500 dark:border-red-500' : ''
         "
-        class="form-control w-full block"
+        class="form-control block w-full"
         :enable-time-picker="true"
         :min-date="min ? new Date(min) : null"
         :max-date="max ? new Date(max) : null"
@@ -155,7 +155,7 @@ const formatDate = (date) => {
     </div>
     <div
       v-if="!!errorMessage"
-      class="text-xs text-red-500 dark:text-red-500 mt-1"
+      class="mt-1 text-xs text-red-500 dark:text-red-500"
     >
       {{ errorMessage }}
     </div>

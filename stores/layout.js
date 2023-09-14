@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-export const useLayout = defineStore('layout', {
+export const useLayout = defineStore("layout", {
   state: () => ({
     dark_data: false,
   }),
@@ -9,7 +9,7 @@ export const useLayout = defineStore('layout', {
   },
   actions: {
     darkModeSwitch() {
-      this.dark_data = !this.dark_data
-    }
-  }
-})
+      this.dark_data = !this.dark_data;
+    },
+  },
+});

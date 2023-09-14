@@ -1,4 +1,4 @@
-export default defineNuxtPlugin((nuxtApp) => {  
+export default defineNuxtPlugin((nuxtApp) => {
   function dataURItoBlob(dataURI) {
     const byteString = atob(dataURI.split(",")[1]);
     const mimeString = dataURI.split(",")[0].split(":")[1].split(";")[0];
@@ -11,8 +11,8 @@ export default defineNuxtPlugin((nuxtApp) => {
     return blob;
   }
   return {
-  provide: {
-    dataURItoBlob: dataURItoBlob
-  },
-};
+    provide: {
+      dataURItoBlob: dataURItoBlob,
+    },
+  };
 });

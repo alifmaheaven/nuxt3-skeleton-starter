@@ -2,15 +2,16 @@
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-
 ## Requirment
+
 - pnpm command already exist in your command line, havent yet?
+
 ```bash
 npm install -g pnpm
 ```
+
 - node 16 stable its must
 - vue & nuxt global command
-
 
 ## Setup
 
@@ -64,22 +65,23 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
     "yup": "^1.2.0"
 
 ## Features
-- [X] ✨ [Headless UI](https://headlessui.dev/)
-- [X] 🛹 [State & Store Management (Pinia)](https://pinia.vuejs.org/)
-- [X] 💨 [Tailwind CSS v3](https://tailwindcss.com/)
-- [X] 📄 [Vue Form](https://vueform.com/)
-- [X] 📄 [Vee Validate](https://vee-validate.logaretm.com/v4/)
-- [X] 📄 [Yup](https://www.npmjs.com/package/yup)
-- [X] 📄 [Vue Datepicker](https://vue3-datepicker.netlify.app/)
-- [X] 📄 [Apex Chart](https://apexcharts.com/)
-- [X] 📄 [Vue Apex Chart](https://apexcharts.com/docs/vue-charts/)
-- [X] 📄 [Nuxt Storage](https://storage.nuxtjs.org/)
-- [X] 📄 [Axios](https://axios.nuxtjs.org/)
-- [X] 📄 [Sass](https://sass-lang.com/)
-- [X] 📄 [PostCSS](https://postcss.org/)
-- [X] 📄 [vue3-apexcharts](https://apexcharts.com/docs/vue-charts/)
-- [X] 🔔 [Nuxt Icon](https://icones.js.org/)
-- [X] 📦 [PNPM](https://pnpm.io/)
+
+- [x] ✨ [Headless UI](https://headlessui.dev/)
+- [x] 🛹 [State & Store Management (Pinia)](https://pinia.vuejs.org/)
+- [x] 💨 [Tailwind CSS v3](https://tailwindcss.com/)
+- [x] 📄 [Vue Form](https://vueform.com/)
+- [x] 📄 [Vee Validate](https://vee-validate.logaretm.com/v4/)
+- [x] 📄 [Yup](https://www.npmjs.com/package/yup)
+- [x] 📄 [Vue Datepicker](https://vue3-datepicker.netlify.app/)
+- [x] 📄 [Apex Chart](https://apexcharts.com/)
+- [x] 📄 [Vue Apex Chart](https://apexcharts.com/docs/vue-charts/)
+- [x] 📄 [Nuxt Storage](https://storage.nuxtjs.org/)
+- [x] 📄 [Axios](https://axios.nuxtjs.org/)
+- [x] 📄 [Sass](https://sass-lang.com/)
+- [x] 📄 [PostCSS](https://postcss.org/)
+- [x] 📄 [vue3-apexcharts](https://apexcharts.com/docs/vue-charts/)
+- [x] 🔔 [Nuxt Icon](https://icones.js.org/)
+- [x] 📦 [PNPM](https://pnpm.io/)
 
 ## How to use all component inside
 
@@ -90,7 +92,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 ```
 
 ## License
-[MIT License](./LICENSE)
 
+[MIT License](./LICENSE)
 
 Made with ❤️ by JeSiCa

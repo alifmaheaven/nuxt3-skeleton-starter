@@ -1,34 +1,34 @@
-import type { Config } from 'tailwindcss'
-import defaultTheme from 'tailwindcss/defaultTheme'
-import colors from 'tailwindcss/colors'
-const tailwindForms = require('@tailwindcss/forms');
-const flowbite = require('flowbite/plugin');
+import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
+import colors from "tailwindcss/colors";
+const tailwindForms = require("@tailwindcss/forms");
+const flowbite = require("flowbite/plugin");
 
 export default <Partial<Config>>{
   mode: "jit",
-  darkMode: 'class',
+  darkMode: "class",
   content: [
-    './components/**/*.{vue,js,ts}',
-    './layouts/**/*.vue',
-    './pages/**/*.vue',
-    './composables/**/*.{js,ts}',
-    './plugins/**/*.{js,ts}',
-    './App.{js,ts,vue}',
-    './app.{js,ts,vue}',
-    './Error.{js,ts,vue}',
-    './error.{js,ts,vue}',
+    "./components/**/*.{vue,js,ts}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./composables/**/*.{js,ts}",
+    "./plugins/**/*.{js,ts}",
+    "./App.{js,ts,vue}",
+    "./app.{js,ts,vue}",
+    "./Error.{js,ts,vue}",
+    "./error.{js,ts,vue}",
   ],
   theme: {
     screens: {
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px',
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
     },
     extend: {
       maxWidth: {
-        '8xl': '90rem',
+        "8xl": "90rem",
       },
       colors: {
         primary: "var(--color-primary)",
@@ -40,7 +40,7 @@ export default <Partial<Config>>{
         danger: "var(--color-danger)",
         light: "var(--color-light)",
         dark: "var(--color-dark)",
-        transparent: 'transparent',
+        transparent: "transparent",
         black: colors.black,
         white: colors.white,
         gray: colors.slate,
@@ -52,16 +52,16 @@ export default <Partial<Config>>{
         blue: colors.blue,
         indigo: colors.indigo,
         slate: {
-          50: 'var(--color-slate-50)',
-          100: 'var(--color-slate-100)',
-          200: 'var(--color-slate-200)',
-          300: 'var(--color-slate-300)',
-          400: 'var(--color-slate-400)',
-          500: 'var(--color-slate-500)',
-          600: 'var(--color-slate-600)',
-          700: 'var(--color-slate-700)',
-          800: 'var(--color-slate-800)',
-          900: 'var(--color-slate-900)',
+          50: "var(--color-slate-50)",
+          100: "var(--color-slate-100)",
+          200: "var(--color-slate-200)",
+          300: "var(--color-slate-300)",
+          400: "var(--color-slate-400)",
+          500: "var(--color-slate-500)",
+          600: "var(--color-slate-600)",
+          700: "var(--color-slate-700)",
+          800: "var(--color-slate-800)",
+          900: "var(--color-slate-900)",
         },
         darkmode: {
           50: "var(--color-darkmode-50)",
@@ -77,7 +77,7 @@ export default <Partial<Config>>{
         },
       },
       fontFamily: {
-        sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+        sans: ["Nunito", ...defaultTheme.fontFamily.sans],
       },
       container: {
         center: true,
@@ -85,13 +85,10 @@ export default <Partial<Config>>{
     },
   },
   backgroundColor: (theme: any) => ({
-    ...theme('colors'),
+    ...theme("colors"),
   }),
   borderColor: (theme: any) => ({
-    ...theme('colors'),
+    ...theme("colors"),
   }),
-  plugins: [
-    tailwindForms,
-    flowbite,
-  ],
-}
+  plugins: [tailwindForms, flowbite],
+};

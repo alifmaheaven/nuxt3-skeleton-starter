@@ -111,13 +111,13 @@ const sparatorformater = (value) => {
     <label
       v-if="label"
       :for="name"
-      class="form-label block mb-2"
+      class="form-label mb-2 block"
       :class="{
-        'text-red-500 font-bold': !!errorMessage,
+        'font-bold text-red-500': !!errorMessage,
       }"
     >
       <span v-if="primary">
-        <span class="text-red-500 font-bold">*</span>
+        <span class="font-bold text-red-500">*</span>
       </span>
       {{ label }}</label
     >
@@ -127,7 +127,7 @@ const sparatorformater = (value) => {
         v-model="npwpvalue"
         :name="name"
         type="text"
-        class="form-control w-full block"
+        class="form-control block w-full"
         :class="{
           'border-red-500 dark:border-red-500': !!errorMessage,
           'pl-10': !!icon,
@@ -159,7 +159,7 @@ const sparatorformater = (value) => {
     </div>
     <div
       v-if="!!errorMessage"
-      class="text-xs text-red-500 dark:text-red-500 mt-1"
+      class="mt-1 text-xs text-red-500 dark:text-red-500"
     >
       {{ errorMessage }}
     </div>

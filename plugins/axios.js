@@ -3,7 +3,7 @@ import { useAuth } from "@/stores/auth.js";
 export default defineNuxtPlugin((nuxtApp) => {
   let ajax = axios.create({
     baseURL:
-    useRuntimeConfig().MODE === "production"
+      useRuntimeConfig().MODE === "production"
         ? window.location.origin
         : useRuntimeConfig().public.BASE_URL_PUBLIC,
     // baseURL: window.location.origin,
@@ -17,8 +17,8 @@ export default defineNuxtPlugin((nuxtApp) => {
   ajax.isCancel = axios.isCancel;
 
   /*
- * The interceptor here ensures that we check for the token in local storage every time an ajax request is made
- */
+   * The interceptor here ensures that we check for the token in local storage every time an ajax request is made
+   */
   ajax.interceptors.request.use(
     (config) => {
       useAuth().setLoading(true);
@@ -37,7 +37,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 
     (error) => {
       return Promise.reject(error);
-    }
+    },
   );
 
   ajax.interceptors.response.use(
@@ -84,7 +84,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         // console.log(err);
         throw err;
       });
-    }
+    },
   );
 
   return {

@@ -52,42 +52,47 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
 </script>
 
 <template>
-  <div class="min-w-max min-h-max justify-center items-center inline-flex">
+  <div class="inline-flex min-h-max min-w-max items-center justify-center">
     <div
-      class="grow shrink basis-0 bg-gray-50 rounded-xl shadow border border-gray-200 flex-col justify-start items-center inline-flex"
+      class="inline-flex shrink grow basis-0 flex-col items-center justify-start rounded-xl border border-gray-200 bg-gray-50 shadow"
     >
       <div
-        class="self-stretch h-[180px] p-6 flex-col justify-start items-center gap-4 flex"
+        class="flex h-[180px] flex-col items-center justify-start gap-4 self-stretch p-6"
       >
         <div
-          class="w-14 h-14 p-3.5 bg-white rounded-xl shadow border border-gray-200 justify-center items-center inline-flex"
+          class="inline-flex h-14 w-14 items-center justify-center rounded-xl border border-gray-200 bg-white p-3.5 shadow"
         >
           <Icon
             name="ic:outline-log-in"
-            class="w-7 h-7 relative flex-col justify-start items-start flex"
+            class="relative flex h-7 w-7 flex-col items-start justify-start"
           />
         </div>
         <div
-          class="self-stretch h-full flex-col justify-center items-start gap-3 flex"
+          class="flex h-full flex-col items-start justify-center gap-3 self-stretch"
         >
           <div
-            class="self-stretch h-full flex-col justify-start items-start gap-1 flex"
+            class="flex h-full flex-col items-start justify-start gap-1 self-stretch"
           >
             <div
-              class="self-stretch text-center text-gray-900 text-2xl font-semibold leading-loose"
+              class="self-stretch text-center text-2xl font-semibold leading-loose text-gray-900"
             >
               Atur Ulang Password
             </div>
-            <div class="w-96 text-center text-slate-600 text-base font-normal leading-normal">Tautan telah dikirimkan. Pastikan email tepat dan periksa kembali kolom spam</div>
+            <div
+              class="w-96 text-center text-base font-normal leading-normal text-slate-600"
+            >
+              Tautan telah dikirimkan. Pastikan email tepat dan periksa kembali
+              kolom spam
+            </div>
           </div>
         </div>
       </div>
       <form
+        class="flex min-h-max flex-col items-center justify-start gap-8 self-stretch border-gray-200 px-20 py-12"
         @submit="submitLogin"
-        class="self-stretch min-h-max px-20 py-12 border-gray-200 flex-col justify-start items-center gap-8 flex"
       >
         <div
-          class="self-stretch min-h-min flex-col justify-start items-start flex"
+          class="flex min-h-min flex-col items-start justify-start self-stretch"
         >
           <globalInputText
             icon="icon-park-outline:mail"
@@ -96,28 +101,29 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
           />
         </div>
         <div
-          class="self-stretch min-h-min flex-col justify-start items-start gap-3 flex"
+          class="flex min-h-min flex-col items-start justify-start gap-3 self-stretch"
         >
           <GlobalButton
-            buttonClass="self-stretch px-5 py-3 bg-gray-600 rounded-lg shadow border border-gray-600 justify-center items-center gap-2 inline-flex text-white text-base font-semibold leading-normal"
-            buttonType="submit"
+            button-class="self-stretch px-5 py-3 bg-gray-600 rounded-lg shadow border border-gray-600 justify-center items-center gap-2 inline-flex text-white text-base font-semibold leading-normal"
+            button-type="submit"
           >
             Masuk
           </GlobalButton>
         </div>
         <div
-          class="self-stretch h-full flex-col justify-center items-center gap-3 flex"
+          class="flex h-full flex-col items-center justify-center gap-3 self-stretch"
         >
-          <div class="justify-center items-start gap-1 inline-flex">
-            <div class="justify-center items-center gap-2 flex">
-              <NuxtLink to="/auth/login" class="text-gray-700 text-sm font-semibold leading-tight">
+          <div class="inline-flex items-start justify-center gap-1">
+            <div class="flex items-center justify-center gap-2">
+              <NuxtLink
+                to="/auth/login"
+                class="text-sm font-semibold leading-tight text-gray-700"
+              >
                 <Icon
                   name="ph:arrow-left-bold"
-                  class="w-5 h-5 relative flex-col justify-start items-start flex"
+                  class="relative flex h-5 w-5 flex-col items-start justify-start"
                 />
-                <span>
-                  Kembali
-                </span>
+                <span> Kembali </span>
               </NuxtLink>
             </div>
           </div>
@@ -129,7 +135,7 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
 
 <style lang="scss" scoped>
 .badge {
-  @apply inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700;
+  @apply inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700;
   &:hover {
     @apply bg-gray-300;
   }

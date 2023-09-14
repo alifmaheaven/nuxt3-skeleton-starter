@@ -1,100 +1,902 @@
-[{"id":1,"kode_gedung":"A01","alamat":"59435 Dahle Lane","kota":"Ribeirão Preto","lantai":"R6","wing":"Wing Utara","kode_ruangan":"L01"},
-{"id":2,"kode_gedung":"B02","alamat":"78795 Bunker Hill Avenue","kota":"Hamamatsu","lantai":"V5","wing":"Wing Selatan","kode_ruangan":"L02"},
-{"id":3,"kode_gedung":"C03","alamat":"020 Springview Plaza","kota":"Bjelovar","lantai":"E0","wing":"Wing Barat","kode_ruangan":"L03"},
-{"id":4,"kode_gedung":"D04","alamat":"9 Transport Street","kota":"Nong Khai","lantai":"H1","wing":"Wing Timur","kode_ruangan":"L04"},
-{"id":5,"kode_gedung":"E05","alamat":"28147 Fordem Terrace","kota":"Sufālat Samā’il","lantai":"R9","wing":"Wing Timur","kode_ruangan":"L05"},
-{"id":6,"kode_gedung":"F06","alamat":"051 Eagle Crest Point","kota":"Chemin Grenier","lantai":"P5","wing":"Wing Selatan","kode_ruangan":"L06"},
-{"id":7,"kode_gedung":"G07","alamat":"52 Browning Drive","kota":"Sandefjord","lantai":"B3","wing":"Wing Selatan","kode_ruangan":"L07"},
-{"id":8,"kode_gedung":"H08","alamat":"48 Butternut Court","kota":"Sironko","lantai":"E3","wing":"Wing Selatan","kode_ruangan":"L08"},
-{"id":9,"kode_gedung":"I09","alamat":"348 Mcbride Place","kota":"Itatuba","lantai":"P3","wing":"Wing Timur","kode_ruangan":"L09"},
-{"id":10,"kode_gedung":"J10","alamat":"6 Hoepker Parkway","kota":"Saxin","lantai":"Z0","wing":"Wing Utara","kode_ruangan":"L10"},
-{"id":11,"kode_gedung":"K11","alamat":"112 School Lane","kota":"Xiangfeng","lantai":"W5","wing":"Wing Barat","kode_ruangan":"L11"},
-{"id":12,"kode_gedung":"L12","alamat":"495 Calypso Trail","kota":"Bilo","lantai":"Q6","wing":"Wing Utara","kode_ruangan":"L12"},
-{"id":13,"kode_gedung":"M13","alamat":"26515 Donald Road","kota":"Panzhuang","lantai":"G1","wing":"Wing Timur","kode_ruangan":"L13"},
-{"id":14,"kode_gedung":"N14","alamat":"87 Victoria Place","kota":"Shiye","lantai":"N6","wing":"Wing Timur","kode_ruangan":"L14"},
-{"id":15,"kode_gedung":"O15","alamat":"40209 Fallview Court","kota":"Shuibian","lantai":"P8","wing":"Wing Utara","kode_ruangan":"L15"},
-{"id":16,"kode_gedung":"P16","alamat":"4651 Vahlen Road","kota":"Granja","lantai":"J9","wing":"Wing Utara","kode_ruangan":"L16"},
-{"id":17,"kode_gedung":"Q17","alamat":"88302 Drewry Crossing","kota":"Darhan","lantai":"W2","wing":"Wing Utara","kode_ruangan":"L17"},
-{"id":18,"kode_gedung":"R18","alamat":"391 Amoth Park","kota":"Palaiópyrgos","lantai":"T1","wing":"Wing Barat","kode_ruangan":"L18"},
-{"id":19,"kode_gedung":"S19","alamat":"80016 John Wall Plaza","kota":"Paratunka","lantai":"V1","wing":"Wing Selatan","kode_ruangan":"L19"},
-{"id":20,"kode_gedung":"T20","alamat":"9 Coolidge Pass","kota":"Port Nolloth","lantai":"I5","wing":"Wing Selatan","kode_ruangan":"L20"},
-{"id":21,"kode_gedung":"U21","alamat":"78 Tomscot Alley","kota":"Dayou","lantai":"T2","wing":"Wing Timur","kode_ruangan":"L21"},
-{"id":22,"kode_gedung":"V22","alamat":"3402 Stuart Plaza","kota":"Seupakat","lantai":"Q9","wing":"Wing Timur","kode_ruangan":"L22"},
-{"id":23,"kode_gedung":"W23","alamat":"553 Dakota Drive","kota":"Hrob","lantai":"H7","wing":"Wing Barat","kode_ruangan":"L23"},
-{"id":24,"kode_gedung":"X24","alamat":"1 2nd Crossing","kota":"Pasirreungit","lantai":"T7","wing":"Wing Selatan","kode_ruangan":"L24"},
-{"id":25,"kode_gedung":"Y25","alamat":"76 Hagan Circle","kota":"Dengmu","lantai":"C1","wing":"Wing Utara","kode_ruangan":"L25"},
-{"id":26,"kode_gedung":"Z26","alamat":"69 Garrison Court","kota":"Can-asujan","lantai":"A3","wing":"Wing Selatan","kode_ruangan":"L26"},
-{"id":27,"kode_gedung":"A27","alamat":"01536 Glacier Hill Pass","kota":"Popayán","lantai":"V9","wing":"Wing Barat","kode_ruangan":"L27"},
-{"id":28,"kode_gedung":"B28","alamat":"5 Jay Avenue","kota":"Zolotonosha","lantai":"T1","wing":"Wing Selatan","kode_ruangan":"L28"},
-{"id":29,"kode_gedung":"C29","alamat":"61 Schlimgen Trail","kota":"Lyon","lantai":"Y3","wing":"Wing Barat","kode_ruangan":"L29"},
-{"id":30,"kode_gedung":"D30","alamat":"08338 American Way","kota":"Čačinci","lantai":"X2","wing":"Wing Timur","kode_ruangan":"L30"},
-{"id":31,"kode_gedung":"E31","alamat":"6890 Bluestem Park","kota":"Huangzhuang","lantai":"H2","wing":"Wing Utara","kode_ruangan":"L31"},
-{"id":32,"kode_gedung":"F32","alamat":"39 Dixon Street","kota":"Gazimurskiy Zavod","lantai":"U8","wing":"Wing Timur","kode_ruangan":"L32"},
-{"id":33,"kode_gedung":"G33","alamat":"314 Loftsgordon Way","kota":"Huafeng","lantai":"Z2","wing":"Wing Selatan","kode_ruangan":"L33"},
-{"id":34,"kode_gedung":"H34","alamat":"0104 Dayton Drive","kota":"Jiulonggang","lantai":"L3","wing":"Wing Selatan","kode_ruangan":"L34"},
-{"id":35,"kode_gedung":"I35","alamat":"449 Sherman Way","kota":"Canha","lantai":"O4","wing":"Wing Selatan","kode_ruangan":"L35"},
-{"id":36,"kode_gedung":"J36","alamat":"55 Bunker Hill Court","kota":"Primero de Mayo","lantai":"W2","wing":"Wing Selatan","kode_ruangan":"L36"},
-{"id":37,"kode_gedung":"K37","alamat":"95 Sauthoff Alley","kota":"Librazhd-Qendër","lantai":"X1","wing":"Wing Selatan","kode_ruangan":"L37"},
-{"id":38,"kode_gedung":"L38","alamat":"88884 Mallard Park","kota":"Surup","lantai":"A4","wing":"Wing Timur","kode_ruangan":"L38"},
-{"id":39,"kode_gedung":"M39","alamat":"93 Evergreen Crossing","kota":"Wurigelebur","lantai":"L7","wing":"Wing Timur","kode_ruangan":"L39"},
-{"id":40,"kode_gedung":"N40","alamat":"08160 Maple Court","kota":"Nishinomiya-hama","lantai":"U8","wing":"Wing Timur","kode_ruangan":"L40"},
-{"id":41,"kode_gedung":"O41","alamat":"82 Oxford Junction","kota":"Belle-Anse","lantai":"E5","wing":"Wing Timur","kode_ruangan":"L41"},
-{"id":42,"kode_gedung":"P42","alamat":"53723 Saint Paul Trail","kota":"Ulaan-Uul","lantai":"H3","wing":"Wing Timur","kode_ruangan":"L42"},
-{"id":43,"kode_gedung":"Q43","alamat":"1155 Kensington Parkway","kota":"Rāmsar","lantai":"Y6","wing":"Wing Barat","kode_ruangan":"L43"},
-{"id":44,"kode_gedung":"R44","alamat":"60124 Logan Park","kota":"Dorotea","lantai":"I8","wing":"Wing Utara","kode_ruangan":"L44"},
-{"id":45,"kode_gedung":"S45","alamat":"91 Claremont Road","kota":"Khiliomódhi","lantai":"U2","wing":"Wing Utara","kode_ruangan":"L45"},
-{"id":46,"kode_gedung":"T46","alamat":"84281 Eggendart Terrace","kota":"Danyang","lantai":"B0","wing":"Wing Barat","kode_ruangan":"L46"},
-{"id":47,"kode_gedung":"U47","alamat":"29986 Anderson Alley","kota":"Sumiainen","lantai":"N8","wing":"Wing Selatan","kode_ruangan":"L47"},
-{"id":48,"kode_gedung":"V48","alamat":"275 Erie Drive","kota":"Khotsimsk","lantai":"Q9","wing":"Wing Selatan","kode_ruangan":"L48"},
-{"id":49,"kode_gedung":"W49","alamat":"3429 Warner Alley","kota":"Airuk","lantai":"W4","wing":"Wing Barat","kode_ruangan":"L49"},
-{"id":50,"kode_gedung":"X50","alamat":"02511 Armistice Circle","kota":"San Miguel","lantai":"O6","wing":"Wing Utara","kode_ruangan":"L50"},
-{"id":51,"kode_gedung":"Y51","alamat":"7588 Cherokee Point","kota":"Olo","lantai":"G4","wing":"Wing Barat","kode_ruangan":"L51"},
-{"id":52,"kode_gedung":"Z52","alamat":"0 Southridge Lane","kota":"Pizhanka","lantai":"F5","wing":"Wing Timur","kode_ruangan":"L52"},
-{"id":53,"kode_gedung":"A53","alamat":"3525 Lake View Place","kota":"Keruguya","lantai":"A8","wing":"Wing Timur","kode_ruangan":"L53"},
-{"id":54,"kode_gedung":"B54","alamat":"7871 Northport Trail","kota":"Road Town","lantai":"M5","wing":"Wing Selatan","kode_ruangan":"L54"},
-{"id":55,"kode_gedung":"C55","alamat":"2490 Annamark Junction","kota":"Óbidos","lantai":"H3","wing":"Wing Selatan","kode_ruangan":"L55"},
-{"id":56,"kode_gedung":"D56","alamat":"301 1st Park","kota":"Charlottetown","lantai":"F7","wing":"Wing Timur","kode_ruangan":"L56"},
-{"id":57,"kode_gedung":"E57","alamat":"07024 Aberg Drive","kota":"Mazongling","lantai":"D2","wing":"Wing Timur","kode_ruangan":"L57"},
-{"id":58,"kode_gedung":"F58","alamat":"6610 Carpenter Avenue","kota":"Zhaoqing","lantai":"R5","wing":"Wing Selatan","kode_ruangan":"L58"},
-{"id":59,"kode_gedung":"G59","alamat":"1 Kenwood Crossing","kota":"Beiwucha","lantai":"O6","wing":"Wing Utara","kode_ruangan":"L59"},
-{"id":60,"kode_gedung":"H60","alamat":"984 Oriole Center","kota":"Shuangshi","lantai":"A2","wing":"Wing Barat","kode_ruangan":"L60"},
-{"id":61,"kode_gedung":"I61","alamat":"22 Monument Street","kota":"Litan","lantai":"M3","wing":"Wing Utara","kode_ruangan":"L61"},
-{"id":62,"kode_gedung":"J62","alamat":"28 Anhalt Place","kota":"Phù Cát","lantai":"M0","wing":"Wing Barat","kode_ruangan":"L62"},
-{"id":63,"kode_gedung":"K63","alamat":"0451 Larry Park","kota":"Mulleriyawa","lantai":"B1","wing":"Wing Utara","kode_ruangan":"L63"},
-{"id":64,"kode_gedung":"L64","alamat":"1 Stoughton Avenue","kota":"Fort-de-France","lantai":"J2","wing":"Wing Utara","kode_ruangan":"L64"},
-{"id":65,"kode_gedung":"M65","alamat":"49271 Waubesa Hill","kota":"Pathum Thani","lantai":"L2","wing":"Wing Timur","kode_ruangan":"L65"},
-{"id":66,"kode_gedung":"N66","alamat":"839 Farmco Trail","kota":"Maroanging","lantai":"B8","wing":"Wing Selatan","kode_ruangan":"L66"},
-{"id":67,"kode_gedung":"O67","alamat":"2 Katie Center","kota":"Huangxi","lantai":"C1","wing":"Wing Selatan","kode_ruangan":"L67"},
-{"id":68,"kode_gedung":"P68","alamat":"20538 Nobel Center","kota":"Calarcá","lantai":"P7","wing":"Wing Utara","kode_ruangan":"L68"},
-{"id":69,"kode_gedung":"Q69","alamat":"1 Karstens Park","kota":"Gaoqiao","lantai":"W5","wing":"Wing Barat","kode_ruangan":"L69"},
-{"id":70,"kode_gedung":"R70","alamat":"491 Mcbride Point","kota":"Yanjiang","lantai":"K3","wing":"Wing Timur","kode_ruangan":"L70"},
-{"id":71,"kode_gedung":"S71","alamat":"81543 8th Junction","kota":"Blagoveshchensk","lantai":"R0","wing":"Wing Utara","kode_ruangan":"L71"},
-{"id":72,"kode_gedung":"T72","alamat":"09274 Sage Court","kota":"Stockholm","lantai":"T8","wing":"Wing Utara","kode_ruangan":"L72"},
-{"id":73,"kode_gedung":"U73","alamat":"90 Anhalt Road","kota":"L'viv","lantai":"Y9","wing":"Wing Utara","kode_ruangan":"L73"},
-{"id":74,"kode_gedung":"V74","alamat":"866 Mccormick Park","kota":"Káto Nevrokópi","lantai":"X5","wing":"Wing Utara","kode_ruangan":"L74"},
-{"id":75,"kode_gedung":"W75","alamat":"549 Blue Bill Park Avenue","kota":"Balice","lantai":"G0","wing":"Wing Timur","kode_ruangan":"L75"},
-{"id":76,"kode_gedung":"X76","alamat":"604 Warbler Court","kota":"Mirkovci","lantai":"K1","wing":"Wing Barat","kode_ruangan":"L76"},
-{"id":77,"kode_gedung":"Y77","alamat":"2949 Hanover Center","kota":"Dangshun","lantai":"R8","wing":"Wing Utara","kode_ruangan":"L77"},
-{"id":78,"kode_gedung":"Z78","alamat":"5 Starling Drive","kota":"Norfolk","lantai":"M2","wing":"Wing Selatan","kode_ruangan":"L78"},
-{"id":79,"kode_gedung":"A79","alamat":"98 Milwaukee Alley","kota":"Tianya","lantai":"S8","wing":"Wing Timur","kode_ruangan":"L79"},
-{"id":80,"kode_gedung":"B80","alamat":"017 Autumn Leaf Trail","kota":"Niebocko","lantai":"B8","wing":"Wing Utara","kode_ruangan":"L80"},
-{"id":81,"kode_gedung":"C81","alamat":"8 Mosinee Hill","kota":"Neuville","lantai":"Z8","wing":"Wing Selatan","kode_ruangan":"L81"},
-{"id":82,"kode_gedung":"D82","alamat":"71907 Columbus Park","kota":"Shahrak","lantai":"L4","wing":"Wing Utara","kode_ruangan":"L82"},
-{"id":83,"kode_gedung":"E83","alamat":"09487 Lakewood Center","kota":"Baihe","lantai":"I9","wing":"Wing Barat","kode_ruangan":"L83"},
-{"id":84,"kode_gedung":"F84","alamat":"9562 Michigan Way","kota":"Hongqi Yingzi","lantai":"B1","wing":"Wing Barat","kode_ruangan":"L84"},
-{"id":85,"kode_gedung":"G85","alamat":"75 Novick Junction","kota":"Keroka","lantai":"L5","wing":"Wing Barat","kode_ruangan":"L85"},
-{"id":86,"kode_gedung":"H86","alamat":"095 Emmet Court","kota":"Antsirabe","lantai":"G8","wing":"Wing Selatan","kode_ruangan":"L86"},
-{"id":87,"kode_gedung":"I87","alamat":"6482 Farragut Plaza","kota":"Malalag","lantai":"U9","wing":"Wing Selatan","kode_ruangan":"L87"},
-{"id":88,"kode_gedung":"J88","alamat":"1 Roxbury Way","kota":"Mbouda","lantai":"F7","wing":"Wing Selatan","kode_ruangan":"L88"},
-{"id":89,"kode_gedung":"K89","alamat":"45970 Talisman Park","kota":"Belanting","lantai":"I2","wing":"Wing Barat","kode_ruangan":"L89"},
-{"id":90,"kode_gedung":"L90","alamat":"725 Esker Drive","kota":"Aparecida do Taboado","lantai":"B6","wing":"Wing Timur","kode_ruangan":"L90"},
-{"id":91,"kode_gedung":"M91","alamat":"119 Fallview Plaza","kota":"Kovářská","lantai":"P9","wing":"Wing Barat","kode_ruangan":"L91"},
-{"id":92,"kode_gedung":"N92","alamat":"94515 Novick Crossing","kota":"Inari","lantai":"J9","wing":"Wing Barat","kode_ruangan":"L92"},
-{"id":93,"kode_gedung":"O93","alamat":"7 Roxbury Drive","kota":"Tiksi","lantai":"L0","wing":"Wing Barat","kode_ruangan":"L93"},
-{"id":94,"kode_gedung":"P94","alamat":"336 Chinook Crossing","kota":"Carig","lantai":"J8","wing":"Wing Utara","kode_ruangan":"L94"},
-{"id":95,"kode_gedung":"Q95","alamat":"956 Anderson Way","kota":"Chīchāwatni","lantai":"G5","wing":"Wing Barat","kode_ruangan":"L95"},
-{"id":96,"kode_gedung":"R96","alamat":"27 Havey Junction","kota":"Buenavista","lantai":"Q3","wing":"Wing Selatan","kode_ruangan":"L96"},
-{"id":97,"kode_gedung":"S97","alamat":"4 5th Lane","kota":"Pittsburgh","lantai":"Z6","wing":"Wing Selatan","kode_ruangan":"L97"},
-{"id":98,"kode_gedung":"T98","alamat":"524 Manitowish Alley","kota":"Gudja","lantai":"C0","wing":"Wing Selatan","kode_ruangan":"L98"},
-{"id":99,"kode_gedung":"U99","alamat":"237 Eggendart Road","kota":"Żurowa","lantai":"Z4","wing":"Wing Selatan","kode_ruangan":"L99"},
-{"id":100,"kode_gedung":"V100","alamat":"2 Schlimgen Hill","kota":"Strasbourg","lantai":"T3","wing":"Wing Barat","kode_ruangan":"L100"}]
+[
+  {
+    "id": 1,
+    "kode_gedung": "A01",
+    "alamat": "59435 Dahle Lane",
+    "kota": "Ribeirão Preto",
+    "lantai": "R6",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L01"
+  },
+  {
+    "id": 2,
+    "kode_gedung": "B02",
+    "alamat": "78795 Bunker Hill Avenue",
+    "kota": "Hamamatsu",
+    "lantai": "V5",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L02"
+  },
+  {
+    "id": 3,
+    "kode_gedung": "C03",
+    "alamat": "020 Springview Plaza",
+    "kota": "Bjelovar",
+    "lantai": "E0",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L03"
+  },
+  {
+    "id": 4,
+    "kode_gedung": "D04",
+    "alamat": "9 Transport Street",
+    "kota": "Nong Khai",
+    "lantai": "H1",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L04"
+  },
+  {
+    "id": 5,
+    "kode_gedung": "E05",
+    "alamat": "28147 Fordem Terrace",
+    "kota": "Sufālat Samā’il",
+    "lantai": "R9",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L05"
+  },
+  {
+    "id": 6,
+    "kode_gedung": "F06",
+    "alamat": "051 Eagle Crest Point",
+    "kota": "Chemin Grenier",
+    "lantai": "P5",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L06"
+  },
+  {
+    "id": 7,
+    "kode_gedung": "G07",
+    "alamat": "52 Browning Drive",
+    "kota": "Sandefjord",
+    "lantai": "B3",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L07"
+  },
+  {
+    "id": 8,
+    "kode_gedung": "H08",
+    "alamat": "48 Butternut Court",
+    "kota": "Sironko",
+    "lantai": "E3",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L08"
+  },
+  {
+    "id": 9,
+    "kode_gedung": "I09",
+    "alamat": "348 Mcbride Place",
+    "kota": "Itatuba",
+    "lantai": "P3",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L09"
+  },
+  {
+    "id": 10,
+    "kode_gedung": "J10",
+    "alamat": "6 Hoepker Parkway",
+    "kota": "Saxin",
+    "lantai": "Z0",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L10"
+  },
+  {
+    "id": 11,
+    "kode_gedung": "K11",
+    "alamat": "112 School Lane",
+    "kota": "Xiangfeng",
+    "lantai": "W5",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L11"
+  },
+  {
+    "id": 12,
+    "kode_gedung": "L12",
+    "alamat": "495 Calypso Trail",
+    "kota": "Bilo",
+    "lantai": "Q6",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L12"
+  },
+  {
+    "id": 13,
+    "kode_gedung": "M13",
+    "alamat": "26515 Donald Road",
+    "kota": "Panzhuang",
+    "lantai": "G1",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L13"
+  },
+  {
+    "id": 14,
+    "kode_gedung": "N14",
+    "alamat": "87 Victoria Place",
+    "kota": "Shiye",
+    "lantai": "N6",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L14"
+  },
+  {
+    "id": 15,
+    "kode_gedung": "O15",
+    "alamat": "40209 Fallview Court",
+    "kota": "Shuibian",
+    "lantai": "P8",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L15"
+  },
+  {
+    "id": 16,
+    "kode_gedung": "P16",
+    "alamat": "4651 Vahlen Road",
+    "kota": "Granja",
+    "lantai": "J9",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L16"
+  },
+  {
+    "id": 17,
+    "kode_gedung": "Q17",
+    "alamat": "88302 Drewry Crossing",
+    "kota": "Darhan",
+    "lantai": "W2",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L17"
+  },
+  {
+    "id": 18,
+    "kode_gedung": "R18",
+    "alamat": "391 Amoth Park",
+    "kota": "Palaiópyrgos",
+    "lantai": "T1",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L18"
+  },
+  {
+    "id": 19,
+    "kode_gedung": "S19",
+    "alamat": "80016 John Wall Plaza",
+    "kota": "Paratunka",
+    "lantai": "V1",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L19"
+  },
+  {
+    "id": 20,
+    "kode_gedung": "T20",
+    "alamat": "9 Coolidge Pass",
+    "kota": "Port Nolloth",
+    "lantai": "I5",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L20"
+  },
+  {
+    "id": 21,
+    "kode_gedung": "U21",
+    "alamat": "78 Tomscot Alley",
+    "kota": "Dayou",
+    "lantai": "T2",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L21"
+  },
+  {
+    "id": 22,
+    "kode_gedung": "V22",
+    "alamat": "3402 Stuart Plaza",
+    "kota": "Seupakat",
+    "lantai": "Q9",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L22"
+  },
+  {
+    "id": 23,
+    "kode_gedung": "W23",
+    "alamat": "553 Dakota Drive",
+    "kota": "Hrob",
+    "lantai": "H7",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L23"
+  },
+  {
+    "id": 24,
+    "kode_gedung": "X24",
+    "alamat": "1 2nd Crossing",
+    "kota": "Pasirreungit",
+    "lantai": "T7",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L24"
+  },
+  {
+    "id": 25,
+    "kode_gedung": "Y25",
+    "alamat": "76 Hagan Circle",
+    "kota": "Dengmu",
+    "lantai": "C1",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L25"
+  },
+  {
+    "id": 26,
+    "kode_gedung": "Z26",
+    "alamat": "69 Garrison Court",
+    "kota": "Can-asujan",
+    "lantai": "A3",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L26"
+  },
+  {
+    "id": 27,
+    "kode_gedung": "A27",
+    "alamat": "01536 Glacier Hill Pass",
+    "kota": "Popayán",
+    "lantai": "V9",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L27"
+  },
+  {
+    "id": 28,
+    "kode_gedung": "B28",
+    "alamat": "5 Jay Avenue",
+    "kota": "Zolotonosha",
+    "lantai": "T1",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L28"
+  },
+  {
+    "id": 29,
+    "kode_gedung": "C29",
+    "alamat": "61 Schlimgen Trail",
+    "kota": "Lyon",
+    "lantai": "Y3",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L29"
+  },
+  {
+    "id": 30,
+    "kode_gedung": "D30",
+    "alamat": "08338 American Way",
+    "kota": "Čačinci",
+    "lantai": "X2",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L30"
+  },
+  {
+    "id": 31,
+    "kode_gedung": "E31",
+    "alamat": "6890 Bluestem Park",
+    "kota": "Huangzhuang",
+    "lantai": "H2",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L31"
+  },
+  {
+    "id": 32,
+    "kode_gedung": "F32",
+    "alamat": "39 Dixon Street",
+    "kota": "Gazimurskiy Zavod",
+    "lantai": "U8",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L32"
+  },
+  {
+    "id": 33,
+    "kode_gedung": "G33",
+    "alamat": "314 Loftsgordon Way",
+    "kota": "Huafeng",
+    "lantai": "Z2",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L33"
+  },
+  {
+    "id": 34,
+    "kode_gedung": "H34",
+    "alamat": "0104 Dayton Drive",
+    "kota": "Jiulonggang",
+    "lantai": "L3",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L34"
+  },
+  {
+    "id": 35,
+    "kode_gedung": "I35",
+    "alamat": "449 Sherman Way",
+    "kota": "Canha",
+    "lantai": "O4",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L35"
+  },
+  {
+    "id": 36,
+    "kode_gedung": "J36",
+    "alamat": "55 Bunker Hill Court",
+    "kota": "Primero de Mayo",
+    "lantai": "W2",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L36"
+  },
+  {
+    "id": 37,
+    "kode_gedung": "K37",
+    "alamat": "95 Sauthoff Alley",
+    "kota": "Librazhd-Qendër",
+    "lantai": "X1",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L37"
+  },
+  {
+    "id": 38,
+    "kode_gedung": "L38",
+    "alamat": "88884 Mallard Park",
+    "kota": "Surup",
+    "lantai": "A4",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L38"
+  },
+  {
+    "id": 39,
+    "kode_gedung": "M39",
+    "alamat": "93 Evergreen Crossing",
+    "kota": "Wurigelebur",
+    "lantai": "L7",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L39"
+  },
+  {
+    "id": 40,
+    "kode_gedung": "N40",
+    "alamat": "08160 Maple Court",
+    "kota": "Nishinomiya-hama",
+    "lantai": "U8",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L40"
+  },
+  {
+    "id": 41,
+    "kode_gedung": "O41",
+    "alamat": "82 Oxford Junction",
+    "kota": "Belle-Anse",
+    "lantai": "E5",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L41"
+  },
+  {
+    "id": 42,
+    "kode_gedung": "P42",
+    "alamat": "53723 Saint Paul Trail",
+    "kota": "Ulaan-Uul",
+    "lantai": "H3",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L42"
+  },
+  {
+    "id": 43,
+    "kode_gedung": "Q43",
+    "alamat": "1155 Kensington Parkway",
+    "kota": "Rāmsar",
+    "lantai": "Y6",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L43"
+  },
+  {
+    "id": 44,
+    "kode_gedung": "R44",
+    "alamat": "60124 Logan Park",
+    "kota": "Dorotea",
+    "lantai": "I8",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L44"
+  },
+  {
+    "id": 45,
+    "kode_gedung": "S45",
+    "alamat": "91 Claremont Road",
+    "kota": "Khiliomódhi",
+    "lantai": "U2",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L45"
+  },
+  {
+    "id": 46,
+    "kode_gedung": "T46",
+    "alamat": "84281 Eggendart Terrace",
+    "kota": "Danyang",
+    "lantai": "B0",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L46"
+  },
+  {
+    "id": 47,
+    "kode_gedung": "U47",
+    "alamat": "29986 Anderson Alley",
+    "kota": "Sumiainen",
+    "lantai": "N8",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L47"
+  },
+  {
+    "id": 48,
+    "kode_gedung": "V48",
+    "alamat": "275 Erie Drive",
+    "kota": "Khotsimsk",
+    "lantai": "Q9",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L48"
+  },
+  {
+    "id": 49,
+    "kode_gedung": "W49",
+    "alamat": "3429 Warner Alley",
+    "kota": "Airuk",
+    "lantai": "W4",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L49"
+  },
+  {
+    "id": 50,
+    "kode_gedung": "X50",
+    "alamat": "02511 Armistice Circle",
+    "kota": "San Miguel",
+    "lantai": "O6",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L50"
+  },
+  {
+    "id": 51,
+    "kode_gedung": "Y51",
+    "alamat": "7588 Cherokee Point",
+    "kota": "Olo",
+    "lantai": "G4",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L51"
+  },
+  {
+    "id": 52,
+    "kode_gedung": "Z52",
+    "alamat": "0 Southridge Lane",
+    "kota": "Pizhanka",
+    "lantai": "F5",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L52"
+  },
+  {
+    "id": 53,
+    "kode_gedung": "A53",
+    "alamat": "3525 Lake View Place",
+    "kota": "Keruguya",
+    "lantai": "A8",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L53"
+  },
+  {
+    "id": 54,
+    "kode_gedung": "B54",
+    "alamat": "7871 Northport Trail",
+    "kota": "Road Town",
+    "lantai": "M5",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L54"
+  },
+  {
+    "id": 55,
+    "kode_gedung": "C55",
+    "alamat": "2490 Annamark Junction",
+    "kota": "Óbidos",
+    "lantai": "H3",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L55"
+  },
+  {
+    "id": 56,
+    "kode_gedung": "D56",
+    "alamat": "301 1st Park",
+    "kota": "Charlottetown",
+    "lantai": "F7",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L56"
+  },
+  {
+    "id": 57,
+    "kode_gedung": "E57",
+    "alamat": "07024 Aberg Drive",
+    "kota": "Mazongling",
+    "lantai": "D2",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L57"
+  },
+  {
+    "id": 58,
+    "kode_gedung": "F58",
+    "alamat": "6610 Carpenter Avenue",
+    "kota": "Zhaoqing",
+    "lantai": "R5",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L58"
+  },
+  {
+    "id": 59,
+    "kode_gedung": "G59",
+    "alamat": "1 Kenwood Crossing",
+    "kota": "Beiwucha",
+    "lantai": "O6",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L59"
+  },
+  {
+    "id": 60,
+    "kode_gedung": "H60",
+    "alamat": "984 Oriole Center",
+    "kota": "Shuangshi",
+    "lantai": "A2",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L60"
+  },
+  {
+    "id": 61,
+    "kode_gedung": "I61",
+    "alamat": "22 Monument Street",
+    "kota": "Litan",
+    "lantai": "M3",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L61"
+  },
+  {
+    "id": 62,
+    "kode_gedung": "J62",
+    "alamat": "28 Anhalt Place",
+    "kota": "Phù Cát",
+    "lantai": "M0",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L62"
+  },
+  {
+    "id": 63,
+    "kode_gedung": "K63",
+    "alamat": "0451 Larry Park",
+    "kota": "Mulleriyawa",
+    "lantai": "B1",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L63"
+  },
+  {
+    "id": 64,
+    "kode_gedung": "L64",
+    "alamat": "1 Stoughton Avenue",
+    "kota": "Fort-de-France",
+    "lantai": "J2",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L64"
+  },
+  {
+    "id": 65,
+    "kode_gedung": "M65",
+    "alamat": "49271 Waubesa Hill",
+    "kota": "Pathum Thani",
+    "lantai": "L2",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L65"
+  },
+  {
+    "id": 66,
+    "kode_gedung": "N66",
+    "alamat": "839 Farmco Trail",
+    "kota": "Maroanging",
+    "lantai": "B8",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L66"
+  },
+  {
+    "id": 67,
+    "kode_gedung": "O67",
+    "alamat": "2 Katie Center",
+    "kota": "Huangxi",
+    "lantai": "C1",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L67"
+  },
+  {
+    "id": 68,
+    "kode_gedung": "P68",
+    "alamat": "20538 Nobel Center",
+    "kota": "Calarcá",
+    "lantai": "P7",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L68"
+  },
+  {
+    "id": 69,
+    "kode_gedung": "Q69",
+    "alamat": "1 Karstens Park",
+    "kota": "Gaoqiao",
+    "lantai": "W5",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L69"
+  },
+  {
+    "id": 70,
+    "kode_gedung": "R70",
+    "alamat": "491 Mcbride Point",
+    "kota": "Yanjiang",
+    "lantai": "K3",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L70"
+  },
+  {
+    "id": 71,
+    "kode_gedung": "S71",
+    "alamat": "81543 8th Junction",
+    "kota": "Blagoveshchensk",
+    "lantai": "R0",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L71"
+  },
+  {
+    "id": 72,
+    "kode_gedung": "T72",
+    "alamat": "09274 Sage Court",
+    "kota": "Stockholm",
+    "lantai": "T8",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L72"
+  },
+  {
+    "id": 73,
+    "kode_gedung": "U73",
+    "alamat": "90 Anhalt Road",
+    "kota": "L'viv",
+    "lantai": "Y9",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L73"
+  },
+  {
+    "id": 74,
+    "kode_gedung": "V74",
+    "alamat": "866 Mccormick Park",
+    "kota": "Káto Nevrokópi",
+    "lantai": "X5",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L74"
+  },
+  {
+    "id": 75,
+    "kode_gedung": "W75",
+    "alamat": "549 Blue Bill Park Avenue",
+    "kota": "Balice",
+    "lantai": "G0",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L75"
+  },
+  {
+    "id": 76,
+    "kode_gedung": "X76",
+    "alamat": "604 Warbler Court",
+    "kota": "Mirkovci",
+    "lantai": "K1",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L76"
+  },
+  {
+    "id": 77,
+    "kode_gedung": "Y77",
+    "alamat": "2949 Hanover Center",
+    "kota": "Dangshun",
+    "lantai": "R8",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L77"
+  },
+  {
+    "id": 78,
+    "kode_gedung": "Z78",
+    "alamat": "5 Starling Drive",
+    "kota": "Norfolk",
+    "lantai": "M2",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L78"
+  },
+  {
+    "id": 79,
+    "kode_gedung": "A79",
+    "alamat": "98 Milwaukee Alley",
+    "kota": "Tianya",
+    "lantai": "S8",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L79"
+  },
+  {
+    "id": 80,
+    "kode_gedung": "B80",
+    "alamat": "017 Autumn Leaf Trail",
+    "kota": "Niebocko",
+    "lantai": "B8",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L80"
+  },
+  {
+    "id": 81,
+    "kode_gedung": "C81",
+    "alamat": "8 Mosinee Hill",
+    "kota": "Neuville",
+    "lantai": "Z8",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L81"
+  },
+  {
+    "id": 82,
+    "kode_gedung": "D82",
+    "alamat": "71907 Columbus Park",
+    "kota": "Shahrak",
+    "lantai": "L4",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L82"
+  },
+  {
+    "id": 83,
+    "kode_gedung": "E83",
+    "alamat": "09487 Lakewood Center",
+    "kota": "Baihe",
+    "lantai": "I9",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L83"
+  },
+  {
+    "id": 84,
+    "kode_gedung": "F84",
+    "alamat": "9562 Michigan Way",
+    "kota": "Hongqi Yingzi",
+    "lantai": "B1",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L84"
+  },
+  {
+    "id": 85,
+    "kode_gedung": "G85",
+    "alamat": "75 Novick Junction",
+    "kota": "Keroka",
+    "lantai": "L5",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L85"
+  },
+  {
+    "id": 86,
+    "kode_gedung": "H86",
+    "alamat": "095 Emmet Court",
+    "kota": "Antsirabe",
+    "lantai": "G8",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L86"
+  },
+  {
+    "id": 87,
+    "kode_gedung": "I87",
+    "alamat": "6482 Farragut Plaza",
+    "kota": "Malalag",
+    "lantai": "U9",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L87"
+  },
+  {
+    "id": 88,
+    "kode_gedung": "J88",
+    "alamat": "1 Roxbury Way",
+    "kota": "Mbouda",
+    "lantai": "F7",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L88"
+  },
+  {
+    "id": 89,
+    "kode_gedung": "K89",
+    "alamat": "45970 Talisman Park",
+    "kota": "Belanting",
+    "lantai": "I2",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L89"
+  },
+  {
+    "id": 90,
+    "kode_gedung": "L90",
+    "alamat": "725 Esker Drive",
+    "kota": "Aparecida do Taboado",
+    "lantai": "B6",
+    "wing": "Wing Timur",
+    "kode_ruangan": "L90"
+  },
+  {
+    "id": 91,
+    "kode_gedung": "M91",
+    "alamat": "119 Fallview Plaza",
+    "kota": "Kovářská",
+    "lantai": "P9",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L91"
+  },
+  {
+    "id": 92,
+    "kode_gedung": "N92",
+    "alamat": "94515 Novick Crossing",
+    "kota": "Inari",
+    "lantai": "J9",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L92"
+  },
+  {
+    "id": 93,
+    "kode_gedung": "O93",
+    "alamat": "7 Roxbury Drive",
+    "kota": "Tiksi",
+    "lantai": "L0",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L93"
+  },
+  {
+    "id": 94,
+    "kode_gedung": "P94",
+    "alamat": "336 Chinook Crossing",
+    "kota": "Carig",
+    "lantai": "J8",
+    "wing": "Wing Utara",
+    "kode_ruangan": "L94"
+  },
+  {
+    "id": 95,
+    "kode_gedung": "Q95",
+    "alamat": "956 Anderson Way",
+    "kota": "Chīchāwatni",
+    "lantai": "G5",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L95"
+  },
+  {
+    "id": 96,
+    "kode_gedung": "R96",
+    "alamat": "27 Havey Junction",
+    "kota": "Buenavista",
+    "lantai": "Q3",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L96"
+  },
+  {
+    "id": 97,
+    "kode_gedung": "S97",
+    "alamat": "4 5th Lane",
+    "kota": "Pittsburgh",
+    "lantai": "Z6",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L97"
+  },
+  {
+    "id": 98,
+    "kode_gedung": "T98",
+    "alamat": "524 Manitowish Alley",
+    "kota": "Gudja",
+    "lantai": "C0",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L98"
+  },
+  {
+    "id": 99,
+    "kode_gedung": "U99",
+    "alamat": "237 Eggendart Road",
+    "kota": "Żurowa",
+    "lantai": "Z4",
+    "wing": "Wing Selatan",
+    "kode_ruangan": "L99"
+  },
+  {
+    "id": 100,
+    "kode_gedung": "V100",
+    "alamat": "2 Schlimgen Hill",
+    "kota": "Strasbourg",
+    "lantai": "T3",
+    "wing": "Wing Barat",
+    "kode_ruangan": "L100"
+  }
+]

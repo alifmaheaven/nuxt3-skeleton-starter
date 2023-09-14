@@ -64,17 +64,17 @@ const dropdowninput = computed({
 </script>
 
 <template>
-  <div class="mb-6 last:mb-0 w-full" :class="{ success: meta.valid }">
+  <div class="mb-6 w-full last:mb-0" :class="{ success: meta.valid }">
     <label
       v-if="label"
       :for="name"
-      class="form-label block mb-2"
+      class="form-label mb-2 block"
       :class="{
-        'text-red-500 font-bold': !!errorMessage,
+        'font-bold text-red-500': !!errorMessage,
       }"
     >
       <span v-if="primary">
-        <span class="text-red-500 font-bold">*</span>
+        <span class="font-bold text-red-500">*</span>
       </span>
       {{ label }}</label
     >
@@ -85,7 +85,7 @@ const dropdowninput = computed({
         :disabled="disabled || readonly"
         value-prop="id"
         :options="options"
-        class="form-control w-full block"
+        class="form-control block w-full"
         :class="{
           'border-red-500 dark:border-red-500': !!errorMessage,
           'pl-10': !!icon,
@@ -104,7 +104,7 @@ const dropdowninput = computed({
     </div>
     <div
       v-if="!!errorMessage"
-      class="text-xs text-red-500 dark:text-red-500 mt-1"
+      class="mt-1 text-xs text-red-500 dark:text-red-500"
     >
       {{ errorMessage }}
     </div>

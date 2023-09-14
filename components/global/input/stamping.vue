@@ -96,10 +96,10 @@ const print = (event) => {
 const handleDocumentRender = (args) => {
   viewpdf.value.pageCount = pdfRef.value.pageCount;
   viewpdf.value.canvasWidth = Number(
-    document.getElementById("canvas_content").clientWidth.toFixed()
+    document.getElementById("canvas_content").clientWidth.toFixed(),
   );
   viewpdf.value.canvasHight = Number(
-    document.getElementById("canvas_content").clientHeight.toFixed()
+    document.getElementById("canvas_content").clientHeight.toFixed(),
   );
 };
 
@@ -117,11 +117,15 @@ const stampOnChange = () => {
     canvas_total_page: viewpdf.value.pageCount,
     stamp_x_left: stamp_cordinate.value.x,
     stamp_y_top: stamp_cordinate.value.y,
-    stamp_x_right: viewpdf.value.canvasWidth - (stamp_cordinate.value.x + stamp_cordinate.value.w),
-    stamp_y_bottom: viewpdf.value.canvasHight - (stamp_cordinate.value.y + stamp_cordinate.value.h),
+    stamp_x_right:
+      viewpdf.value.canvasWidth -
+      (stamp_cordinate.value.x + stamp_cordinate.value.w),
+    stamp_y_bottom:
+      viewpdf.value.canvasHight -
+      (stamp_cordinate.value.y + stamp_cordinate.value.h),
     stamp_width: stamp_cordinate.value.w,
     stamp_height: stamp_cordinate.value.h,
-  }
+  };
   handleChange(JSON.stringify(stamp_data));
   // console.log("stampOnChange", );
   // let canvasWidth = viewpdf.value.canvasWidth;
@@ -191,19 +195,19 @@ const stampOnChange = () => {
 </script>
 
 <template>
-  <div class="w-full h-full flex justify-center">
+  <div class="flex h-full w-full justify-center">
     <ClientOnly>
       <div
         id="parent_canvas"
-        class="border-dotted border-gray-400 relative w-fit h-full"
+        class="relative h-full w-fit border-dotted border-gray-400"
       >
         <VuePdfEmbed
           id="canvas_content"
           ref="pdfRef"
           :page="viewpdf.page"
           :source="source"
-          @rendered="handleDocumentRender"
           class="absolute"
+          @rendered="handleDocumentRender"
         />
         <div
           id="materai_canvas"
@@ -214,18 +218,19 @@ const stampOnChange = () => {
         >
           <Vue3DraggableResizable
             v-if="viewpdf.canvasWidth && stamp_image"
-            :initW="Number(viewpdf.canvasWidth * 0.11)"
-            :initH="Number(viewpdf.canvasHight * 0.11)"
             v-model:x="stamp_cordinate.x"
             v-model:y="stamp_cordinate.y"
             v-model:w="stamp_cordinate.w"
             v-model:h="stamp_cordinate.h"
             v-model:active="stamp_cordinate.active"
+            :init-w="Number(viewpdf.canvasWidth * 0.11)"
+            :init-h="Number(viewpdf.canvasHight * 0.11)"
             :draggable="true"
             :resizable="true"
-            :lockAspectRatio="true"
+            :lock-aspect-ratio="true"
             :parent="true"
             :handles="['tl', 'tm', 'tr', 'ml', 'mr', 'bl', 'bm', 'br']"
+            class-name-draggable="bg-no-repeat bg-cover bg-center relative"
             @activated="print('activated')"
             @deactivated="print('deactivated')"
             @drag-start="print('drag-start')"
@@ -234,12 +239,11 @@ const stampOnChange = () => {
             @resizing="print('resizing')"
             @drag-end="stampOnChange()"
             @resize-end="stampOnChange()"
-            classNameDraggable="bg-no-repeat bg-cover bg-center relative"
           >
             <img
               id="imageStamping"
               :src="stamp_image"
-              class="w-full basolute"
+              class="basolute w-full"
               alt="stamp_image"
               draggable="false"
               @load="
