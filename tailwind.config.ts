@@ -41,6 +41,7 @@ export default <Partial<Config>>{
         light: "var(--color-light)",
         dark: "var(--color-dark)",
         transparent: "transparent",
+        current: "currentColor",
         black: colors.black,
         white: colors.white,
         gray: colors.slate,
