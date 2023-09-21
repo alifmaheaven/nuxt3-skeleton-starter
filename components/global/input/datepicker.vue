@@ -113,18 +113,21 @@ const formatDate = (date) => {
 </script>
 
 <template>
-  <div class="my-3 first:mt-0 last:mb-0 w-full relative" :class="{ success: meta.valid, 'inline-flex items-center': inline }">
+  <div
+    class="relative my-3 w-full first:mt-0 last:mb-0"
+    :class="{ success: meta.valid, 'inline-flex items-center': inline }"
+  >
     <label
       v-if="label"
       :for="name"
-      class="form-label block mb-2 w-40"
+      class="form-label mb-2 block w-40"
       :class="{
-        'text-red-500 font-bold': !!errorMessage,
-        'inline-block mr-2': inline,
+        'font-bold text-red-500': !!errorMessage,
+        'mr-2 inline-block': inline,
       }"
     >
       <span v-if="primary">
-        <span class="text-red-500 font-bold">*</span>
+        <span class="font-bold text-red-500">*</span>
       </span>
       {{ label }}</label
     >
@@ -141,7 +144,7 @@ const formatDate = (date) => {
         :input-class-name="
           !!errorMessage ? 'border-red-500 dark:border-red-500' : ''
         "
-        class="w-full block bg-white rounded-[9px] shadow border border-gray-300"
+        class="block w-full rounded-[9px] border border-gray-300 bg-white shadow"
         :enable-time-picker="true"
         :min-date="min ? new Date(min) : null"
         :max-date="max ? new Date(max) : null"
@@ -156,12 +159,12 @@ const formatDate = (date) => {
         v-if="icon"
         class="absolute inset-y-0 left-0 flex items-center px-3 text-gray-500"
       >
-        <Icon :name="icon" class="w-5 h-5" />
+        <Icon :name="icon" class="h-5 w-5" />
       </div>
     </div>
     <div
       v-if="!!errorMessage"
-      class="text-xs text-red-500 dark:text-red-500 mt-1 absolute -bottom-5 right-0"
+      class="absolute -bottom-5 right-0 mt-1 text-xs text-red-500 dark:text-red-500"
     >
       {{ errorMessage }}
     </div>

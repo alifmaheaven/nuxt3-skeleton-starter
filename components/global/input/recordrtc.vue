@@ -280,32 +280,32 @@ const {
 
 <template>
   <div
-    class="my-3 first:mt-0 last:mb-0 w-full relative"
+    class="relative my-3 w-full first:mt-0 last:mb-0"
     :class="{ success: meta.valid }"
   >
     <div
-      class="w-full h-full px-16 py-8 bg-gray-50 rounded-xl border border-gray-200 flex-col justify-center items-center gap-6 inline-flex"
+      class="inline-flex h-full w-full flex-col items-center justify-center gap-6 rounded-xl border border-gray-200 bg-gray-50 px-16 py-8"
       :class="{
         'border-red-500 dark:border-red-500': !!errorMessage,
       }"
     >
       <div
-        class="self-stretch h-24 flex-col justify-center items-center gap-2 flex"
+        class="flex h-24 flex-col items-center justify-center gap-2 self-stretch"
       >
         <div
-          class="self-stretch h-7 flex-col justify-start items-start gap-1 flex"
+          class="flex h-7 flex-col items-start justify-start gap-1 self-stretch"
         >
           <div
-            class="self-stretch text-center text-gray-900 text-lg font-semibold leading-7"
+            class="self-stretch text-center text-lg font-semibold leading-7 text-gray-900"
           >
             Izinkan akses kamera
           </div>
         </div>
         <div
-          class="self-stretch h-[60px] flex-col justify-start items-start gap-4 flex"
+          class="flex h-[60px] flex-col items-start justify-start gap-4 self-stretch"
         >
           <div
-            class="self-stretch text-center text-slate-600 text-sm font-normal leading-tight"
+            class="self-stretch text-center text-sm font-normal leading-tight text-slate-600"
           >
             Kami melakukan perekaman terhadap wajah anda untuk dilakukan
             verifikasi data biometrik dengan proses analisa dan perbandingan
@@ -315,31 +315,31 @@ const {
         </div>
       </div>
       <div
-        class="self-stretch h-fit w-full px-16 flex-col justify-start items-center gap-4 flex"
+        class="flex h-fit w-full flex-col items-center justify-start gap-4 self-stretch px-16"
       >
         <button
           id="enableCamera"
           type="button"
-          class="self-stretch px-[18px] py-2.5 bg-white rounded-lg shadow border border-gray-300 justify-center items-center gap-2 inline-flex"
+          class="inline-flex items-center justify-center gap-2 self-stretch rounded-lg border border-gray-300 bg-white px-[18px] py-2.5 shadow"
         >
           <Icon
             name="material-symbols:android-camera-outline"
-            class="w-5 h-5 relative"
+            class="relative h-5 w-5"
           />
-          <div class="text-slate-700 text-base font-semibold leading-normal">
+          <div class="text-base font-semibold leading-normal text-slate-700">
             Izinkan akses
           </div>
         </button>
         <div
           id="videoContainer"
-          class="bg-white rounded-[9px] shadow border border-gray-300 w-full"
+          class="w-full rounded-[9px] border border-gray-300 bg-white shadow"
           :class="{
             'border-red-500 dark:border-red-500': !!errorMessage,
           }"
           style="background-color: #cccccc; position: relative; display: none"
         >
           <video
-            class="bg-white rounded-[9px] shadow border border-gray-300 w-full"
+            class="w-full rounded-[9px] border border-gray-300 bg-white shadow"
             style="position: relative; z-index: 0"
             id="selfVideo"
             width="100%"
@@ -360,14 +360,14 @@ const {
             <button
               id="startRecord"
               type="button"
-              class="block w-full py-2 px-4 border border-transparent text-sm font-medium text-slate-700 bg-white hover:bg-slate-200 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500"
+              class="block w-full rounded-lg border border-transparent bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
             >
               Mulai Rekam
             </button>
             <button
               id="restartRecord"
               type="button"
-              class="block w-full py-2 px-4 border border-transparent text-sm font-medium text-slate-700 bg-white hover:bg-slate-200 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500"
+              class="block w-full rounded-lg border border-transparent bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
               style="display: none"
             >
               Ulangi
@@ -375,47 +375,47 @@ const {
           </div>
         </div>
         <div style="z-index: 1; width: 100%">
-            <p
-              align="center"
-              class="text-slate-900 py-2 px-4 text-lg font-semibold"
-              style="display: none"
-              id="lookCamera"
-            >
-              Silahkan tegakan badan anda dan menghadap kamera
-            </p>
-            <p
-              align="center"
-              class="text-slate-900 py-2 px-4 text-lg font-semibold"
-              style="display: none"
-              id="openMouth"
-            >
-              Silakan buka mulut anda
-            </p>
-            <p
-              align="center"
-              class="text-slate-900 py-2 px-4 text-lg font-semibold"
-              style="display: none"
-              id="closeMouth"
-            >
-              Tutup mulut anda kembali
-            </p>
-            <p
-              align="center"
-              class="text-slate-900 py-2 px-4 text-lg font-semibold"
-              style="display: none"
-              id="openEye"
-            >
-              Kedipkan mata anda
-            </p>
-            <p
-              align="center"
-              class="text-slate-900 py-2 px-4 text-lg font-semibold"
-              style="display: none"
-              id="openEye2"
-            >
-              Sekali lagi, kedipkan mata anda
-            </p>
-            <!--
+          <p
+            align="center"
+            class="px-4 py-2 text-lg font-semibold text-slate-900"
+            style="display: none"
+            id="lookCamera"
+          >
+            Silahkan tegakan badan anda dan menghadap kamera
+          </p>
+          <p
+            align="center"
+            class="px-4 py-2 text-lg font-semibold text-slate-900"
+            style="display: none"
+            id="openMouth"
+          >
+            Silakan buka mulut anda
+          </p>
+          <p
+            align="center"
+            class="px-4 py-2 text-lg font-semibold text-slate-900"
+            style="display: none"
+            id="closeMouth"
+          >
+            Tutup mulut anda kembali
+          </p>
+          <p
+            align="center"
+            class="px-4 py-2 text-lg font-semibold text-slate-900"
+            style="display: none"
+            id="openEye"
+          >
+            Kedipkan mata anda
+          </p>
+          <p
+            align="center"
+            class="px-4 py-2 text-lg font-semibold text-slate-900"
+            style="display: none"
+            id="openEye2"
+          >
+            Sekali lagi, kedipkan mata anda
+          </p>
+          <!--
                 <p align="center" style="background-color: #f00; color: #fff; display: none" id="saySentence1">
                   Silakan ikuti kalimat berikut ini
                 </p>
@@ -423,7 +423,7 @@ const {
                   "Saya, (nama anda), tanggal lahir (tanggal lahir anda), dengan ini menyatakan setuju untuk melakukan pembukaan rekening di Bank BRI."
                 </p>
                 -->
-          </div>
+        </div>
       </div>
     </div>
     <!-- <label
@@ -445,7 +445,7 @@ const {
       (misal: Kaca mata).
     </p> -->
     <div class="relative">
-      <div class="w-full flex justify-center items-center">
+      <div class="flex w-full items-center justify-center">
         <!-- <button
           id="enableCamera"
           type="button"
@@ -455,14 +455,14 @@ const {
         </button> -->
         <div
           id="videoContainer"
-          class="bg-white rounded-[9px] shadow border border-gray-300"
+          class="rounded-[9px] border border-gray-300 bg-white shadow"
           :class="{
             'border-red-500 dark:border-red-500': !!errorMessage,
           }"
           style="background-color: #cccccc; position: relative; display: none"
         >
           <video
-            class="bg-white rounded-[9px] shadow border border-gray-300"
+            class="rounded-[9px] border border-gray-300 bg-white shadow"
             style="position: relative; z-index: 0"
             id="selfVideo"
             width="100%"
@@ -472,7 +472,7 @@ const {
           <div style="position: absolute; top: 0; z-index: 1; width: 100%">
             <p
               align="center"
-              class="text-slate-900 py-2 px-4"
+              class="px-4 py-2 text-slate-900"
               style="display: none"
               id="openMouth"
             >
@@ -480,7 +480,7 @@ const {
             </p>
             <p
               align="center"
-              class="text-slate-900 py-2 px-4"
+              class="px-4 py-2 text-slate-900"
               style="display: none"
               id="closeMouth"
             >
@@ -488,7 +488,7 @@ const {
             </p>
             <p
               align="center"
-              class="text-slate-900 py-2 px-4"
+              class="px-4 py-2 text-slate-900"
               style="display: none"
               id="openEye"
             >
@@ -496,7 +496,7 @@ const {
             </p>
             <p
               align="center"
-              class="text-slate-900 py-2 px-4"
+              class="px-4 py-2 text-slate-900"
               style="display: none"
               id="openEye2"
             >
@@ -524,14 +524,14 @@ const {
             <button
               id="startRecord"
               type="button"
-              class="block w-full py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              class="block w-full rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               Mulai Rekam
             </button>
             <button
               id="restartRecord"
               type="button"
-              class="block w-full py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              class="block w-full rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               style="display: none"
             >
               Ulangi
@@ -561,7 +561,7 @@ const {
     </div>
     <div
       v-if="!!errorMessage"
-      class="text-xs text-red-500 dark:text-red-500 mt-1 absolute -bottom-5 right-0"
+      class="absolute -bottom-5 right-0 mt-1 text-xs text-red-500 dark:text-red-500"
     >
       {{ errorMessage }}
     </div>

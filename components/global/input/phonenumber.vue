@@ -1,5 +1,4 @@
 <script setup>
-
 const { $api } = useNuxtApp();
 
 import { computed, toRef, ref, useSlots } from "vue";
@@ -104,14 +103,16 @@ const onlynumber = (e) => {
   }
 };
 
-const getPhonePrefix = async ()=>{
+const getPhonePrefix = async () => {
   try {
-    const { data } = await useFetch(`https://cuik-projects.github.io/country-list/countries.json`)
+    const { data } = await useFetch(
+      `https://cuik-projects.github.io/country-list/countries.json`,
+    );
     phonecoderesult.value = JSON.parse(JSON.stringify(data.value));
   } catch (error) {
     console.error(error);
   }
-}
+};
 getPhonePrefix();
 
 const phoneformarter = (phoneNumber) => {
@@ -139,27 +140,27 @@ const phoneformarter = (phoneNumber) => {
 };
 </script>
 
-  <template>
-    <div
-      class="my-3 first:mt-0 last:mb-0 w-full relative"
-      :class="{ success: meta.valid, 'inline-flex items-center': inline }"
+<template>
+  <div
+    class="relative my-3 w-full first:mt-0 last:mb-0"
+    :class="{ success: meta.valid, 'inline-flex items-center': inline }"
+  >
+    <label
+      v-if="label"
+      :for="name"
+      class="form-label mb-2 block w-40"
+      :class="{
+        'font-bold text-red-500': !!errorMessage,
+        'mr-2 inline-block': inline,
+      }"
     >
-      <label
-        v-if="label"
-        :for="name"
-        class="form-label block mb-2 w-40"
-        :class="{
-          'text-red-500 font-bold': !!errorMessage,
-          'inline-block mr-2': inline,
-        }"
-      >
-        <span v-if="primary">
-          <span class="text-red-500 font-bold">*</span>
-        </span>
-        {{ label }}
-      </label>
-      <div class="inline-flex w-full">
-        <!-- <TomSelect
+      <span v-if="primary">
+        <span class="font-bold text-red-500">*</span>
+      </span>
+      {{ label }}
+    </label>
+    <div class="inline-flex w-full">
+      <!-- <TomSelect
           v-model="country_code_value"
           class="block bg-white rounded-[9px] shadow border border-gray-300 w-[25%]"
           :class="{
@@ -177,49 +178,54 @@ const phoneformarter = (phoneNumber) => {
             {{ items.code }}
           </option>
         </TomSelect> -->
-        <multiselect
-          v-model="country_code_value"
-          :disabled="disabled || readonly"
-          value-prop="id"
-          :options="phonecoderesult?.map(({dial_code})=> ({id: dial_code, name: dial_code})) || []"
-          class="block bg-white !rounded-[9px] shadow border border-gray-300 !w-[30%]"
-          :class="{
-            'border-red-500 dark:border-red-500': !!errorMessage,
-          }"
-          :classes="{
-            search: 'multiselect-search !bg-transparent border-none',
-            dropdown:
-              'multiselect-dropdown bg-white dark:bg-darkmode-600 border-2 border-gray-300 dark:border-gray-700 !rounded-[9px]',
-          }"
-          label="name"
-          track-by="name"
-          :searchable="true"
-          @blur="handleBlur"
-        >
-        </multiselect>
-        <input
-          :id="name"
-          v-model="phone_number_value"
-          :name="name"
-          type="text"
-          class="block bg-white rounded-[9px] shadow border border-gray-300 w-[70%]"
-          :class="{
-            'border-red-500 dark:border-red-500': !!errorMessage,
-          }"
-          :disabled="disabled"
-          :readonly="readonly"
-          :placeholder="placeholder"
-          @blur="handleBlur"
-          @keypress="onlynumber"
-        />
-      </div>
-      <div
-        v-if="!!errorMessage || !!errorMessagePrefix"
-        class="text-xs text-red-500 dark:text-red-500 mt-1 absolute -bottom-3 right-0"
+      <multiselect
+        v-model="country_code_value"
+        :disabled="disabled || readonly"
+        value-prop="id"
+        :options="
+          phonecoderesult?.map(({ dial_code }) => ({
+            id: dial_code,
+            name: dial_code,
+          })) || []
+        "
+        class="block !w-[30%] !rounded-[9px] border border-gray-300 bg-white shadow"
+        :class="{
+          'border-red-500 dark:border-red-500': !!errorMessage,
+        }"
+        :classes="{
+          search: 'multiselect-search !bg-transparent border-none',
+          dropdown:
+            'multiselect-dropdown bg-white dark:bg-darkmode-600 border-2 border-gray-300 dark:border-gray-700 !rounded-[9px]',
+        }"
+        label="name"
+        track-by="name"
+        :searchable="true"
+        @blur="handleBlur"
       >
-        {{ errorMessage || errorMessagePrefix }}
-      </div>
+      </multiselect>
+      <input
+        :id="name"
+        v-model="phone_number_value"
+        :name="name"
+        type="text"
+        class="block w-[70%] rounded-[9px] border border-gray-300 bg-white shadow"
+        :class="{
+          'border-red-500 dark:border-red-500': !!errorMessage,
+        }"
+        :disabled="disabled"
+        :readonly="readonly"
+        :placeholder="placeholder"
+        @blur="handleBlur"
+        @keypress="onlynumber"
+      />
     </div>
-  </template>
+    <div
+      v-if="!!errorMessage || !!errorMessagePrefix"
+      class="absolute -bottom-3 right-0 mt-1 text-xs text-red-500 dark:text-red-500"
+    >
+      {{ errorMessage || errorMessagePrefix }}
+    </div>
+  </div>
+</template>
 
 <style src="@vueform/multiselect/themes/default.css"></style>

@@ -92,10 +92,10 @@ const print = (event) => {
 const handleDocumentRender = (args) => {
   viewpdf.value.pageCount = pdfRef.value.pageCount;
   viewpdf.value.canvasWidth = Number(
-    document.getElementById("canvas_content").clientWidth.toFixed()
+    document.getElementById("canvas_content").clientWidth.toFixed(),
   );
   viewpdf.value.canvasHight = Number(
-    document.getElementById("canvas_content").clientHeight.toFixed()
+    document.getElementById("canvas_content").clientHeight.toFixed(),
   );
 };
 
@@ -248,11 +248,11 @@ const stampOnChange = () => {
 </script>
 
 <template>
-  <div v-if="source" class="w-full h-full flex justify-center relative">
+  <div v-if="source" class="relative flex h-full w-full justify-center">
     <ClientOnly>
       <div
         id="parent_canvas"
-        class="border-dotted border-gray-400 relative w-full h-full"
+        class="relative h-full w-full border-dotted border-gray-400"
       >
         <vue-pdf-embed
           id="canvas_content"
@@ -263,7 +263,7 @@ const stampOnChange = () => {
           class="absolute w-full border"
           :class="{
             'border-red-500 ': !!errorMessage,
-            'is-disabled bg-gray-400 cursor-not-allowed': disabled,
+            'is-disabled cursor-not-allowed bg-gray-400': disabled,
           }"
         />
         <div
@@ -300,7 +300,7 @@ const stampOnChange = () => {
             <img
               id="imageStamping"
               :src="stamp_image"
-              class="w-full basolute"
+              class="basolute w-full"
               alt="stamp_image"
               draggable="false"
               @load="
@@ -313,13 +313,13 @@ const stampOnChange = () => {
         </div>
         <!-- up navigation -->
         <div
-          class="flex justify-between items-center absolute top-0 w-full bg-slate-50"
+          class="absolute top-0 flex w-full items-center justify-between bg-slate-50"
         >
           <button
             type="button"
             :disabled="viewpdf.page === 1"
             @click="viewpdf.page--"
-            class="bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-l"
+            class="rounded-l bg-slate-500 px-4 py-2 font-bold text-white hover:bg-slate-700"
           >
             Sebelumnya
           </button>
@@ -332,20 +332,20 @@ const stampOnChange = () => {
             type="button"
             :disabled="viewpdf.page === viewpdf.pageCount"
             @click="viewpdf.page++"
-            class="bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-r"
+            class="rounded-r bg-slate-500 px-4 py-2 font-bold text-white hover:bg-slate-700"
           >
             Selanjutnya
           </button>
         </div>
         <!-- bottom navigation -->
         <div
-          class="flex justify-between items-center absolute bottom-0 w-full bg-slate-50"
+          class="absolute bottom-0 flex w-full items-center justify-between bg-slate-50"
         >
           <button
             type="button"
             :disabled="viewpdf.page === 1"
             @click="viewpdf.page--"
-            class="bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-l"
+            class="rounded-l bg-slate-500 px-4 py-2 font-bold text-white hover:bg-slate-700"
           >
             Sebelumnya
           </button>
@@ -358,7 +358,7 @@ const stampOnChange = () => {
             type="button"
             :disabled="viewpdf.page === viewpdf.pageCount"
             @click="viewpdf.page++"
-            class="bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-r"
+            class="rounded-r bg-slate-500 px-4 py-2 font-bold text-white hover:bg-slate-700"
           >
             Selanjutnya
           </button>
@@ -366,7 +366,7 @@ const stampOnChange = () => {
       </div>
       <div
         v-if="!!errorMessage"
-        class="text-xs text-red-500 dark:text-red-500 mt-1 absolute -bottom-5 right-0"
+        class="absolute -bottom-5 right-0 mt-1 text-xs text-red-500 dark:text-red-500"
       >
         {{ errorMessage }}
       </div>

@@ -1,8 +1,10 @@
 <script setup>
 // import
-import { ref } from "vue";
+// import { ref } from "vue";
+import { useLayout } from "@/stores/layout";
 
 // define
+const layoutStore = useLayout();
 
 // data
 
@@ -10,7 +12,7 @@ import { ref } from "vue";
 </script>
 
 <template>
-  <div>
+  <div :class="layoutStore.theme">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>

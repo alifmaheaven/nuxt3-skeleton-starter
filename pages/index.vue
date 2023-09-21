@@ -150,9 +150,7 @@ const getData = () => {
                     </div>
                   </div>
                 </div>
-                <GlobalInputFileupload
-                  name="upload"
-                />
+                <GlobalInputFileupload name="upload" />
               </div>
               <!-- <button
                 class="self-stretch px-5 py-3 bg-gray-600 rounded-lg shadow border border-gray-600 justify-center items-center gap-2 inline-flex"

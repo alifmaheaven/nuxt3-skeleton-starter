@@ -2,7 +2,11 @@
   <div class="bg-login inline-flex items-center justify-center">
     <slot />
   </div>
+  <LayoutLanguagedarkswitcher />
 </template>
+
+<script setup>
+</script>
 
 <style lang="scss" scoped>
 .bg-login {

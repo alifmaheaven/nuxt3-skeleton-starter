@@ -76,23 +76,26 @@ const reset = () => {
 </script>
 
 <template>
-  <div class="my-3 first:mt-0 last:mb-0 w-full relative" :class="{ success: meta.valid }">
+  <div
+    class="relative my-3 w-full first:mt-0 last:mb-0"
+    :class="{ success: meta.valid }"
+  >
     <label
       v-if="label"
       :for="name"
-      class="form-label block mb-2"
+      class="form-label mb-2 block"
       :class="{
-        'text-red-500 font-bold': !!errorMessage,
+        'font-bold text-red-500': !!errorMessage,
       }"
     >
       <span v-if="primary">
-        <span class="text-red-500 font-bold">*</span>
+        <span class="font-bold text-red-500">*</span>
       </span>
       {{ label }}</label
     >
     <div
       v-if="!!!inputValue"
-      class="relative w-full h-80 border shadow-md bg-white"
+      class="relative h-80 w-full border bg-white shadow-md"
       :class="{
         'border-red-500 dark:border-red-500': !!errorMessage,
       }"
@@ -100,21 +103,21 @@ const reset = () => {
       <button
         @click="clear()"
         type="button"
-        class="absolute top-1 right-1 px-2 py-1 text-sm font-medium text-white bg-orange-500 rounded-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+        class="absolute right-1 top-1 rounded-md bg-orange-500 px-2 py-1 text-sm font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
       >
         <Icon name="carbon:reset" />
       </button>
       <button
         @click="undo()"
         type="button"
-        class="absolute top-1 right-10 px-2 py-1 text-sm font-medium text-white bg-gray-500 rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+        class="absolute right-10 top-1 rounded-md bg-gray-500 px-2 py-1 text-sm font-medium text-white hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
       >
         <Icon name="carbon:undo" />
       </button>
       <button
         @click="save('png')"
         type="button"
-        class="absolute top-1 left-1 px-2 py-1 text-sm font-medium text-white bg-green-500 rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+        class="absolute left-1 top-1 rounded-md bg-green-500 px-2 py-1 text-sm font-medium text-white hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
       >
         <Icon name="carbon:save" />
       </button>
@@ -127,19 +130,19 @@ const reset = () => {
         ></Vue3Signature>
       </ClientOnly>
     </div>
-    <div v-else class="relative w-full h-80 border shadow-md bg-white">
+    <div v-else class="relative h-80 w-full border bg-white shadow-md">
       <button
         @click="reset()"
         type="button"
-        class="absolute top-1 right-1 px-2 py-1 text-sm font-medium text-white bg-orange-500 rounded-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+        class="absolute right-1 top-1 rounded-md bg-orange-500 px-2 py-1 text-sm font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
       >
         <Icon name="material-symbols:delete-outline" />
       </button>
-      <img :src="inputValue" class="w-full h-full" />
+      <img :src="inputValue" class="h-full w-full" />
     </div>
     <div
       v-if="!!errorMessage"
-      class="text-xs text-red-500 dark:text-red-500 mt-1 absolute -bottom-3 right-0"
+      class="absolute -bottom-3 right-0 mt-1 text-xs text-red-500 dark:text-red-500"
     >
       {{ errorMessage }}
     </div>

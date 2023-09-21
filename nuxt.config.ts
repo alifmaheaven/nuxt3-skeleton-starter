@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { defineNuxtConfig } from 'nuxt/config'
+import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -34,7 +34,7 @@ export default defineNuxtConfig({
   // //   baseURL: "http://localhost:8000",
   //   prerender: {
   //     crawlLinks: true,
-  //     failOnError: true, 
+  //     failOnError: true,
   //   },
   // },
 });
