@@ -39,6 +39,10 @@ const props = defineProps({
     type: Array,
     default: () => [],
   },
+  inline: {
+    type: Boolean,
+    default: false,
+  },
 });
 const emit = defineEmits();
 const name = toRef(props, "name");
@@ -52,7 +56,7 @@ const {
 
 const dropdowninput = computed({
   get() {
-    console.log("inputValue.value", `${name.value}`);
+    // console.log("inputValue.value", `${name.value}`);
     // return 'ADSTAFF'
     return inputValue.value;
   },
@@ -64,36 +68,40 @@ const dropdowninput = computed({
 </script>
 
 <template>
-  <div class="mb-6 w-full last:mb-0" :class="{ success: meta.valid }">
+  <div
+    class="my-3 first:mt-0 last:mb-0 w-full relative"
+    :class="{ success: meta.valid, 'inline-flex items-center': inline }"
+  >
     <label
       v-if="label"
       :for="name"
-      class="form-label mb-2 block"
+      class="form-label block mb-2 w-40"
       :class="{
-        'font-bold text-red-500': !!errorMessage,
+        'text-red-500 font-bold': !!errorMessage,
+        'inline-block mr-2': inline,
       }"
     >
       <span v-if="primary">
-        <span class="font-bold text-red-500">*</span>
+        <span class="text-red-500 font-bold">*</span>
       </span>
-      {{ label }}</label
-    >
-    <div class="relative">
+      {{ label }}
+    </label>
+    <div class="relative w-full">
       <multiselect
         v-model="dropdowninput"
         :placeholder="placeholder"
         :disabled="disabled || readonly"
         value-prop="id"
         :options="options"
-        class="form-control block w-full"
+        class="block bg-white !rounded-[9px] shadow border border-gray-300"
         :class="{
-          'border-red-500 dark:border-red-500': !!errorMessage,
+          '!border-red-500 !dark:border-red-500': !!errorMessage,
           'pl-10': !!icon,
         }"
         :classes="{
-          search: 'multiselect-search bg-transparent border-none',
+          search: 'multiselect-search !bg-transparent border-none',
           dropdown:
-            'multiselect-dropdown bg-white dark:bg-darkmode-600 border-2 border-gray-300 dark:border-gray-700',
+            'multiselect-dropdown bg-white dark:bg-darkmode-600 border-2 border-gray-300 dark:border-gray-700 !rounded-[9px]',
         }"
         label="name"
         track-by="name"
@@ -101,14 +109,20 @@ const dropdowninput = computed({
         @blur="handleBlur"
       >
       </multiselect>
+      <div
+        v-if="icon"
+        class="absolute inset-y-0 left-0 flex items-center px-3 text-gray-500"
+      >
+        <Icon :name="icon" class="w-5 h-5" />
+      </div>
     </div>
     <div
       v-if="!!errorMessage"
-      class="mt-1 text-xs text-red-500 dark:text-red-500"
+      class="text-xs text-red-500 dark:text-red-500 mt-1 absolute -bottom-5 right-0"
     >
       {{ errorMessage }}
     </div>
   </div>
 </template>
 
-<style src="@vueform/multiselect/themes/default.css"></style>
+  <style src="@vueform/multiselect/themes/default.css"></style>

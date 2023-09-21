@@ -79,13 +79,13 @@ const functionSearch = (search) => {
     <label
       v-if="label"
       :for="name"
-      class="mb-2 block font-bold"
+      class="block font-bold mb-2"
       :class="{
         'text-red-500': !!errorMessage,
       }"
     >
       <span v-if="primary">
-        <span class="font-bold text-red-500">*</span>
+        <span class="text-red-500 font-bold">*</span>
       </span>
       {{ label }}</label
     >
@@ -119,7 +119,7 @@ const functionSearch = (search) => {
     </div>
     <div
       v-if="!!errorMessage"
-      class="mt-1 text-xs text-red-500 dark:text-red-500"
+      class="text-xs text-red-500 dark:text-red-500 mt-1 absolute -bottom-3 right-0"
     >
       {{ errorMessage }}
     </div>

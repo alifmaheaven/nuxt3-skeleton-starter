@@ -90,6 +90,12 @@ const pagination = reactive({
 });
 
 // methods
+const getData = () => {
+  // $api.get("/api/v1/test").then((response) => {
+  //   console.log(response);
+  // });
+  // authStore.setUserData();
+};
 </script>
 
 <template>
@@ -144,7 +150,9 @@ const pagination = reactive({
                     </div>
                   </div>
                 </div>
-                <GlobalInputFileupload />
+                <GlobalInputFileupload
+                  name="upload"
+                />
               </div>
               <!-- <button
                 class="self-stretch px-5 py-3 bg-gray-600 rounded-lg shadow border border-gray-600 justify-center items-center gap-2 inline-flex"

@@ -35,6 +35,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  inline: {
+    type: Boolean,
+    default: false,
+  },
 });
 const name = toRef(props, "name");
 const showPassword = ref(true);
@@ -48,26 +52,27 @@ const {
 </script>
 
 <template>
-  <div class="mb-6 w-full last:mb-0" :class="{ success: meta.valid }">
+  <div class="my-3 first:mt-0 last:mb-0 w-full relative relative" :class="{ success: meta.valid, 'inline-flex items-center': inline }">
     <label
       v-if="label"
       :for="name"
-      class="form-label mb-2 block"
+      class="form-label block mb-2 w-40"
       :class="{
-        'font-bold text-red-500': !!errorMessage,
+        'text-red-500 font-bold': !!errorMessage,
+        'inline-block mr-2': inline,
       }"
     >
       <span v-if="primary">
-        <span class="font-bold text-red-500">*</span>
+        <span class="text-red-500 font-bold">*</span>
       </span>
-      {{ label }}</label
-    >
-    <div class="relative">
+      {{ label }}
+    </label>
+    <div class="relative w-full">
       <input
         :id="name"
         :name="name"
         :type="showPassword ? 'password' : 'text'"
-        class="block w-full rounded-[9px] border border-gray-300 bg-white shadow"
+        class="w-full block bg-white rounded-[9px] shadow border border-gray-300"
         :class="{
           'border-red-500 dark:border-red-500': !!errorMessage,
           'pl-10': !!icon,
@@ -88,25 +93,21 @@ const {
         class="absolute top-0 left-0 z-10 pointer-events-none text-gray-500 dark:text-slate-400"
       /> -->
       <div
-        class="absolute inset-y-0 right-0 flex cursor-pointer items-center px-3 text-gray-600"
+        class="absolute inset-y-0 right-0 flex items-center px-3 text-gray-600 cursor-pointer"
       >
-        <Icon
-          :name="showPassword ? 'iconoir:eye-alt' : 'iconoir:eye-close'"
-          class="h-5 w-5"
-          @click="showPassword = !showPassword"
-        />
+        <Icon @click="showPassword = !showPassword" :name="showPassword ? 'iconoir:eye-alt' : 'iconoir:eye-close'" class="w-5 h-5" />
       </div>
 
       <div
         v-if="icon"
         class="absolute inset-y-0 left-0 flex items-center px-3 text-gray-500"
       >
-        <Icon :name="icon" class="h-5 w-5" />
+        <Icon :name="icon" class="w-5 h-5" />
       </div>
     </div>
     <div
       v-if="!!errorMessage"
-      class="mt-1 text-xs text-red-500 dark:text-red-500"
+      class="text-xs text-red-500 dark:text-red-500 mt-1 absolute -bottom-5 right-0"
     >
       {{ errorMessage }}
     </div>

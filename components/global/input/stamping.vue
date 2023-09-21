@@ -1,7 +1,4 @@
 <script setup>
-import VuePdfEmbed from "vue-pdf-embed";
-import Vue3DraggableResizable from "vue3-draggable-resizable";
-import "vue3-draggable-resizable/dist/Vue3DraggableResizable.css";
 import { computed, toRef, useSlots } from "vue";
 import { useField } from "vee-validate";
 
@@ -44,14 +41,12 @@ const props = defineProps({
   },
   stamp_image: {
     type: String,
-    default: "/images/logo-ematerai.png",
   },
   source: {
     type: String,
-    default:
-      "https://afrovenator.digitalevent.id/ptba/file/file_1622775526_Notulen%20Kebijakan%20ITMS.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=Omi2rSOjfWRDE4816slEp7KxiCbkxz3N%2F20230907%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230907T034603Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=d789b6fc7cc49d0a66828f4f7f4062e5b0be11a700ec866677ba5ac283e44a6a",
   },
 });
+const emit = defineEmits();
 const name = toRef(props, "name");
 const {
   value: inputValue,
@@ -73,6 +68,7 @@ const npwpvalue = computed({
 // data
 var pdfRef = ref(null);
 var imageStamping = ref(null);
+// var rendered_component = ref(false);
 
 var viewpdf = ref({
   page: 1,
@@ -96,10 +92,10 @@ const print = (event) => {
 const handleDocumentRender = (args) => {
   viewpdf.value.pageCount = pdfRef.value.pageCount;
   viewpdf.value.canvasWidth = Number(
-    document.getElementById("canvas_content").clientWidth.toFixed(),
+    document.getElementById("canvas_content").clientWidth.toFixed()
   );
   viewpdf.value.canvasHight = Number(
-    document.getElementById("canvas_content").clientHeight.toFixed(),
+    document.getElementById("canvas_content").clientHeight.toFixed()
   );
 };
 
@@ -110,24 +106,71 @@ const handleImageStampeOnloaded = (e) => {
 };
 
 const stampOnChange = () => {
-  var stamp_data = {
-    canvas_width: viewpdf.value.canvasWidth,
-    canvas_height: viewpdf.value.canvasHight,
-    canvas_page: viewpdf.value.page,
-    canvas_total_page: viewpdf.value.pageCount,
-    stamp_x_left: stamp_cordinate.value.x,
-    stamp_y_top: stamp_cordinate.value.y,
-    stamp_x_right:
-      viewpdf.value.canvasWidth -
-      (stamp_cordinate.value.x + stamp_cordinate.value.w),
-    stamp_y_bottom:
-      viewpdf.value.canvasHight -
-      (stamp_cordinate.value.y + stamp_cordinate.value.h),
-    stamp_width: stamp_cordinate.value.w,
-    stamp_height: stamp_cordinate.value.h,
-  };
-  handleChange(JSON.stringify(stamp_data));
+  // var stamp_data = {
+  //   canvas_width: viewpdf.value.canvasWidth,
+  //   canvas_height: viewpdf.value.canvasHight,
+  //   canvas_page: viewpdf.value.page,
+  //   canvas_total_page: viewpdf.value.pageCount,
+  //   stamp_x_left: stamp_cordinate.value.x,
+  //   stamp_y_top: stamp_cordinate.value.y,
+  //   stamp_x_right:
+  //     viewpdf.value.canvasWidth -
+  //     (stamp_cordinate.value.x + stamp_cordinate.value.w),
+  //   stamp_y_bottom:
+  //     viewpdf.value.canvasHight -
+  //     (stamp_cordinate.value.y + stamp_cordinate.value.h),
+  //   stamp_width: stamp_cordinate.value.w,
+  //   stamp_height: stamp_cordinate.value.h,
+  // };
+  // handleChange(JSON.stringify(stamp_data));
+  // emit("update:value", JSON.stringify(stamp_data));
   // console.log("stampOnChange", );
+
+  var canvas_width = viewpdf.value.canvasWidth;
+  var canvas_height = viewpdf.value.canvasHight;
+  var tempactualWidth = document
+    .getElementById("parent_canvas")
+    .getBoundingClientRect()
+    .width.toFixed();
+  var tempactualHeight = document
+    .getElementById("parent_canvas")
+    .getBoundingClientRect()
+    .height.toFixed();
+  var page = viewpdf.value.page;
+  var scale = tempactualWidth / canvas_width;
+
+  var x2 = stamp_cordinate.value.x + stamp_cordinate.value.w;
+  var y2 = stamp_cordinate.value.y + stamp_cordinate.value.h;
+  var visLLX = stamp_cordinate.value.x * scale;
+  var visLLY = tempactualHeight - 13 - y2 * scale;
+
+  if (visLLX < 0) {
+    var visLLX = 0;
+  }
+
+  if (visLLY < 0) {
+    var visLLY = 0;
+  }
+
+  // "lowerLeftX": "",
+  //   "lowerLeftY": "",
+  //   "upperRightX": "",
+  //   "upperRightY": "",
+
+  var data_cordinate = {
+    lowerLeftX: visLLX,
+    lowerLeftY: visLLY,
+    upperRightX: x2 * scale,
+    upperRightY: tempactualHeight - 13 - stamp_cordinate.value.y * scale,
+    canvasWidth: canvas_width,
+    canvasHeight: canvas_height,
+    page: page,
+  };
+
+  // console.log("data_cordinate", data_cordinate);
+  handleChange(JSON.stringify(data_cordinate));
+  emit("update:value", data_cordinate);
+
   // let canvasWidth = viewpdf.value.canvasWidth;
   // let canvasHeight = viewpdf.value.canvasHight;
   // let x = parseFloat(stamp_cordinate.value.x);
@@ -192,22 +235,36 @@ const stampOnChange = () => {
   //   profileName: "emeteraicertificateSigner",
   // });
 };
+
+// onMounted(() => {
+//   console.log("onMounted");
+//   rendered_component.value = true;
+// })
+
+// onUnmounted(() => {
+//   console.log("onUnmounted");
+//   rendered_component.value = false;
+// })
 </script>
 
 <template>
-  <div class="flex h-full w-full justify-center">
+  <div v-if="source" class="w-full h-full flex justify-center relative">
     <ClientOnly>
       <div
         id="parent_canvas"
-        class="relative h-full w-fit border-dotted border-gray-400"
+        class="border-dotted border-gray-400 relative w-full h-full"
       >
-        <VuePdfEmbed
+        <vue-pdf-embed
           id="canvas_content"
           ref="pdfRef"
           :page="viewpdf.page"
           :source="source"
-          class="absolute"
           @rendered="handleDocumentRender"
+          class="absolute w-full border"
+          :class="{
+            'border-red-500 ': !!errorMessage,
+            'is-disabled bg-gray-400 cursor-not-allowed': disabled,
+          }"
         />
         <div
           id="materai_canvas"
@@ -216,21 +273,20 @@ const stampOnChange = () => {
             width: `${viewpdf.canvasWidth}px`,
           }"
         >
-          <Vue3DraggableResizable
-            v-if="viewpdf.canvasWidth && stamp_image"
+          <vue3-draggable-resizable
+            v-if="viewpdf.canvasWidth && stamp_image && !readonly"
+            :initW="Number(viewpdf.canvasWidth * 0.11)"
+            :initH="Number(viewpdf.canvasHight * 0.11)"
             v-model:x="stamp_cordinate.x"
             v-model:y="stamp_cordinate.y"
             v-model:w="stamp_cordinate.w"
             v-model:h="stamp_cordinate.h"
             v-model:active="stamp_cordinate.active"
-            :init-w="Number(viewpdf.canvasWidth * 0.11)"
-            :init-h="Number(viewpdf.canvasHight * 0.11)"
             :draggable="true"
             :resizable="true"
-            :lock-aspect-ratio="true"
+            :lockAspectRatio="true"
             :parent="true"
             :handles="['tl', 'tm', 'tr', 'ml', 'mr', 'bl', 'bm', 'br']"
-            class-name-draggable="bg-no-repeat bg-cover bg-center relative"
             @activated="print('activated')"
             @deactivated="print('deactivated')"
             @drag-start="print('drag-start')"
@@ -239,11 +295,12 @@ const stampOnChange = () => {
             @resizing="print('resizing')"
             @drag-end="stampOnChange()"
             @resize-end="stampOnChange()"
+            classNameDraggable="bg-no-repeat bg-cover bg-center relative"
           >
             <img
               id="imageStamping"
               :src="stamp_image"
-              class="basolute w-full"
+              class="w-full basolute"
               alt="stamp_image"
               draggable="false"
               @load="
@@ -252,8 +309,66 @@ const stampOnChange = () => {
                 }
               "
             />
-          </Vue3DraggableResizable>
+          </vue3-draggable-resizable>
         </div>
+        <!-- up navigation -->
+        <div
+          class="flex justify-between items-center absolute top-0 w-full bg-slate-50"
+        >
+          <button
+            type="button"
+            :disabled="viewpdf.page === 1"
+            @click="viewpdf.page--"
+            class="bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-l"
+          >
+            Sebelumnya
+          </button>
+          <div class="flex items-center">
+            <span class="">
+              Page {{ viewpdf.page }} of {{ viewpdf.pageCount }}
+            </span>
+          </div>
+          <button
+            type="button"
+            :disabled="viewpdf.page === viewpdf.pageCount"
+            @click="viewpdf.page++"
+            class="bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-r"
+          >
+            Selanjutnya
+          </button>
+        </div>
+        <!-- bottom navigation -->
+        <div
+          class="flex justify-between items-center absolute bottom-0 w-full bg-slate-50"
+        >
+          <button
+            type="button"
+            :disabled="viewpdf.page === 1"
+            @click="viewpdf.page--"
+            class="bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-l"
+          >
+            Sebelumnya
+          </button>
+          <div class="flex items-center">
+            <span class="">
+              Page {{ viewpdf.page }} of {{ viewpdf.pageCount }}
+            </span>
+          </div>
+          <button
+            type="button"
+            :disabled="viewpdf.page === viewpdf.pageCount"
+            @click="viewpdf.page++"
+            class="bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-r"
+          >
+            Selanjutnya
+          </button>
+        </div>
+      </div>
+      <div
+        v-if="!!errorMessage"
+        class="text-xs text-red-500 dark:text-red-500 mt-1 absolute -bottom-5 right-0"
+      >
+        {{ errorMessage }}
       </div>
     </ClientOnly>
   </div>

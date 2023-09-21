@@ -51,6 +51,10 @@ const props = defineProps({
     type: String,
     default: "",
   },
+  inline: {
+    type: Boolean,
+    default: false,
+  },
 });
 const name = toRef(props, "name");
 const {
@@ -109,21 +113,22 @@ const formatDate = (date) => {
 </script>
 
 <template>
-  <div class="mb-6 last:mb-0" :class="{ success: meta.valid }">
+  <div class="my-3 first:mt-0 last:mb-0 w-full relative" :class="{ success: meta.valid, 'inline-flex items-center': inline }">
     <label
       v-if="label"
       :for="name"
-      class="form-label mb-2 block"
+      class="form-label block mb-2 w-40"
       :class="{
-        'font-bold text-red-500': !!errorMessage,
+        'text-red-500 font-bold': !!errorMessage,
+        'inline-block mr-2': inline,
       }"
     >
       <span v-if="primary">
-        <span class="font-bold text-red-500">*</span>
+        <span class="text-red-500 font-bold">*</span>
       </span>
       {{ label }}</label
     >
-    <div class="relative">
+    <div class="relative w-full">
       <VueDatePicker
         :id="name"
         v-model="datevalue"
@@ -136,26 +141,27 @@ const formatDate = (date) => {
         :input-class-name="
           !!errorMessage ? 'border-red-500 dark:border-red-500' : ''
         "
-        class="form-control block w-full"
+        class="w-full block bg-white rounded-[9px] shadow border border-gray-300"
         :enable-time-picker="true"
         :min-date="min ? new Date(min) : null"
         :max-date="max ? new Date(max) : null"
         :start-time="startTime"
         :dark="darkMode"
         @blur="handleBlur"
+        hide-input-icon
       >
       </VueDatePicker>
 
       <div
         v-if="icon"
-        class="absolute inset-y-0 left-0 flex items-center px-3 text-gray-600"
+        class="absolute inset-y-0 left-0 flex items-center px-3 text-gray-500"
       >
-        <component :is="icon" />
+        <Icon :name="icon" class="w-5 h-5" />
       </div>
     </div>
     <div
       v-if="!!errorMessage"
-      class="mt-1 text-xs text-red-500 dark:text-red-500"
+      class="text-xs text-red-500 dark:text-red-500 mt-1 absolute -bottom-5 right-0"
     >
       {{ errorMessage }}
     </div>

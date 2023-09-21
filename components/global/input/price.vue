@@ -35,6 +35,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  inline: {
+    type: Boolean,
+    default: false,
+  },
 });
 const name = toRef(props, "name");
 const {
@@ -107,27 +111,27 @@ const sparatorformater = (value) => {
 </script>
 
 <template>
-  <div class="mb-6 last:mb-0" :class="{ success: meta.valid }">
+  <div class="mb-6 last:mb-0" :class="{ success: meta.valid, 'inline-flex items-center': inline }">
     <label
       v-if="label"
       :for="name"
-      class="form-label mb-2 block"
+      class="form-label block mb-2 mr-2"
       :class="{
-        'font-bold text-red-500': !!errorMessage,
+        'text-red-500 font-bold': !!errorMessage,
       }"
     >
       <span v-if="primary">
-        <span class="font-bold text-red-500">*</span>
+        <span class="text-red-500 font-bold">*</span>
       </span>
-      {{ label }}</label
-    >
+      {{ label }}
+    </label>
     <div class="relative">
       <input
         :id="name"
         v-model="npwpvalue"
         :name="name"
         type="text"
-        class="form-control block w-full"
+        class="form-control w-full block"
         :class="{
           'border-red-500 dark:border-red-500': !!errorMessage,
           'pl-10': !!icon,
@@ -159,7 +163,7 @@ const sparatorformater = (value) => {
     </div>
     <div
       v-if="!!errorMessage"
-      class="mt-1 text-xs text-red-500 dark:text-red-500"
+      class="text-xs text-red-500 dark:text-red-500 mt-1 absolute -bottom-3 right-0"
     >
       {{ errorMessage }}
     </div>

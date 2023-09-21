@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { defineNuxtConfig } from 'nuxt/config'
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
   components: ["~/components"],
@@ -27,4 +29,12 @@ export default defineNuxtConfig({
       "postcss-advanced-variables": {},
     },
   },
+  // ssr: true,
+  // nitro: {
+  // //   baseURL: "http://localhost:8000",
+  //   prerender: {
+  //     crawlLinks: true,
+  //     failOnError: true, 
+  //   },
+  // },
 });

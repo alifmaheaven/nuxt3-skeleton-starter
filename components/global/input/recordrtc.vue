@@ -1,6 +1,7 @@
 <script setup>
 // config
 useHead({
+  title: "Login",
   script: [
     {
       src: "/_nuxt/eksternal/RecordRTC/RecordRTC.js",
