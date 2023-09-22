@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-login inline-flex items-center justify-center">
+  <div class="bg-login bg-light inline-flex items-center justify-center">
     <slot />
   </div>
   <LayoutLanguagedarkswitcher />
@@ -12,8 +12,11 @@
 .bg-login {
   height: 100vh;
   width: 100vw;
-  background-image: url("/images/bg-login.jpeg");
+  background-image: url("/images/bg-login3.png");
   background-size: cover;
-  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  // margin: 0;
+  background-position: top center;
 }
 </style>

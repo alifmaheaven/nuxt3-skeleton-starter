@@ -142,9 +142,9 @@ const formatDate = (date) => {
           'pl-10': !!icon,
         }"
         :input-class-name="
-          !!errorMessage ? 'border-red-500 dark:border-red-500' : ''
+          !!errorMessage ? '!border-red-500 !dark:border-red-500' : ''
         "
-        class="block w-full rounded-[9px] border border-gray-300 bg-white shadow"
+        class="block w-full rounded-[9px] border text-dark border-slate-300 bg-slate-50 shadow"
         :enable-time-picker="true"
         :min-date="min ? new Date(min) : null"
         :max-date="max ? new Date(max) : null"

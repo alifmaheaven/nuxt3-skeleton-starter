@@ -97,7 +97,7 @@ const reset = () => {
       v-if="!!!inputValue"
       class="relative h-80 w-full border bg-white shadow-md"
       :class="{
-        'border-red-500 dark:border-red-500': !!errorMessage,
+        '!border-red-500 !dark:border-red-500': !!errorMessage,
       }"
     >
       <button

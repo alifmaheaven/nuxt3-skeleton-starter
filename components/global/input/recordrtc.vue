@@ -286,7 +286,7 @@ const {
     <div
       class="inline-flex h-full w-full flex-col items-center justify-center gap-6 rounded-xl border border-gray-200 bg-gray-50 px-16 py-8"
       :class="{
-        'border-red-500 dark:border-red-500': !!errorMessage,
+        '!border-red-500 !dark:border-red-500': !!errorMessage,
       }"
     >
       <div
@@ -332,14 +332,14 @@ const {
         </button>
         <div
           id="videoContainer"
-          class="w-full rounded-[9px] border border-gray-300 bg-white shadow"
+          class="w-full rounded-[9px] border text-dark border-slate-300 bg-slate-50 shadow"
           :class="{
-            'border-red-500 dark:border-red-500': !!errorMessage,
+            '!border-red-500 !dark:border-red-500': !!errorMessage,
           }"
           style="background-color: #cccccc; position: relative; display: none"
         >
           <video
-            class="w-full rounded-[9px] border border-gray-300 bg-white shadow"
+            class="w-full rounded-[9px] border text-dark border-slate-300 bg-slate-50 shadow"
             style="position: relative; z-index: 0"
             id="selfVideo"
             width="100%"
@@ -455,14 +455,14 @@ const {
         </button> -->
         <div
           id="videoContainer"
-          class="rounded-[9px] border border-gray-300 bg-white shadow"
+          class="rounded-[9px] border text-dark border-slate-300 bg-slate-50 shadow"
           :class="{
-            'border-red-500 dark:border-red-500': !!errorMessage,
+            '!border-red-500 !dark:border-red-500': !!errorMessage,
           }"
           style="background-color: #cccccc; position: relative; display: none"
         >
           <video
-            class="rounded-[9px] border border-gray-300 bg-white shadow"
+            class="rounded-[9px] border text-dark border-slate-300 bg-slate-50 shadow"
             style="position: relative; z-index: 0"
             id="selfVideo"
             width="100%"

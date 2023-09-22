@@ -1,6 +1,6 @@
 
 <template>
-    <div class="shadow-md absolute bottom-3 right-3 border flex flex-row bg-slate-50 p-1">
+    <div class="shadow-md absolute bottom-3 right-3 border border-slate-500 rounded-full flex flex-row bg-slate-400 p-1">
     <form class="mr-4">
       <!-- <label for="locale-select" class="mb-2 block font-bold text-gray-700"
         >{{ $t("language") }}:</label
@@ -9,9 +9,9 @@
         <select
           id="locale-select"
           v-model="localeValue"
-          class="focus:shadow-outline-blue block appearance-none rounded border border-gray-400 bg-white dark:bg-gray-800 dark:text-white px-4 py-2 pr-8 leading-tight shadow hover:border-gray-500 focus:border-blue-500 focus:outline-none dark:border-gray-600"
+          class="focus:shadow-outline-blue block appearance-none rounded-full border border-gray-400 bg-white dark:bg-gray-800 dark:text-white px-4 py-2 pr-8 leading-tight shadow hover:border-gray-500 focus:border-blue-500 focus:outline-none dark:border-gray-600 cursor-pointer"
         >
-          <option v-for="value in availableLocales" :value="value">{{value}}</option>
+          <option class="cursor-pointer" v-for="value in availableLocales" :value="value">{{value}}</option>
         </select>
       </div>
     </form>

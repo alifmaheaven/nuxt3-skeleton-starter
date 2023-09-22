@@ -53,7 +53,7 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
 </script>
 
 <template>
-  <div class="inline-flex min-h-max max-w-[23rem] items-center justify-center">
+  <div class="inline-flex min-h-fit max-w-[23rem] items-center justify-center">
     <div
       class="inline-flex shrink grow basis-0 flex-col items-center justify-start rounded-xl border border-slate-200 bg-slate-50 shadow"
     >
@@ -81,12 +81,12 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
             <div
               class="self-stretch text-center text-2xl font-semibold leading-loose text-primary"
             >
-              Login
+              Register
             </div>
             <div
               class="self-stretch text-center text-base font-normal leading-normal text-slate-600"
             >
-              Mohon masukkan kredensial Anda di bawah ini
+              Mohon daftarkan akun Anda di bawah ini
             </div>
           </div>
         </div>
@@ -126,18 +126,18 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
             class="inline-flex items-center justify-center gap-1 self-stretch"
           >
             <div class="text-sm font-normal leading-tight text-slate-600">
-              Belum memiliki akun?
+              Sudah memiliki akun ?
             </div>
             <div class="flex items-center justify-center gap-2">
               <NuxtLink
-                to="/auth/register"
+                to="/auth/login"
                 class="text-sm font-semibold leading-tight text-primary"
               >
-                Daftar sekarang
+                Login sekarang
               </NuxtLink>
             </div>
           </div>
-          <div class="inline-flex items-start justify-center gap-1">
+          <!-- <div class="inline-flex items-start justify-center gap-1">
             <div class="flex items-center justify-center gap-2">
               <NuxtLink
                 to="/auth/forgot-password"
@@ -146,7 +146,7 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
                 Lupa password
               </NuxtLink>
             </div>
-          </div>
+          </div> -->
         </div>
       </form>
     </div>

@@ -83,9 +83,9 @@ var valueChange = computed({
         :id="name"
         :name="name"
         type="text"
-        class="block w-full rounded-[9px] border border-gray-300 bg-white shadow"
+        class="block w-full rounded-[9px] border border-slate-300 bg-slate-50 shadow text-dark"
         :class="{
-          'border-red-500 dark:border-red-500': !!errorMessage,
+          '!border-red-500 !dark:border-red-500': !!errorMessage,
           'pl-10': !!icon,
           'inline-block': inline,
         }"
@@ -96,7 +96,7 @@ var valueChange = computed({
       />
       <div
         v-if="icon"
-        class="absolute inset-y-0 left-0 flex items-center px-3 text-gray-500"
+        class="absolute inset-y-0 left-0 flex items-center px-3 text-slate-500"
       >
         <Icon :name="icon" class="h-5 w-5" />
       </div>

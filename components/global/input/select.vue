@@ -93,7 +93,7 @@ const dropdowninput = computed({
         :disabled="disabled || readonly"
         value-prop="id"
         :options="options"
-        class="block !rounded-[9px] border border-gray-300 bg-white shadow"
+        class="block !rounded-[9px] border text-dark border-slate-300 bg-slate-50 shadow"
         :class="{
           '!dark:border-red-500 !border-red-500': !!errorMessage,
           'pl-10': !!icon,

@@ -1,13 +1,16 @@
 <template>
   <ClientOnly>
     <button
-      :class="[buttonClass]"
-      :style="buttonStyle"
-      :type="buttonType"
+      :class="{
+        [`${props.class}`] : true,
+        'cursor-not-allowed opacity-50' : !!isLoading,
+      }"
+      :style="props.style"
+      :type="props.type"
       :disabled="isLoading"
     >
       <slot v-if="!!!isLoading"></slot>
-      <span v-if="!!isLoading">Loading...</span>
+      <span v-if="!!isLoading"><Icon name="eos-icons:hourglass" /> Loading...</span>
       <!-- <LoadingIcon
       v-if="!!isLoading"
       icon="spinning-circles"
@@ -23,19 +26,20 @@ import { useAuth } from "@/stores/auth";
 const authStore = useAuth();
 
 const props = defineProps({
-  buttonClass: {
+  class: {
     type: String,
     default: "btn",
   },
-  buttonStyle: {
+  style: {
     type: Object,
     default: () => {},
   },
-  buttonType: {
+  type: {
     type: String,
     default: "button",
   },
 });
 
 const isLoading = computed(() => authStore.isLoading);
+// const isLoading = computed(() => true);
 </script>

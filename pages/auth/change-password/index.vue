@@ -110,8 +110,8 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
           class="flex min-h-min flex-col items-start justify-start gap-3 self-stretch"
         >
           <GlobalButton
-            button-class="self-stretch px-5 py-3 bg-gray-600 rounded-lg shadow border border-gray-600 justify-center items-center gap-2 inline-flex text-white text-base font-semibold leading-normal"
-            button-type="submit"
+            class="self-stretch px-5 py-3 bg-gray-600 rounded-lg shadow border border-gray-600 justify-center items-center gap-2 inline-flex text-white text-base font-semibold leading-normal"
+            type="submit"
           >
             Masuk
           </GlobalButton>
