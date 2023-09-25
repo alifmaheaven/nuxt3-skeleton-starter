@@ -1,12 +1,12 @@
-import { createI18n } from "vue-i18n";
-import { useLayout  } from "@/stores/layout";
+import * as i18n from "vue-i18n";
+import { useLayout } from "@/stores/layout";
 import en from "../locales/en.json";
 import fr from "../locales/fr.json";
 import ja from "../locales/ja.json";
 import id from "../locales/id.json";
 
-export default defineNuxtPlugin(({ vueApp }) => {
-  const i18n = createI18n({
+export default defineNuxtPlugin(( nuxtApp ) => {
+  const i18nCreate = i18n.createI18n({
     legacy: false,
     globalInjection: true,
     locale: useLayout().language,
@@ -18,5 +18,10 @@ export default defineNuxtPlugin(({ vueApp }) => {
     },
   });
 
-  vueApp.use(i18n);
+  nuxtApp.vueApp.use(i18nCreate);
+  return {
+    provide: {
+      i18n:i18n,
+    },
+  };
 });

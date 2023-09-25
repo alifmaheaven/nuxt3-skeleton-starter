@@ -1,6 +1,7 @@
-
 <template>
-    <div class="shadow-md absolute bottom-3 right-3 border border-slate-500 rounded-full flex flex-row bg-slate-400 p-1">
+  <div
+    class="fixed bottom-3 right-3 flex flex-row rounded-full border border-slate-500 bg-slate-400 p-1 shadow-md"
+  >
     <form class="mr-4">
       <!-- <label for="locale-select" class="mb-2 block font-bold text-gray-700"
         >{{ $t("language") }}:</label
@@ -9,28 +10,42 @@
         <select
           id="locale-select"
           v-model="localeValue"
-          class="focus:shadow-outline-blue block appearance-none rounded-full border border-gray-400 bg-white dark:bg-gray-800 dark:text-white px-4 py-2 pr-8 leading-tight shadow hover:border-gray-500 focus:border-blue-500 focus:outline-none dark:border-gray-600 cursor-pointer"
+          class="focus:shadow-outline-blue block cursor-pointer appearance-none rounded-full border border-gray-400 bg-white px-4 py-2 pr-8 leading-tight shadow hover:border-gray-500 focus:border-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-800 dark:text-white"
         >
-          <option class="cursor-pointer" v-for="value in availableLocales" :value="value">{{value}}</option>
+          <option
+            class="cursor-pointer"
+            v-for="value in availableLocales"
+            :value="value"
+          >
+            {{ value }}
+          </option>
         </select>
       </div>
     </form>
     <div class="flex items-center justify-end">
-      <button @click="darkMode" class="shadow-sm p-1 bg-white text-black dark:bg-black dark:text-white flex justify-center items-center rounded-full cursor-pointer">
-        <Icon name="material-symbols:dark-mode" class="relative h-8 w-8 visible dark:collapse" />
-        <Icon name="material-symbols:light-mode" class="relative h-8 w-8 invisible dark:visible" />
+      <button
+        @click="darkMode()"
+        class="flex cursor-pointer items-center justify-center rounded-full bg-white p-1 text-black shadow-sm dark:bg-black dark:text-white"
+      >
+        <Icon
+          name="material-symbols:dark-mode"
+          class="visible relative h-8 w-8 dark:collapse"
+        />
+        <Icon
+          name="material-symbols:light-mode"
+          class="invisible relative h-8 w-8 dark:visible"
+        />
       </button>
     </div>
   </div>
 </template>
 
 <script setup>
+const { $api, $i18n } = useNuxtApp();
 import { useLayout } from "@/stores/layout";
-import { useI18n } from 'vue-i18n'
-
 
 const layoutStore = useLayout();
-const { locale, availableLocales } = useI18n()
+const { locale, availableLocales } = $i18n.useI18n();
 
 const localeValue = computed({
   get() {
@@ -38,12 +53,11 @@ const localeValue = computed({
   },
   set(value) {
     locale.value = value;
-    layoutStore.languageSwitch(value)
+    layoutStore.languageSwitch(value);
   },
 });
 
 const darkMode = () => {
-  layoutStore.thameSwitch()
-}
-
+  layoutStore.thameSwitch();
+};
 </script>
