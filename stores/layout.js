@@ -6,7 +6,7 @@ export const useLayout = defineStore("layout", {
     language_data: "",
   }),
   getters: {
-    theme: (state) => state.dark_data || useCookie('theme').value || 'dark' ,
+    theme: (state) => state.theme_data || useCookie('theme').value || 'dark' ,
     language: (state) => state.language_data || useCookie('language').value || 'id',
   },
   actions: {

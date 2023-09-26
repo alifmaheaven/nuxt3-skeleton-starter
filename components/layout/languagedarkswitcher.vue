@@ -24,6 +24,7 @@
     </form>
     <div class="flex items-center justify-end">
       <button
+        id="btn-dark-mode"
         @click="darkMode()"
         class="flex cursor-pointer items-center justify-center rounded-full bg-white p-1 text-black shadow-sm dark:bg-black dark:text-white"
       >
@@ -60,4 +61,13 @@ const localeValue = computed({
 const darkMode = () => {
   layoutStore.thameSwitch();
 };
+
+onMounted(() => {
+  document.body.classList = `${layoutStore.theme} bg-light`;
+  document
+    .getElementById("btn-dark-mode")
+    .addEventListener("click", function () {
+      document.body.classList = `${layoutStore.theme} bg-light`;
+    });
+});
 </script>
