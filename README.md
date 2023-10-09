@@ -142,6 +142,10 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 - [x] 💨 [Tailwind CSS v3](https://tailwindcss.com/)
 
+- [x] 📄 [Tailwind Forms](https://tailwindcss.com/docs/forms)
+
+- [x] 📄 [Tailwind Elements](https://tailwind-elements.com/)
+
 - [x] 📄 [Vue Form](https://vueform.com/)
 
 - [x] 📄 [Vee Validate](https://vee-validate.logaretm.com/v4/)
@@ -172,7 +176,6 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 - [x] 📦 [PNPM](https://pnpm.io/)
 
-  
 
 ## How to use all component inside
 

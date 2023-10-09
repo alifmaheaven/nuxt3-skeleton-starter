@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
 import colors from "tailwindcss/colors";
 const tailwindForms = require("@tailwindcss/forms");
-const flowbite = require("flowbite/plugin");
+const twElemenets = require("tw-elements/dist/plugin.cjs");
 
 export default <Partial<Config>>{
   mode: "jit",
@@ -91,5 +91,5 @@ export default <Partial<Config>>{
   borderColor: (theme: any) => ({
     ...theme("colors"),
   }),
-  plugins: [tailwindForms, flowbite],
+  plugins: [tailwindForms, twElemenets],
 };
