@@ -11,3 +11,10 @@ export default defineNuxtPlugin((nuxtApp) => {
   });
   // nuxtApp.vueApp.use(twElements);
 });
+
+// if not working try this at page or layout you want implement tw element 
+
+// onMounted(async () => {
+//   const { Collapse, initTE } = await import("tw-elements");
+//   initTE({ Collapse });
+// });
