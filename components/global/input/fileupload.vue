@@ -21,10 +21,10 @@ const props = defineProps({
     type: String,
     default: "",
   },
-  // icon: {
-  //   type: String,
-  //   default: mdiFile,
-  // },
+  icon: {
+    type: String,
+    default: 'mdi:file-document-outline',
+  },
   disabled: {
     type: Boolean,
     default: false,
@@ -36,6 +36,14 @@ const props = defineProps({
   primary: {
     type: Boolean,
     default: false,
+  },
+  accept: {
+    type: String,
+    default: ".pdf",
+  },
+  comment: {
+    type: String,
+    default: "PDF, DOC, DOCX. (max: 10MB)",
   },
 });
 const name = toRef(props, "name");
@@ -69,33 +77,31 @@ const changeFile = async (event) => {
   let files = event.target.files;
   log_file.value.push(files[0]);
   var base64 = await toBase64(files[0]);
-  log_base64.value.push({ base64, name: files[0].name });
   handleChange(log_base64.value);
 };
 
 const removeFile = (index) => {
   log_base64.value.splice(index, 1);
   log_file.value.splice(index, 1);
-  console.log(log_base64.value);
   handleChange(log_base64.value);
 };
 </script>
 
 <template>
   <div
-    class="relative my-3 h-full w-full first:mt-0 last:mb-0"
+    class="my-3 first:mt-0 last:mb-0 w-full relative h-full"
     :class="{ success: meta.valid }"
   >
     <label
       v-if="label"
       :for="name"
-      class="mb-2 block font-bold"
+      class="block mb-2"
       :class="{
         'text-red-500': !!errorMessage,
       }"
     >
       <span v-if="primary">
-        <span class="font-bold text-red-500">*</span>
+        <span class="text-red-500 font-bold">*</span>
       </span>
       {{ label }}</label
     >
@@ -103,55 +109,55 @@ const removeFile = (index) => {
       <label
         :class="{
           'border-red-500 ': !!errorMessage,
-          'border-gray-700': !!!errorMessage,
-          'is-disabled cursor-not-allowed bg-gray-400': disabled,
+          'border-gray-300': !!!errorMessage,
+          'is-disabled bg-gray-400 cursor-not-allowed': disabled,
         }"
-        class="flex h-full shrink grow basis-0 flex-col items-center justify-center self-stretch rounded-[10px] border border-gray-200 bg-white"
+        class="h-full self-stretch grow shrink basis-0 bg-white rounded-[10px] border border-gray-200 flex-col justify-center items-center flex"
       >
         <div
           v-if="!!log_file?.length"
-          class="flex h-full w-full flex-col items-center justify-center gap-4 rounded-[10px]"
+          class="w-full h-full flex-col justify-center items-center gap-4 flex rounded-[10px]"
         >
-          <div class="relative grid w-full grid-cols-1 gap-2 px-2">
+          <div class="grid grid-cols-1 gap-2 relative w-full px-2">
             <div
               v-for="(item, index) in log_file"
               :key="index"
               :class="{ 'border-red-500 ': !!errorMessage }"
-              class="group relative inline-flex w-full items-center rounded-lg border bg-white p-3 shadow-sm"
+              class="bg-white rounded-lg shadow-sm border p-3 inline-flex items-center w-full relative group"
             >
-              <div class="flex grow-0 items-center text-lg font-semibold">
+              <div class="grow-0 text-lg font-semibold flex items-center">
                 <Icon
-                  name="mdi:file-document-outline"
-                  class="relative h-10 w-10"
+                  :name="icon"
+                  class="w-10 h-10 relative"
                 />
               </div>
-              <div class="grow truncate p-2 text-gray-600">
+              <div class="grow text-gray-600 p-2 truncate">
                 {{ item?.name }}
               </div>
               <div
-                class="absolute -top-8 hidden w-full items-center justify-center rounded-lg p-1 group-hover:inline-flex"
+                class="hidden rounded-lg p-1 group-hover:inline-flex justify-center items-center w-full absolute -top-8"
               >
                 <label
-                  class="grow-0 cursor-pointer rounded-lg bg-white p-2 text-green-500 shadow-md hover:bg-green-500 hover:text-white"
+                  class="grow-0 bg-white shadow-md text-green-500 p-2 rounded-lg hover:bg-green-500 hover:text-white cursor-pointer"
                 >
-                  <Icon name="material-symbols:add" class="relative h-5 w-5" />
+                  <Icon name="material-symbols:add" class="w-5 h-5 relative" />
                   <input
                     :id="name"
                     :name="name"
                     type="file"
                     class="hidden"
                     @change="changeFile"
-                    accept=".pdf"
+                    :accept="accept"
                   />
                 </label>
                 <button
                   type="button"
-                  class="grow-0 rounded-lg bg-white p-2 text-red-500 shadow-md hover:bg-red-500 hover:text-white"
+                  class="grow-0 bg-white shadow-md text-red-500 p-2 rounded-lg hover:bg-red-500 hover:text-white"
                   @click="removeFile(index)"
                 >
                   <Icon
                     name="material-symbols:delete-outline-rounded"
-                    class="relative h-5 w-5"
+                    class="w-5 h-5 relative"
                   />
                 </button>
               </div>
@@ -160,40 +166,40 @@ const removeFile = (index) => {
         </div>
         <div
           v-if="!!!log_file?.length"
-          class="flex h-full w-full cursor-pointer flex-col items-center justify-center gap-4 rounded-[10px] hover:bg-slate-100"
+          class="w-full h-full flex-col justify-center items-center gap-4 flex cursor-pointer hover:bg-slate-100 rounded-[10px]"
         >
           <div
-            class="flex h-[94px] flex-col items-center justify-start gap-3 self-stretch"
+            class="self-stretch h-[94px] flex-col justify-start items-center gap-3 flex"
           >
             <div
-              class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-gray-200 bg-white p-2.5 shadow"
+              class="w-10 h-10 p-2.5 bg-white rounded-lg shadow border border-gray-200 justify-center items-center inline-flex"
             >
               <Icon
                 name="ph:cloud-arrow-up-duotone"
-                class="relative flex h-5 w-5 flex-col items-start justify-start"
+                class="w-5 h-5 relative flex-col justify-start items-start flex"
               />
             </div>
             <div
-              class="flex h-[42px] flex-col items-center justify-start gap-1 self-stretch"
+              class="self-stretch h-[42px] flex-col justify-start items-center gap-1 flex"
             >
               <div
-                class="inline-flex items-start justify-center gap-1 self-stretch"
+                class="self-stretch justify-center items-start gap-1 inline-flex"
               >
-                <div class="flex items-center justify-center gap-2">
+                <div class="justify-center items-center gap-2 flex">
                   <div
-                    class="text-sm font-semibold leading-tight text-gray-700"
+                    class="text-gray-700 text-sm font-semibold leading-tight"
                   >
                     Klik untuk unggah
                   </div>
                 </div>
-                <div class="text-sm font-normal leading-tight text-slate-600">
+                <div class="text-slate-600 text-sm font-normal leading-tight">
                   atau drag & drop
                 </div>
               </div>
               <div
-                class="self-stretch text-center text-xs font-normal leading-[18px] text-slate-600"
+                class="self-stretch text-center text-slate-600 text-xs font-normal leading-[18px]"
               >
-                PDF, DOC, DOCX. (max: 10MB)
+              {{comment}}
               </div>
             </div>
           </div>
@@ -205,13 +211,13 @@ const removeFile = (index) => {
           type="file"
           class="hidden"
           @change="changeFile"
-          accept=".pdf"
+          :accept="accept"
         />
       </label>
     </div>
     <div
       v-if="!!errorMessage"
-      class="absolute -bottom-5 right-0 mt-1 text-xs text-red-500 dark:text-red-500"
+      class="text-xs text-red-500 dark:text-red-500 mt-1 absolute -bottom-5 right-0"
     >
       {{ errorMessage }}
     </div>
