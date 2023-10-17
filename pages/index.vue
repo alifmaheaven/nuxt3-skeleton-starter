@@ -2,6 +2,11 @@
 // layout
 definePageMeta({
   layout: "autenticated",
+  // middleware: ["auth"],
+  breadcrumb: {
+    text: "Kesesuaian Pengisian",
+    href: "/risk-function/performance-review/personnel-rm-admin/kesesuaian-pengisian-risk-register",
+  },
 });
 
 // import

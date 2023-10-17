@@ -3,13 +3,51 @@
 
 // import
 const { $api } = useNuxtApp();
-import { ref, computed } from "vue";
+import { useAuth } from "@/stores/auth";
 
 // define
-
+const authStore = useAuth();
+const router = useRouter();
 const route = useRoute();
+// const user_data = authStore.getProfile();
 
-console.log(route.href);
+const breadcrumbs = computed(() => {
+  return router.options.routes
+    .filter((value_router) => {
+      const current_route = route.path.split("/").filter((x) => x);
+      const route_value = value_router.path.split("/").filter((x) => x);
+      const isMatched = route_value.every((value_route_value) => {
+        if (value_route_value.indexOf(":") > -1) {
+          return route.params[
+            value_route_value.replace(":", "").replace("()", "")
+          ];
+        } else {
+          return current_route.includes(value_route_value);
+        }
+      });
+      return isMatched && value_router.meta && value_router.meta.breadcrumb;
+    })
+    .sort((a, b) => a.path.length - b.path.length)
+    .map((value) => {
+      Object.keys(route.params).forEach((key) => {
+        value.path = value.path.replace(`:${key}()`, route.params[key]);
+      });
+      return {
+        path: value.path,
+        meta: value.meta,
+      };
+    });
+});
+
+// tiap page kasih parameter breadcrumb. contoh :
+// definePageMeta({
+//   layout: "autentication",
+//   // middleware: ["auth"],
+//   breadcrumb: {
+//     text: "Kesesuaian Pengisian",
+//     href: "/risk-function/performance-review/personnel-rm-admin/kesesuaian-pengisian-risk-register",
+//   },
+// });
 
 // data
 
@@ -203,35 +241,34 @@ const sub_menu = computed(() => {
         >
           <div class="inline-flex h-7 w-full items-center justify-start">
             <div class="flex items-center justify-start gap-2">
-              <div class="flex flex-row items-center">
-                <div class="flex items-start justify-start rounded-md p-1">
-                  <Icon name="ri:home-6-line" class="relative h-5 w-5" />
-                </div>
-                <Icon
-                  name="material-symbols:arrow-forward-ios"
-                  class="relative h-4 w-4 text-slate-500"
-                />
+              <template
+                v-for="(value_breadcrumbs, index_breadcrumbs) in breadcrumbs"
+                :key="index_breadcrumbs"
+              >
                 <div
-                  class="flex items-center justify-center rounded-md px-2 py-1"
+                  class="inline-flex items-start justify-start rounded-md px-2 py-1"
                 >
-                  <div class="text-sm font-medium leading-tight text-slate-600">
-                    Overview
-                  </div>
-                </div>
-                <Icon
-                  name="material-symbols:arrow-forward-ios"
-                  class="relative h-4 w-4 text-slate-500"
-                />
-                <div
-                  class="flex items-center justify-center rounded-md bg-gray-50 px-2 py-1"
-                >
-                  <div
-                    class="text-sm font-semibold leading-tight text-slate-700"
+                  <NuxtLink
+                    :to="value_breadcrumbs.path"
+                    class="font-montserrat text-sm font-semibold leading-tight text-slate-700"
+                    :class="{
+                      'font-montserrat cursor-pointer text-sm font-normal text-slate-400':
+                        index_breadcrumbs != breadcrumbs.length - 1,
+                    }"
                   >
-                    Tanda Tangan Individu
-                  </div>
+                    <!-- <Icon
+                      name="material-symbols:arrow-forward-ios"
+                      class="w-4 h-4 relative text-slate-500"
+                    />  -->
+                    {{ value_breadcrumbs.meta.breadcrumb.text }}
+                  </NuxtLink>
                 </div>
-              </div>
+                <Icon
+                  v-if="index_breadcrumbs < breadcrumbs.length - 1"
+                  name="material-symbols:arrow-forward-ios"
+                  class="relative h-4 w-4 text-slate-500"
+                />
+              </template>
             </div>
           </div>
         </div>
