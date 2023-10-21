@@ -50,7 +50,7 @@ const props = defineProps({
   },
   dropdown_trackby: {
     type: String,
-    default: "id",
+    default: "name",
   },
   options: {
     type: Array,
@@ -68,9 +68,23 @@ const {
   meta,
 } = useField(name);
 
+const dropdowninput = computed({
+  get() {
+    return inputValue.value;
+  },
+  set(value) {
+    handleChange(value);
+    emit("update:value", value);
+  },
+});
+
 // method
+let getTimeOut = null;
 const functionSearch = (search) => {
-  emit("functionSearch", search);
+  clearTimeout(getTimeOut);
+  getTimeOut = setTimeout(() => {
+    emit("functionSearch", search);
+  }, 1000);
 };
 </script>
 
@@ -79,41 +93,42 @@ const functionSearch = (search) => {
     <label
       v-if="label"
       :for="name"
-      class="mb-2 block font-bold"
+      class="block  mb-2"
       :class="{
         'text-red-500': !!errorMessage,
       }"
     >
       <span v-if="primary">
-        <span class="font-bold text-red-500">*</span>
+        <span class="text-red-500 font-bold">*</span>
       </span>
       {{ label }}</label
     >
     <div>
       <div class="relative">
         <multiselect
-          :value="inputValue"
+          v-model="dropdowninput"
           :placeholder="placeholder"
           :loading="isloading"
           :disabled="disabled || readonly"
           :value-prop="dropdown_value"
           :options="options"
+          class="form-control w-full block"
+          :class="{
+            '!border-red-500 !dark:border-red-500': !!errorMessage,
+            'pl-10': !!icon,
+          }"
+          :classes="{
+            search: 'multiselect-search bg-transparent border-none',
+            dropdown:
+              'multiselect-dropdown bg-white dark:bg-darkmode-600 border-2 border-gray-300 dark:border-gray-700',
+          }"
           :label="dropdown_label"
+          :track-by="dropdown_trackby"
           :searchable="true"
           :preselect-first="false"
           :internal-search="false"
           @search-change="functionSearch"
-          @input="handleChange"
-          @blur="handleBlur"
         >
-          <!-- <template v-slot:tag="{ option, handleTagRemove, disabled }">
-            <slot
-              name="custom-label"
-              :option="option"
-              :handleTagRemove="handleTagRemove"
-              :disabled="disabled">
-            </slot>
-          </template> -->
         </multiselect>
       </div>
     </div>
