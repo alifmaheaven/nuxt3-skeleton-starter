@@ -19,7 +19,7 @@ const breadcrumbs = computed(() => {
       const isMatched = route_value.every((value_route_value) => {
         if (value_route_value.indexOf(":") > -1) {
           return route.params[
-            value_route_value.replace(":", "").replace("()", "")
+            value_route_value.split(":")[1].replace("()", "")
           ];
         } else {
           return current_route.includes(value_route_value);
@@ -260,7 +260,7 @@ const sub_menu = computed(() => {
                       name="material-symbols:arrow-forward-ios"
                       class="w-4 h-4 relative text-slate-500"
                     />  -->
-                    {{ value_breadcrumbs.meta.breadcrumb.text }}
+                    {{ value_breadcrumbs.meta.breadcrumb?.text || value_breadcrumbs.meta.breadcrumb }}
                   </NuxtLink>
                 </div>
                 <Icon
