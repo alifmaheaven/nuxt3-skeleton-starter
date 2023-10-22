@@ -260,7 +260,7 @@ const sub_menu = computed(() => {
                       name="material-symbols:arrow-forward-ios"
                       class="w-4 h-4 relative text-slate-500"
                     />  -->
-                    {{ value_breadcrumbs.meta.breadcrumb?.text || value_breadcrumbs.meta.breadcrumb.value }}
+                    {{ value_breadcrumbs?.meta?.breadcrumb?.text || value_breadcrumbs?.meta?.breadcrumb?.value || value_breadcrumbs?.meta?.breadcrumb }}
                   </NuxtLink>
                 </div>
                 <Icon
