@@ -89,6 +89,7 @@ const dropdowninput = computed({
     <div class="relative w-full">
       <multiselect
         v-model="dropdowninput"
+        :value="dropdowninput"
         :placeholder="placeholder"
         :disabled="disabled || readonly"
         value-prop="id"

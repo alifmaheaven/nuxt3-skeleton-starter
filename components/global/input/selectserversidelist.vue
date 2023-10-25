@@ -107,6 +107,7 @@ const functionSearch = (search) => {
       <div class="relative">
         <multiselect
           v-model="dropdowninput"
+          :value="dropdowninput"
           :placeholder="placeholder"
           :loading="isloading"
           :disabled="disabled || readonly"
