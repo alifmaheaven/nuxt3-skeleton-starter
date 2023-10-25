@@ -51,7 +51,17 @@ const props = defineProps({
     type: String,
     default: "",
   },
-  inline: {
+  startTime: {
+    type: Object,
+    default: () => {
+      return { hours: 0, minutes: 0 };
+    },
+  },
+  yearPicker: {
+    type: Boolean,
+    default: false,
+  },
+  addTimepicker: {
     type: Boolean,
     default: false,
   },
@@ -67,15 +77,21 @@ const {
 
 const datevalue = computed({
   get() {
-    return inputValue.value;
+    if (props.yearPicker) {
+      return new Date(inputValue.value).getFullYear();
+    } else {
+      return inputValue.value;
+    }
   },
   set(value) {
-    handleChange(formatDate(value));
+    if (props.yearPicker) {
+      handleChange(`${value}-12-31`);
+    } else {
+      handleChange(formatDate(value));
+    }
     emit("update:changeDate", formatDate(value));
   },
 });
-
-const startTime = ref({ hours: 0, minutes: 0 });
 
 // const onlynumber = (e) => {
 //   var keyCode = e.which;
@@ -142,16 +158,17 @@ const formatDate = (date) => {
           'pl-10': !!icon,
         }"
         :input-class-name="
-          !!errorMessage ? '!border-red-500 !dark:border-red-500' : ''
+          !!errorMessage ? '!border-red-500 dark:!border-red-500' : ''
         "
         class="block w-full rounded-[9px] border text-dark border-slate-300 bg-slate-50 shadow"
-        :enable-time-picker="true"
+        :enable-time-picker="addTimepicker"
         :min-date="min ? new Date(min) : null"
         :max-date="max ? new Date(max) : null"
         :start-time="startTime"
         :dark="darkMode"
         @blur="handleBlur"
         hide-input-icon
+        :year-picker="yearPicker"
       >
       </VueDatePicker>
 
