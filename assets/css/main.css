@@ -1,3 +1,5 @@
+@import "tw-elements/dist/css/tw-elements.min.css";
+
 @import "./_tailwinds.css";
 
 @import "./_colors.css";
