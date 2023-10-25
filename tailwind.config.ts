@@ -17,6 +17,7 @@ export default <Partial<Config>>{
     "./app.{js,ts,vue}",
     "./Error.{js,ts,vue}",
     "./error.{js,ts,vue}",
+    "./node_modules/tw-elements/dist/js/**/*.js"
   ],
   theme: {
     screens: {
