@@ -19,7 +19,7 @@ const breadcrumbs = computed(() => {
       const isMatched = route_value.every((value_route_value) => {
         if (value_route_value.indexOf(":") > -1) {
           return route.params[
-            value_route_value.split(":")[1].replace("()", "")
+            value_route_value?.split(":")?.[1]?.replace("()", "")
           ];
         } else {
           return current_route.includes(value_route_value);
@@ -29,13 +29,14 @@ const breadcrumbs = computed(() => {
     })
     .sort((a, b) => a.path.length - b.path.length)
     .map((value) => {
-      Object.keys(route.params).forEach((key) => {
-        value.path = value.path.replace(`:${key}()`, route.params[key]);
-      });
-      return {
+      const to_breadcrumbs = {
         path: value.path,
         meta: value.meta,
       };
+      Object.keys(route.params).forEach((key) => {
+        to_breadcrumbs.path = to_breadcrumbs.path.replace(`:${key}()`, route.params[key]);
+      });
+      return to_breadcrumbs;
     });
 });
 
