@@ -3,7 +3,12 @@
 definePageMeta({
   layout: "autenticated",
   // middleware: ["auth"],
-  breadcrumb: computed(()=> `${useRoute().params.RISKCD == '-' && 'Add' || 'Edit' } Risk: General Information`),
+  breadcrumb: computed(
+    () =>
+      `${
+        (useRoute().params.RISKCD == "-" && "Add") || "Edit"
+      } Risk: General Information`,
+  ),
 });
 
 // import
@@ -105,6 +110,9 @@ const getData = () => {
     <div
       class="h-min-max mb-4 inline-flex w-full flex-col items-start justify-start gap-1"
     >
+      <div class="w-full rounded-lg bg-red-600 p-4 text-white">
+        {{ formatTimestamp("2023-11-16 11:31:55") }}
+      </div>
       <div
         class="leading-full self-stretch text-3xl font-semibold text-gray-900"
       >
