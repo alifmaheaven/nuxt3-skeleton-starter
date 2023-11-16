@@ -42,9 +42,6 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   ajax.interceptors.response.use(
     (response) => {
-      // if (response.status >= 200 && response.status < 300) {
-      //   response.data = JSON.parse(decrypt(response.data.data));
-      // }
       useAuth().setLoading(false);
       return response;
     },
@@ -58,16 +55,9 @@ export default defineNuxtPlugin((nuxtApp) => {
           !err.config.__isRetryRequest
         ) {
           // if you ever get an unauthorized, logout the user
-          // useAuthStore().removeSession();
-          // try {
-          //   useAuth().logout();
-          //   router.push("/login");
-          // } catch (error) {
-          //   console.log("error", error);
-          // }
+          // useAuthStore().logout();
           // you can also redirect to /login if needed !
         }
-        err.response.data = JSON.parse(decrypt(err.response.data.data));
         // console.log(err);
         throw err;
       });
