@@ -63,11 +63,12 @@ const darkMode = () => {
 };
 
 onMounted(() => {
-  document.body.classList = `${layoutStore.theme} bg-light`;
+  document.documentElement.classList = `${layoutStore.theme}`;
+  document.body.classList = `bg-light`;
   document
     .getElementById("btn-dark-mode")
     .addEventListener("click", function () {
-      document.body.classList = `${layoutStore.theme} bg-light`;
+      document.documentElement.classList = `${layoutStore.theme}`;
     });
 });
 </script>

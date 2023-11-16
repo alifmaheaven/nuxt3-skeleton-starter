@@ -27,7 +27,6 @@ export const usecrudExampleUsingPinia = defineStore("crudExampleUsingPinia", {
           params: {
             page_size: this.meta.page_size,
             page: this.meta.current_page,
-            ...!params?.only_params && useRoute().query,
             ...params,
           },
         })

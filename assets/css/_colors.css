@@ -1,12 +1,5 @@
 /* Default colors */
 :root {
-  --color-primary: #e31b54;
-  --color-secondary: #808080;
-  --color-success: #008000;
-  --color-info: #0000ff;
-  --color-warning: #ffa500;
-  --color-pending: #ffc0cb;
-  --color-danger: #ff0000;
   --color-light: #ffffff;
   --color-dark: #000000;
 
@@ -34,13 +27,6 @@
 
 /* Default dark-mode colors */
 .dark {
-  --color-primary: #e31b54;
-  --color-secondary: #808080;
-  --color-success: #008000;
-  --color-info: #0000ff;
-  --color-warning: #ffa500;
-  --color-pending: #ffc0cb;
-  --color-danger: #ff0000;
   --color-light: #000000;
   --color-dark: #ffffff;
   --color-slate-50: #262626;
