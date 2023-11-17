@@ -5,7 +5,7 @@ import fr from "../locales/fr.json";
 import ja from "../locales/ja.json";
 import id from "../locales/id.json";
 
-export default defineNuxtPlugin(( nuxtApp ) => {
+export default defineNuxtPlugin((nuxtApp) => {
   const i18nCreate = i18n.createI18n({
     legacy: false,
     globalInjection: true,
@@ -21,7 +21,7 @@ export default defineNuxtPlugin(( nuxtApp ) => {
   nuxtApp.vueApp.use(i18nCreate);
   return {
     provide: {
-      i18n:i18n,
+      i18n: i18n,
     },
   };
 });

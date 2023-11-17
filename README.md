@@ -1,18 +1,10 @@
 # Nuxt 3 Minimal Starter
 
-  
-
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
-  
 
 ## Requirment
 
-  
-
 - pnpm command already exist in your command line, havent yet?
-
-  
 
 ```bash
 
@@ -20,21 +12,13 @@ npm  install  -g  pnpm
 
 ```
 
-  
-
 - node 16 stable its must
 
 - vue & nuxt global command
 
-  
-
 ## Setup
 
-  
-
 Make sure to install the dependencies:
-
-  
 
 ```bash
 
@@ -42,15 +26,9 @@ pnpm  install
 
 ```
 
-  
-
 ## Development Server
 
-  
-
 Start the development server on `http://localhost:3000`:
-
-  
 
 ```bash
 
@@ -58,15 +36,9 @@ pnpm  run  dev
 
 ```
 
-  
-
 ## Production
 
-  
-
 Build the application for production:
-
-  
 
 ```bash
 
@@ -74,11 +46,7 @@ pnpm  run  build
 
 ```
 
-  
-
 Locally preview production build:
-
-  
 
 ```bash
 
@@ -86,11 +54,7 @@ pnpm  run  preview
 
 ```
 
-  
-
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-
-  
 
 "@headlessui/vue": "^1.7.16",
 
@@ -130,11 +94,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 "yup": "^1.2.0"
 
-  
-
 ## Features
-
-  
 
 - [x] ✨ [Headless UI](https://headlessui.dev/)
 
@@ -176,13 +136,12 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 - [x] 📦 [PNPM](https://pnpm.io/)
 
-
 ## How to use all component inside
 
-  
-
 ### Input
-####  text input
+
+#### text input
+
 ```
 <globalInputText
 	name="username"
@@ -191,24 +150,16 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 ```
 
 ##### props :
-| props |  type  | example |
-|:-----|:--------:|------:|
-| label | String | "Username", "Email", "etc" |
-| name | String | "username", "email", "etc" |
-| placeholder | String | "Masukkan username", "Masukkan email", "etc" |
-| inline | Boolean | true, false |
 
-
-
-
-  
+| props       |  type   |                                      example |
+| :---------- | :-----: | -------------------------------------------: |
+| label       | String  |                   "Username", "Email", "etc" |
+| name        | String  |                   "username", "email", "etc" |
+| placeholder | String  | "Masukkan username", "Masukkan email", "etc" |
+| inline      | Boolean |                                  true, false |
 
 ## License
 
-  
-
 [MIT License](./LICENSE)
-
-  
 
 Made with ❤️ by JeSiCa
