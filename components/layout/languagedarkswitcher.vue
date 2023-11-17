@@ -13,8 +13,8 @@
           class="focus:shadow-outline-blue block cursor-pointer appearance-none rounded-full border border-gray-400 bg-white px-4 py-2 pr-8 leading-tight shadow hover:border-gray-500 focus:border-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-800 dark:text-white"
         >
           <option
-            class="cursor-pointer"
             v-for="value in availableLocales"
+            class="cursor-pointer"
             :value="value"
           >
             {{ value }}
@@ -25,8 +25,8 @@
     <div class="flex items-center justify-end">
       <button
         id="btn-dark-mode"
-        @click="darkMode()"
         class="flex cursor-pointer items-center justify-center rounded-full bg-white p-1 text-black shadow-sm dark:bg-black dark:text-white"
+        @click="darkMode()"
       >
         <Icon
           name="material-symbols:dark-mode"

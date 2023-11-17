@@ -75,9 +75,9 @@ const {
         :id="name"
         :name="name"
         :type="showPassword ? 'password' : 'text'"
-        class="block w-full rounded-[9px] border text-dark border-slate-300 bg-slate-50 shadow"
+        class="block w-full rounded-[9px] border border-slate-300 bg-slate-50 text-dark shadow"
         :class="{
-          '!border-red-500 !dark:border-red-500': !!errorMessage,
+          '!dark:border-red-500 !border-red-500': !!errorMessage,
           'pl-10': !!icon,
         }"
         :disabled="disabled"
@@ -99,9 +99,9 @@ const {
         class="absolute inset-y-0 right-0 flex cursor-pointer items-center px-3 text-gray-600"
       >
         <Icon
-          @click="showPassword = !showPassword"
           :name="showPassword ? 'iconoir:eye-alt' : 'iconoir:eye-close'"
           class="h-5 w-5"
+          @click="showPassword = !showPassword"
         />
       </div>
 

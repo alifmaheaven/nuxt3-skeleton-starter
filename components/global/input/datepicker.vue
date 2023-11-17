@@ -160,15 +160,15 @@ const formatDate = (date) => {
         :input-class-name="
           !!errorMessage ? '!border-red-500 dark:!border-red-500' : ''
         "
-        class="block w-full rounded-[9px] border text-dark border-slate-300 bg-slate-50 shadow"
+        class="block w-full rounded-[9px] border border-slate-300 bg-slate-50 text-dark shadow"
         :enable-time-picker="addTimepicker"
         :min-date="min ? new Date(min) : null"
         :max-date="max ? new Date(max) : null"
         :start-time="startTime"
         :dark="darkMode"
-        @blur="handleBlur"
         hide-input-icon
         :year-picker="yearPicker"
+        @blur="handleBlur"
       >
       </VueDatePicker>
 

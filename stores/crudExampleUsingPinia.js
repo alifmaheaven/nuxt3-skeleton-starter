@@ -21,19 +21,21 @@ export const usecrudExampleUsingPinia = defineStore("crudExampleUsingPinia", {
       // or you can useAjax from composables/useAjax.js
       return new Promise((resolve, reject) => {
         this.rows_data = [];
-        useNuxtApp().$api({
-          url: "/api/example/",
-          method: "GET",
-          params: {
-            page_size: this.meta.page_size,
-            page: this.meta.current_page,
-            ...params,
-          },
-        })
+        useNuxtApp()
+          .$api({
+            url: "/api/example/",
+            method: "GET",
+            params: {
+              page_size: this.meta.page_size,
+              page: this.meta.current_page,
+              ...params,
+            },
+          })
           .then((result) => {
             this.rows_data = result.data.data;
             this.meta_data.pages = result.data.meta[0].paginator.pages;
-            this.meta_data.current_page = result.data.meta[0].paginator.current_page;
+            this.meta_data.current_page =
+              result.data.meta[0].paginator.current_page;
             this.meta_data.count = result.data.meta[0].paginator.count;
             resolve(result.data.data);
           })
@@ -47,11 +49,12 @@ export const usecrudExampleUsingPinia = defineStore("crudExampleUsingPinia", {
     createData(values) {
       return new Promise((resolve, reject) => {
         // or you can useAjax from composables/useAjax.js
-        useNuxtApp().$api({
-          url: "api/example/",
-          method: "POST",
-          data: values,
-        })
+        useNuxtApp()
+          .$api({
+            url: "api/example/",
+            method: "POST",
+            data: values,
+          })
           .then((response) => {
             resolve(response);
           })
@@ -60,30 +63,32 @@ export const usecrudExampleUsingPinia = defineStore("crudExampleUsingPinia", {
           });
       });
     },
-    updateData(values){
+    updateData(values) {
       // or you can useAjax from composables/useAjax.js
-      return new Promise((resolve,reject)=>{
-        useNuxtApp().$api({
-          url: "api/examples/",
-          method: "POST",
-          data: values,
-        })
-        .then((result)=>{
-          resolve(result.data.data);
-        })
-        .catch((err)=>{
-          reject(err);
-        })
-      })
+      return new Promise((resolve, reject) => {
+        useNuxtApp()
+          .$api({
+            url: "api/examples/",
+            method: "POST",
+            data: values,
+          })
+          .then((result) => {
+            resolve(result.data.data);
+          })
+          .catch((err) => {
+            reject(err);
+          });
+      });
     },
     deleteData(values) {
       // or you can useAjax from composables/useAjax.js
       return new Promise((resolve, reject) => {
-        useNuxtApp().$api({
-          url: `/api/examples/`,
-          method: "DELETE",
-          data: values,
-        })
+        useNuxtApp()
+          .$api({
+            url: `/api/examples/`,
+            method: "DELETE",
+            data: values,
+          })
           .then((result) => {
             resolve(result.data.data);
           })

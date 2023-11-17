@@ -136,7 +136,7 @@ const sparatorformater = (value) => {
         type="text"
         class="form-control block w-full"
         :class="{
-          '!border-red-500 !dark:border-red-500': !!errorMessage,
+          '!dark:border-red-500 !border-red-500': !!errorMessage,
           'pl-10': !!icon,
         }"
         :disabled="disabled"

@@ -1,18 +1,18 @@
 <template>
   <div class="columns">
-    <div class="digit-group column is-10" id="digitgroup">
+    <div id="digitgroup" class="digit-group column is-10">
       <input
-        :type="`${!show && type == 'pin' ? 'password' : 'text'}`"
         v-for="(item, index) in valueToInput"
+        :id="`digit-${index}`"
         :key="index"
         v-model="valueToInput[index]"
-        @keyup="pushValues"
-        @keypress="onlynumber"
-        :id="`digit-${index}`"
+        :type="`${!show && type == 'pin' ? 'password' : 'text'}`"
         maxlength="1"
         :class="{
           invalid: errorMessage,
         }"
+        @keyup="pushValues"
+        @keypress="onlynumber"
       />
       <div v-if="errorMessage" class="columns">
         <div class="column">

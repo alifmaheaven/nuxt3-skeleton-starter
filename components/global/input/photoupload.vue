@@ -112,8 +112,8 @@ const resetField = () => {
       >
         <div
           v-if="!!inputValue"
-          @click="resetField()"
           class="group relative flex h-full w-full cursor-pointer flex-col items-center justify-center gap-4 rounded-[10px] hover:bg-red-700"
+          @click="resetField()"
         >
           <div
             class="relative hidden h-[94px] flex-col items-center justify-center self-stretch group-hover:flex"
@@ -153,7 +153,7 @@ const resetField = () => {
             />
             <Vue3Lottie
               v-if="image_error"
-              animationLink="/animation/animation_failed_load_image.json"
+              animation-link="/animation/animation_failed_load_image.json"
               :height="500"
               :width="500"
               :loop="false"

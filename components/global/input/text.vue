@@ -81,17 +81,17 @@ var valueChange = computed({
     <div class="relative w-full">
       <input
         :id="name"
+        v-model="valueChange"
         :name="name"
         type="text"
-        class="block w-full rounded-[9px] border border-slate-300 bg-slate-50 shadow text-dark"
+        class="block w-full rounded-[9px] border border-slate-300 bg-slate-50 text-dark shadow"
         :class="{
-          '!border-red-500 !dark:border-red-500': !!errorMessage,
+          '!dark:border-red-500 !border-red-500': !!errorMessage,
           'pl-10': !!icon,
           'inline-block': inline,
         }"
         :disabled="disabled"
         :readonly="readonly"
-        v-model="valueChange"
         :placeholder="placeholder"
       />
       <div

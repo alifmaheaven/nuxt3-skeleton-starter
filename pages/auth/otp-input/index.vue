@@ -123,7 +123,7 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
             </div>
           </div>
           <GlobalButton
-            class="px-5 py-3 bg-gray-600 rounded-lg shadow border border-gray-600 justify-center items-center gap-2 flex text-white text-base font-semibold leading-normal"
+            class="flex items-center justify-center gap-2 rounded-lg border border-gray-600 bg-gray-600 px-5 py-3 text-base font-semibold leading-normal text-white shadow"
             type="submit"
           >
             Konfimasi

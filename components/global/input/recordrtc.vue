@@ -286,7 +286,7 @@ const {
     <div
       class="inline-flex h-full w-full flex-col items-center justify-center gap-6 rounded-xl border border-gray-200 bg-gray-50 px-16 py-8"
       :class="{
-        '!border-red-500 !dark:border-red-500': !!errorMessage,
+        '!dark:border-red-500 !border-red-500': !!errorMessage,
       }"
     >
       <div
@@ -332,16 +332,16 @@ const {
         </button>
         <div
           id="videoContainer"
-          class="w-full rounded-[9px] border text-dark border-slate-300 bg-slate-50 shadow"
+          class="w-full rounded-[9px] border border-slate-300 bg-slate-50 text-dark shadow"
           :class="{
-            '!border-red-500 !dark:border-red-500': !!errorMessage,
+            '!dark:border-red-500 !border-red-500': !!errorMessage,
           }"
           style="background-color: #cccccc; position: relative; display: none"
         >
           <video
-            class="w-full rounded-[9px] border text-dark border-slate-300 bg-slate-50 shadow"
-            style="position: relative; z-index: 0"
             id="selfVideo"
+            class="w-full rounded-[9px] border border-slate-300 bg-slate-50 text-dark shadow"
+            style="position: relative; z-index: 0"
             width="100%"
             height="100%"
             autoplay
@@ -376,42 +376,42 @@ const {
         </div>
         <div style="z-index: 1; width: 100%">
           <p
+            id="lookCamera"
             align="center"
             class="px-4 py-2 text-lg font-semibold text-slate-900"
             style="display: none"
-            id="lookCamera"
           >
             Silahkan tegakan badan anda dan menghadap kamera
           </p>
           <p
+            id="openMouth"
             align="center"
             class="px-4 py-2 text-lg font-semibold text-slate-900"
             style="display: none"
-            id="openMouth"
           >
             Silakan buka mulut anda
           </p>
           <p
+            id="closeMouth"
             align="center"
             class="px-4 py-2 text-lg font-semibold text-slate-900"
             style="display: none"
-            id="closeMouth"
           >
             Tutup mulut anda kembali
           </p>
           <p
+            id="openEye"
             align="center"
             class="px-4 py-2 text-lg font-semibold text-slate-900"
             style="display: none"
-            id="openEye"
           >
             Kedipkan mata anda
           </p>
           <p
+            id="openEye2"
             align="center"
             class="px-4 py-2 text-lg font-semibold text-slate-900"
             style="display: none"
-            id="openEye2"
           >
             Sekali lagi, kedipkan mata anda
           </p>
@@ -455,50 +455,50 @@ const {
         </button> -->
         <div
           id="videoContainer"
-          class="rounded-[9px] border text-dark border-slate-300 bg-slate-50 shadow"
+          class="rounded-[9px] border border-slate-300 bg-slate-50 text-dark shadow"
           :class="{
-            '!border-red-500 !dark:border-red-500': !!errorMessage,
+            '!dark:border-red-500 !border-red-500': !!errorMessage,
           }"
           style="background-color: #cccccc; position: relative; display: none"
         >
           <video
-            class="rounded-[9px] border text-dark border-slate-300 bg-slate-50 shadow"
-            style="position: relative; z-index: 0"
             id="selfVideo"
+            class="rounded-[9px] border border-slate-300 bg-slate-50 text-dark shadow"
+            style="position: relative; z-index: 0"
             width="100%"
             autoplay
             playsinline
           ></video>
           <div style="position: absolute; top: 0; z-index: 1; width: 100%">
             <p
+              id="openMouth"
               align="center"
               class="px-4 py-2 text-slate-900"
               style="display: none"
-              id="openMouth"
             >
               Silakan buka mulut anda
             </p>
             <p
+              id="closeMouth"
               align="center"
               class="px-4 py-2 text-slate-900"
               style="display: none"
-              id="closeMouth"
             >
               Tutup mulut anda kembali
             </p>
             <p
+              id="openEye"
               align="center"
               class="px-4 py-2 text-slate-900"
               style="display: none"
-              id="openEye"
             >
               Kedipkan mata anda
             </p>
             <p
+              id="openEye2"
               align="center"
               class="px-4 py-2 text-slate-900"
               style="display: none"
-              id="openEye2"
             >
               Sekali lagi, kedipkan mata anda
             </p>

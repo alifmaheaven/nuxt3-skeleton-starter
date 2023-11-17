@@ -188,9 +188,9 @@ const phoneformarter = (phoneNumber) => {
             name: dial_code,
           })) || []
         "
-        class="block !w-[30%] !rounded-[9px] border text-dark border-slate-300 bg-slate-50 shadow"
+        class="block !w-[30%] !rounded-[9px] border border-slate-300 bg-slate-50 text-dark shadow"
         :class="{
-          '!border-red-500 !dark:border-red-500': !!errorMessage,
+          '!dark:border-red-500 !border-red-500': !!errorMessage,
         }"
         :classes="{
           search: 'multiselect-search !bg-transparent border-none',
@@ -208,9 +208,9 @@ const phoneformarter = (phoneNumber) => {
         v-model="phone_number_value"
         :name="name"
         type="text"
-        class="block w-[70%] rounded-[9px] border text-dark border-slate-300 bg-slate-50 shadow"
+        class="block w-[70%] rounded-[9px] border border-slate-300 bg-slate-50 text-dark shadow"
         :class="{
-          '!border-red-500 !dark:border-red-500': !!errorMessage,
+          '!dark:border-red-500 !border-red-500': !!errorMessage,
         }"
         :disabled="disabled"
         :readonly="readonly"

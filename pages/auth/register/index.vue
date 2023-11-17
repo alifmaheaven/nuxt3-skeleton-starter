@@ -58,19 +58,19 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
       class="inline-flex shrink grow basis-0 flex-col items-center justify-start rounded-xl border border-slate-200 bg-slate-50 shadow"
     >
       <div
-        class="flex h-fit flex-col items-center justify-start gap-4 self-stretch p-6 relative"
+        class="relative flex h-fit flex-col items-center justify-start gap-4 self-stretch p-6"
       >
-        <div class="h-36 w-full relative">
-            <div
-              class="absolute inline-flex h-48 w-48 items-center justify-center rounded-xl p-3.5 left-0 right-0 -top-7 m-auto bg-transparent"
-            >
-              <Vue3Lottie
-                  animationLink="/animation/think_doubt.json"
-                  :height="500"
-                  :width="500"
-                  :loop="true"
-                />
-            </div>
+        <div class="relative h-36 w-full">
+          <div
+            class="absolute -top-7 left-0 right-0 m-auto inline-flex h-48 w-48 items-center justify-center rounded-xl bg-transparent p-3.5"
+          >
+            <Vue3Lottie
+              animation-link="/animation/think_doubt.json"
+              :height="500"
+              :width="500"
+              :loop="true"
+            />
+          </div>
         </div>
         <div
           class="flex h-fit flex-col items-start justify-center gap-3 self-stretch"
@@ -79,7 +79,7 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
             class="flex h-fit flex-col items-start justify-start gap-1 self-stretch"
           >
             <div
-              class="self-stretch text-center text-2xl font-semibold leading-loose text-primary"
+              class="text-primary self-stretch text-center text-2xl font-semibold leading-loose"
             >
               Register
             </div>
@@ -113,7 +113,7 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
           class="flex min-h-min flex-col items-start justify-start gap-3 self-stretch"
         >
           <GlobalButton
-            class="self-stretch px-5 py-3 bg-primary rounded-lg shadow hover:shadow-slate-300 border hover:border-primary hover:bg-slate-50 justify-center items-center gap-2 inline-flex text-light hover:text-primary text-base font-semibold leading-normal"
+            class="bg-primary hover:border-primary hover:text-primary inline-flex items-center justify-center gap-2 self-stretch rounded-lg border px-5 py-3 text-base font-semibold leading-normal text-light shadow hover:bg-slate-50 hover:shadow-slate-300"
             type="submit"
           >
             Masuk
@@ -131,7 +131,7 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
             <div class="flex items-center justify-center gap-2">
               <NuxtLink
                 to="/auth/login"
-                class="text-sm font-semibold leading-tight text-primary"
+                class="text-primary text-sm font-semibold leading-tight"
               >
                 Login sekarang
               </NuxtLink>

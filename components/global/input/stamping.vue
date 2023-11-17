@@ -259,12 +259,12 @@ const stampOnChange = () => {
           ref="pdfRef"
           :page="viewpdf.page"
           :source="source"
-          @rendered="handleDocumentRender"
           class="absolute w-full border"
           :class="{
             'border-red-500 ': !!errorMessage,
             'is-disabled cursor-not-allowed bg-gray-400': disabled,
           }"
+          @rendered="handleDocumentRender"
         />
         <div
           id="materai_canvas"
@@ -275,18 +275,19 @@ const stampOnChange = () => {
         >
           <vue3-draggable-resizable
             v-if="viewpdf.canvasWidth && stamp_image && !readonly"
-            :initW="Number(viewpdf.canvasWidth * 0.11)"
-            :initH="Number(viewpdf.canvasHight * 0.11)"
             v-model:x="stamp_cordinate.x"
             v-model:y="stamp_cordinate.y"
             v-model:w="stamp_cordinate.w"
             v-model:h="stamp_cordinate.h"
             v-model:active="stamp_cordinate.active"
+            :init-w="Number(viewpdf.canvasWidth * 0.11)"
+            :init-h="Number(viewpdf.canvasHight * 0.11)"
             :draggable="true"
             :resizable="true"
-            :lockAspectRatio="true"
+            :lock-aspect-ratio="true"
             :parent="true"
             :handles="['tl', 'tm', 'tr', 'ml', 'mr', 'bl', 'bm', 'br']"
+            class-name-draggable="bg-no-repeat bg-cover bg-center relative"
             @activated="print('activated')"
             @deactivated="print('deactivated')"
             @drag-start="print('drag-start')"
@@ -295,7 +296,6 @@ const stampOnChange = () => {
             @resizing="print('resizing')"
             @drag-end="stampOnChange()"
             @resize-end="stampOnChange()"
-            classNameDraggable="bg-no-repeat bg-cover bg-center relative"
           >
             <img
               id="imageStamping"
@@ -318,8 +318,8 @@ const stampOnChange = () => {
           <button
             type="button"
             :disabled="viewpdf.page === 1"
-            @click="viewpdf.page--"
             class="rounded-l bg-slate-500 px-4 py-2 font-bold text-white hover:bg-slate-700"
+            @click="viewpdf.page--"
           >
             Sebelumnya
           </button>
@@ -331,8 +331,8 @@ const stampOnChange = () => {
           <button
             type="button"
             :disabled="viewpdf.page === viewpdf.pageCount"
-            @click="viewpdf.page++"
             class="rounded-r bg-slate-500 px-4 py-2 font-bold text-white hover:bg-slate-700"
+            @click="viewpdf.page++"
           >
             Selanjutnya
           </button>
@@ -344,8 +344,8 @@ const stampOnChange = () => {
           <button
             type="button"
             :disabled="viewpdf.page === 1"
-            @click="viewpdf.page--"
             class="rounded-l bg-slate-500 px-4 py-2 font-bold text-white hover:bg-slate-700"
+            @click="viewpdf.page--"
           >
             Sebelumnya
           </button>
@@ -357,8 +357,8 @@ const stampOnChange = () => {
           <button
             type="button"
             :disabled="viewpdf.page === viewpdf.pageCount"
-            @click="viewpdf.page++"
             class="rounded-r bg-slate-500 px-4 py-2 font-bold text-white hover:bg-slate-700"
+            @click="viewpdf.page++"
           >
             Selanjutnya
           </button>

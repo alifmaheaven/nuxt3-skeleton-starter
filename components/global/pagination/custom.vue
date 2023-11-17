@@ -186,11 +186,11 @@ const currentPageChange = (value) => {
 .page-item {
   cursor: pointer;
   a.page-link {
-    @apply font-bold text-primary;
+    @apply text-primary font-bold;
   }
   &.active {
     a.page-link {
-      @apply cursor-default bg-primary text-white;
+      @apply bg-primary cursor-default text-white;
     }
   }
 }

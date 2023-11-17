@@ -1,12 +1,11 @@
 <template>
-  <div class="bg-login bg-light inline-flex items-center justify-center">
+  <div class="bg-login inline-flex items-center justify-center bg-light">
     <slot />
   </div>
   <LayoutLanguagedarkswitcher />
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 .bg-login {

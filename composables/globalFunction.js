@@ -80,7 +80,7 @@ function formatIndoDateWithClockV2(value = null) {
   ];
 
   const date = value ? new Date(value) : new Date();
-  const month =date.getMonth();
+  const month = date.getMonth();
   const day = String(date.getDate()).padStart(2, "0");
   const year = date.getFullYear();
   const hour = String(date.getHours()).padStart(2, "0");
@@ -99,7 +99,6 @@ export {
   formatIndoDateWithClock,
   formatIndoDateWithClockV2,
 };
-
 
 // usage
 // today()

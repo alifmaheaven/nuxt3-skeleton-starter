@@ -34,7 +34,10 @@ const breadcrumbs = computed(() => {
         meta: value.meta,
       };
       Object.keys(route.params).forEach((key) => {
-        to_breadcrumbs.path = to_breadcrumbs.path.replace(`:${key}()`, route.params[key]);
+        to_breadcrumbs.path = to_breadcrumbs.path.replace(
+          `:${key}()`,
+          route.params[key],
+        );
       });
       return to_breadcrumbs;
     });
@@ -261,7 +264,11 @@ const sub_menu = computed(() => {
                       name="material-symbols:arrow-forward-ios"
                       class="w-4 h-4 relative text-slate-500"
                     />  -->
-                    {{ value_breadcrumbs?.meta?.breadcrumb?.text || value_breadcrumbs?.meta?.breadcrumb?.value || value_breadcrumbs?.meta?.breadcrumb }}
+                    {{
+                      value_breadcrumbs?.meta?.breadcrumb?.text ||
+                      value_breadcrumbs?.meta?.breadcrumb?.value ||
+                      value_breadcrumbs?.meta?.breadcrumb
+                    }}
                   </NuxtLink>
                 </div>
                 <Icon

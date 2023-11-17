@@ -17,7 +17,7 @@
       />
     </div>
     <Vue3Lottie
-      animationLink="/animation/success.json"
+      animation-link="/animation/success.json"
       :height="300"
       :width="300"
     />

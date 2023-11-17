@@ -23,7 +23,7 @@ const props = defineProps({
   },
   icon: {
     type: String,
-    default: 'mdi:file-document-outline',
+    default: "mdi:file-document-outline",
   },
   disabled: {
     type: Boolean,
@@ -73,7 +73,7 @@ const toBase64 = (file) => {
 };
 
 const changeFile = async (event) => {
-  if (!!!event.target.files[0]) return;
+  if (!event.target.files[0]) return;
   let files = event.target.files;
   log_file.value.push(files[0]);
   var base64 = await toBase64(files[0]);
@@ -89,19 +89,19 @@ const removeFile = (index) => {
 
 <template>
   <div
-    class="my-3 first:mt-0 last:mb-0 w-full relative h-full"
+    class="relative my-3 h-full w-full first:mt-0 last:mb-0"
     :class="{ success: meta.valid }"
   >
     <label
       v-if="label"
       :for="name"
-      class="block mb-2"
+      class="mb-2 block"
       :class="{
         'text-red-500': !!errorMessage,
       }"
     >
       <span v-if="primary">
-        <span class="text-red-500 font-bold">*</span>
+        <span class="font-bold text-red-500">*</span>
       </span>
       {{ label }}</label
     >
@@ -110,54 +110,51 @@ const removeFile = (index) => {
         :class="{
           'border-red-500 ': !!errorMessage,
           'border-gray-300': !!!errorMessage,
-          'is-disabled bg-gray-400 cursor-not-allowed': disabled,
+          'is-disabled cursor-not-allowed bg-gray-400': disabled,
         }"
-        class="h-full self-stretch grow shrink basis-0 bg-white rounded-[10px] border border-gray-200 flex-col justify-center items-center flex"
+        class="flex h-full shrink grow basis-0 flex-col items-center justify-center self-stretch rounded-[10px] border border-gray-200 bg-white"
       >
         <div
           v-if="!!log_file?.length"
-          class="w-full h-full flex-col justify-center items-center gap-4 flex rounded-[10px]"
+          class="flex h-full w-full flex-col items-center justify-center gap-4 rounded-[10px]"
         >
-          <div class="grid grid-cols-1 gap-2 relative w-full px-2">
+          <div class="relative grid w-full grid-cols-1 gap-2 px-2">
             <div
               v-for="(item, index) in log_file"
               :key="index"
               :class="{ 'border-red-500 ': !!errorMessage }"
-              class="bg-white rounded-lg shadow-sm border p-3 inline-flex items-center w-full relative group"
+              class="group relative inline-flex w-full items-center rounded-lg border bg-white p-3 shadow-sm"
             >
-              <div class="grow-0 text-lg font-semibold flex items-center">
-                <Icon
-                  :name="icon"
-                  class="w-10 h-10 relative"
-                />
+              <div class="flex grow-0 items-center text-lg font-semibold">
+                <Icon :name="icon" class="relative h-10 w-10" />
               </div>
-              <div class="grow text-gray-600 p-2 truncate">
+              <div class="grow truncate p-2 text-gray-600">
                 {{ item?.name }}
               </div>
               <div
-                class="hidden rounded-lg p-1 group-hover:inline-flex justify-center items-center w-full absolute -top-8"
+                class="absolute -top-8 hidden w-full items-center justify-center rounded-lg p-1 group-hover:inline-flex"
               >
                 <label
-                  class="grow-0 bg-white shadow-md text-green-500 p-2 rounded-lg hover:bg-green-500 hover:text-white cursor-pointer"
+                  class="grow-0 cursor-pointer rounded-lg bg-white p-2 text-green-500 shadow-md hover:bg-green-500 hover:text-white"
                 >
-                  <Icon name="material-symbols:add" class="w-5 h-5 relative" />
+                  <Icon name="material-symbols:add" class="relative h-5 w-5" />
                   <input
                     :id="name"
                     :name="name"
                     type="file"
                     class="hidden"
-                    @change="changeFile"
                     :accept="accept"
+                    @change="changeFile"
                   />
                 </label>
                 <button
                   type="button"
-                  class="grow-0 bg-white shadow-md text-red-500 p-2 rounded-lg hover:bg-red-500 hover:text-white"
+                  class="grow-0 rounded-lg bg-white p-2 text-red-500 shadow-md hover:bg-red-500 hover:text-white"
                   @click="removeFile(index)"
                 >
                   <Icon
                     name="material-symbols:delete-outline-rounded"
-                    class="w-5 h-5 relative"
+                    class="relative h-5 w-5"
                   />
                 </button>
               </div>
@@ -166,40 +163,40 @@ const removeFile = (index) => {
         </div>
         <div
           v-if="!!!log_file?.length"
-          class="w-full h-full flex-col justify-center items-center gap-4 flex cursor-pointer hover:bg-slate-100 rounded-[10px]"
+          class="flex h-full w-full cursor-pointer flex-col items-center justify-center gap-4 rounded-[10px] hover:bg-slate-100"
         >
           <div
-            class="self-stretch h-[94px] flex-col justify-start items-center gap-3 flex"
+            class="flex h-[94px] flex-col items-center justify-start gap-3 self-stretch"
           >
             <div
-              class="w-10 h-10 p-2.5 bg-white rounded-lg shadow border border-gray-200 justify-center items-center inline-flex"
+              class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-gray-200 bg-white p-2.5 shadow"
             >
               <Icon
                 name="ph:cloud-arrow-up-duotone"
-                class="w-5 h-5 relative flex-col justify-start items-start flex"
+                class="relative flex h-5 w-5 flex-col items-start justify-start"
               />
             </div>
             <div
-              class="self-stretch h-[42px] flex-col justify-start items-center gap-1 flex"
+              class="flex h-[42px] flex-col items-center justify-start gap-1 self-stretch"
             >
               <div
-                class="self-stretch justify-center items-start gap-1 inline-flex"
+                class="inline-flex items-start justify-center gap-1 self-stretch"
               >
-                <div class="justify-center items-center gap-2 flex">
+                <div class="flex items-center justify-center gap-2">
                   <div
-                    class="text-gray-700 text-sm font-semibold leading-tight"
+                    class="text-sm font-semibold leading-tight text-gray-700"
                   >
                     Klik untuk unggah
                   </div>
                 </div>
-                <div class="text-slate-600 text-sm font-normal leading-tight">
+                <div class="text-sm font-normal leading-tight text-slate-600">
                   atau drag & drop
                 </div>
               </div>
               <div
-                class="self-stretch text-center text-slate-600 text-xs font-normal leading-[18px]"
+                class="self-stretch text-center text-xs font-normal leading-[18px] text-slate-600"
               >
-              {{comment}}
+                {{ comment }}
               </div>
             </div>
           </div>
@@ -210,14 +207,14 @@ const removeFile = (index) => {
           :name="name"
           type="file"
           class="hidden"
-          @change="changeFile"
           :accept="accept"
+          @change="changeFile"
         />
       </label>
     </div>
     <div
       v-if="!!errorMessage"
-      class="text-xs text-red-500 dark:text-red-500 mt-1 absolute -bottom-5 right-0"
+      class="absolute -bottom-5 right-0 mt-1 text-xs text-red-500 dark:text-red-500"
     >
       {{ errorMessage }}
     </div>

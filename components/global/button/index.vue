@@ -2,15 +2,17 @@
   <ClientOnly>
     <button
       :class="{
-        [`${props.class}`] : true,
-        'cursor-not-allowed opacity-50' : !!isLoading,
+        [`${props.class}`]: true,
+        'cursor-not-allowed opacity-50': !!isLoading,
       }"
       :style="props.style"
       :type="props.type"
       :disabled="isLoading"
     >
       <slot v-if="!!!isLoading"></slot>
-      <span v-if="!!isLoading"><Icon name="eos-icons:hourglass" /> Loading...</span>
+      <span v-if="!!isLoading"
+        ><Icon name="eos-icons:hourglass" /> Loading...</span
+      >
       <!-- <LoadingIcon
       v-if="!!isLoading"
       icon="spinning-circles"

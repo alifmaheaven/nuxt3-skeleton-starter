@@ -93,13 +93,13 @@ const functionSearch = (search) => {
     <label
       v-if="label"
       :for="name"
-      class="block  mb-2"
+      class="mb-2 block"
       :class="{
         'text-red-500': !!errorMessage,
       }"
     >
       <span v-if="primary">
-        <span class="text-red-500 font-bold">*</span>
+        <span class="font-bold text-red-500">*</span>
       </span>
       {{ label }}</label
     >
@@ -113,9 +113,9 @@ const functionSearch = (search) => {
           :disabled="disabled || readonly"
           :value-prop="dropdown_value"
           :options="options"
-          class="form-control w-full block"
+          class="form-control block w-full"
           :class="{
-            '!border-red-500 !dark:border-red-500': !!errorMessage,
+            '!dark:border-red-500 !border-red-500': !!errorMessage,
             'pl-10': !!icon,
           }"
           :classes="{

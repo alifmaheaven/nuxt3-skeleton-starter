@@ -97,34 +97,34 @@ const reset = () => {
       v-if="!!!inputValue"
       class="relative h-80 w-full border bg-white shadow-md"
       :class="{
-        '!border-red-500 !dark:border-red-500': !!errorMessage,
+        '!dark:border-red-500 !border-red-500': !!errorMessage,
       }"
     >
       <button
-        @click="clear()"
         type="button"
         class="absolute right-1 top-1 rounded-md bg-orange-500 px-2 py-1 text-sm font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+        @click="clear()"
       >
         <Icon name="carbon:reset" />
       </button>
       <button
-        @click="undo()"
         type="button"
         class="absolute right-10 top-1 rounded-md bg-gray-500 px-2 py-1 text-sm font-medium text-white hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+        @click="undo()"
       >
         <Icon name="carbon:undo" />
       </button>
       <button
-        @click="save('png')"
         type="button"
         class="absolute left-1 top-1 rounded-md bg-green-500 px-2 py-1 text-sm font-medium text-white hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+        @click="save('png')"
       >
         <Icon name="carbon:save" />
       </button>
       <ClientOnly>
         <Vue3Signature
           ref="signature1"
-          :sigOption="option"
+          :sig-option="option"
           :disabled="false"
           class="example"
         ></Vue3Signature>
@@ -132,9 +132,9 @@ const reset = () => {
     </div>
     <div v-else class="relative h-80 w-full border bg-white shadow-md">
       <button
-        @click="reset()"
         type="button"
         class="absolute right-1 top-1 rounded-md bg-orange-500 px-2 py-1 text-sm font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+        @click="reset()"
       >
         <Icon name="material-symbols:delete-outline" />
       </button>

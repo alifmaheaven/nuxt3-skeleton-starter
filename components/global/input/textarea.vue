@@ -74,9 +74,9 @@ const {
         :id="name"
         :name="name"
         type="text"
-        class="form-control block w-full rounded-[9px] border text-dark border-slate-300 bg-slate-50 shadow"
+        class="form-control block w-full rounded-[9px] border border-slate-300 bg-slate-50 text-dark shadow"
         :class="{
-          '!border-red-500 !dark:border-red-500': !!errorMessage,
+          '!dark:border-red-500 !border-red-500': !!errorMessage,
           'pl-10': !!icon,
         }"
         rows="3"

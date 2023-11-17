@@ -1,4 +1,4 @@
-// dokumentasinya ada di 
+// dokumentasinya ada di
 
 import { setLocale, addMethod, string, mixed } from "yup";
 

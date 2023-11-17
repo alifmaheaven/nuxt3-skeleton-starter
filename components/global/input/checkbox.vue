@@ -16,7 +16,7 @@
 
     <div
       v-if="isOpen"
-      class="absolute left-0 top-10 z-20 mt-1 flex min-w-max flex-col divide-y rounded-lg border text-dark border-slate-300 bg-slate-50 shadow-md"
+      class="absolute left-0 top-10 z-20 mt-1 flex min-w-max flex-col divide-y rounded-lg border border-slate-300 bg-slate-50 text-dark shadow-md"
     >
       <label class="flex cursor-pointer flex-row items-center gap-2 px-4 py-2">
         <input
