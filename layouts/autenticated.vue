@@ -280,6 +280,7 @@ const sub_menu = computed(() => {
       </div>
     </div>
   </div>
+  <LayoutLanguagedarkswitcher />
 </template>
 
 <style lang="scss" scoped>
