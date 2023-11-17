@@ -8,11 +8,13 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix .",
-    "format": "prettier . --write"
+    "format": "prettier . --write",
+    "test": "vitest"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxt/image": "1.0.0-rc.1",
+    "@nuxt/test-utils": "^3.8.1",
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@types/node": "^18.17.12",
     "autoprefixer": "^10.4.15",
@@ -24,7 +26,8 @@
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.4",
     "sass": "^1.66.1",
-    "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.3.3",
+    "vitest": "^0.34.6"
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.16",

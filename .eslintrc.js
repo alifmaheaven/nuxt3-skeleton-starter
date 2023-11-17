@@ -6,9 +6,8 @@ module.exports = {
     "eslint:recommended",
     "plugin:vue/vue3-recommended",
     "plugin:prettier/recommended",
-    "plugin:prettier-plugin-tailwindcss/recommended",
+    // "plugin:prettier-plugin-tailwindcss/recommended",
     "prettier",
-    "prettier-plugin-tailwindcss",
   ],
   rules: {
     // override/add rules settings here, such as:
