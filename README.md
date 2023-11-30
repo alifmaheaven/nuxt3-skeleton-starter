@@ -12,7 +12,7 @@ npm  install  -g  pnpm
 
 ```
 
-- node 16 stable its must
+- node 20 stable its must
 
 - vue & nuxt global command
 
