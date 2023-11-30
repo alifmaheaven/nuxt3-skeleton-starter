@@ -2,22 +2,22 @@
   <ClientOnly>
     <button
       :class="{
-        [`${props.class}`]: true,
-        'cursor-not-allowed opacity-50': !!isLoading,
+        [`${props.class} ${props.buttonClass}`] : true,
+        'cursor-not-allowed opacity-50' : !!isLoading,
       }"
-      :style="props.style"
-      :type="props.type"
+      :style="props.style || props.buttonStyle"
+      :type="props.type || props.buttonType"
       :disabled="isLoading"
+      @click="$emit('click')"
     >
+      <slot></slot>
       <slot v-if="!!!isLoading"></slot>
-      <span v-if="!!isLoading"
-        ><Icon name="eos-icons:hourglass" /> Loading...</span
-      >
-      <!-- <LoadingIcon
+      <!-- <span v-if="!!isLoading"><Icon name="eos-icons:hourglass" /> Loading...</span> -->
+      <LoadingIcon
       v-if="!!isLoading"
       icon="spinning-circles"
       class="w-4 h-4 ml-2"
-    /> -->
+    />
     </button>
   </ClientOnly>
 </template>
@@ -32,11 +32,22 @@ const props = defineProps({
     type: String,
     default: "btn",
   },
+  buttonClass: {
+    type: String,
+    default: "btn",
+  },
   style: {
     type: Object,
     default: () => {},
   },
+  buttonStyle: {
+    type: Object,
+    default: () => {},
+  },
   type: {
+    type: String,
+  },
+  buttonType: {
     type: String,
     default: "button",
   },
