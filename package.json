@@ -15,7 +15,6 @@
     "@nuxt/devtools": "latest",
     "@nuxt/image": "1.0.0-rc.1",
     "@nuxt/test-utils": "^3.8.1",
-    "@nuxtjs/tailwindcss": "^6.10.1",
     "@types/node": "^18.18.14",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.54.0",
@@ -27,11 +26,11 @@
     "prettier-plugin-tailwindcss": "^0.5.7",
     "sass": "^1.69.5",
     "tailwindcss": "^3.3.3",
-    "vitest": "^0.34.6"
+    "vitest": "^0.34.6",
+    "@headlessui/vue": "^1.7.16",
+    "@nuxt/ui": "^2.11.0"
   },
   "dependencies": {
-    "@headlessui/vue": "^1.7.16",
-    "@nuxt/ui": "^2.11.0",
     "@pinia/nuxt": "^0.4.11",
     "@tailwindcss/forms": "^0.5.7",
     "@tiptap/extension-document": "^2.1.13",

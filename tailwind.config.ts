@@ -16,6 +16,7 @@ export default <Partial<Config>>{
     "./app.{js,ts,vue}",
     "./Error.{js,ts,vue}",
     "./error.{js,ts,vue}",
+    "docs/content/**/*.md",
   ],
   theme: {
     screens: {
@@ -30,7 +31,20 @@ export default <Partial<Config>>{
         "8xl": "90rem",
       },
       colors: {
-        primaryDefault: {
+        primary: {
+          default: "#e31b54",
+          50: "#ffcdd2",
+          100: "#ef9a9a",
+          200: "#e57373",
+          300: "#ef5350",
+          400: "#f44336",
+          500: "#e31b54",
+          600: "#e53935",
+          700: "#d32f2f",
+          800: "#c62828",
+          900: "#b71c1c",
+        },
+        primary_for_nuxtui: {
           default: "#e31b54",
           50: "#ffcdd2",
           100: "#ef9a9a",

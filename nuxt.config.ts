@@ -30,6 +30,12 @@ export default defineNuxtConfig({
       "postcss-advanced-variables": {},
     },
   },
+  ui: {
+    global: true,
+    icons: {
+      dynamic: true
+    }
+  }
   // ssr: true,
   // nitro: {
   // //   baseURL: "http://localhost:8000",
