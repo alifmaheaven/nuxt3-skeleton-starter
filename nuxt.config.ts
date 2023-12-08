@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "nuxt-icon", // use: <Icon name="uil:github" color="black" /> icon source : https://icones.js.org/
     "@nuxt/image", // use: <nuxt-img src="logo.png" /> https://image.nuxtjs.org/
-    "@nuxt/ui", // https://ui.nuxt.com/
+    "@nuxt/ui", // https://ui.nuxt.com/, cara pake iconnya dari icones ex: octicon:logo-github-16 = i-octicon-logo-github-16
   ],
   image: {
     dir: "public",

@@ -11,12 +11,7 @@
       @click="$emit('click')"
     >
       <slot v-if="!!!isLoading"></slot>
-      <!-- <span v-if="!!isLoading"><Icon name="eos-icons:hourglass" /> Loading...</span> -->
-      <LoadingIcon
-      v-if="!!isLoading"
-      icon="spinning-circles"
-      class="w-4 h-4 ml-2"
-    />
+      <span v-if="!!isLoading"><Icon name="eos-icons:hourglass" /> Loading...</span>
     </button>
   </ClientOnly>
 </template>
