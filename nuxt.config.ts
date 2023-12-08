@@ -35,13 +35,14 @@ export default defineNuxtConfig({
     icons: {
       dynamic: true
     }
-  }
-  // ssr: true,
-  // nitro: {
-  // //   baseURL: "http://localhost:8000",
-  //   prerender: {
-  //     crawlLinks: true,
-  //     failOnError: true,
-  //   },
-  // },
+  },
+  ssr: true,
+  nitro: {
+    // baseURL: process.env.NUXT_BASE_URL_PUBLIC,
+    prerender: {
+      crawlLinks: true,
+      failOnError: false,
+    },
+    compressPublicAssets: true,
+  },
 });
