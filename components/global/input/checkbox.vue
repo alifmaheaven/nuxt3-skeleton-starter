@@ -86,6 +86,7 @@ const modelValue = computed({
     <div class="item relative inline-flex justify-center">
       <input
         :id="name"
+        v-model="modelValue"
         :name="name"
         type="checkbox"
         class="cursor-pointer rounded-md border border-gray-300 bg-white text-primary-500 shadow focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:border-gray-600 dark:bg-gray-700 dark:focus:ring-gray-600 dark:focus:ring-offset-gray-900 sm:text-sm"
@@ -93,7 +94,6 @@ const modelValue = computed({
           'border-red-500 dark:border-red-500': !!errorMessage,
         }"
         :value="value"
-        v-model="modelValue"
         :disabled="disabled"
         :readonly="readonly"
       />

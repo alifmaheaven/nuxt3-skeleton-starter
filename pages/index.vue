@@ -307,8 +307,8 @@ const getData = () => {
           :current-page="pagination.current_page"
           :per-page="pagination.per_page"
           @change="getData"
-          @update:perPage="(value) => (pagination.per_page = value)"
-          @update:currentPage="(value) => (pagination.current_page = value)"
+          @update:per-page="(value) => (pagination.per_page = value)"
+          @update:current-page="(value) => (pagination.current_page = value)"
         >
         </globalPaginationCustom>
       </div>
