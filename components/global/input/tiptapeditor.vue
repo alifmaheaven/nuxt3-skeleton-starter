@@ -2,15 +2,15 @@
 import { computed, toRef, useSlots } from "vue";
 import { useField } from "vee-validate";
 
-import { EditorContent, Editor, Extension } from '@tiptap/vue-3'
-import { Highlight } from '@tiptap/extension-highlight'
-import { TextAlign } from '@tiptap/extension-text-align'
-import Gapcursor from '@tiptap/extension-gapcursor'
-import Table from '@tiptap/extension-table'
-import TableCell from '@tiptap/extension-table-cell'
-import TableHeader from '@tiptap/extension-table-header'
-import TableRow from '@tiptap/extension-table-row'
-import StarterKit from '@tiptap/starter-kit'
+import { EditorContent, Editor, Extension } from "@tiptap/vue-3";
+import { Highlight } from "@tiptap/extension-highlight";
+import { TextAlign } from "@tiptap/extension-text-align";
+import Gapcursor from "@tiptap/extension-gapcursor";
+import Table from "@tiptap/extension-table";
+import TableCell from "@tiptap/extension-table-cell";
+import TableHeader from "@tiptap/extension-table-header";
+import TableRow from "@tiptap/extension-table-row";
+import StarterKit from "@tiptap/starter-kit";
 
 const emit = defineEmits();
 const props = defineProps({
@@ -52,7 +52,7 @@ const props = defineProps({
   },
 });
 
-const editor = ref()
+const editor = ref();
 const name = toRef(props, "name");
 
 const {
@@ -74,26 +74,26 @@ var valueChange = computed({
 watch(
   () => valueChange.value,
   (value) => {
-    const isSame = editor.value.getHTML() === value
+    const isSame = editor.value.getHTML() === value;
     if (!isSame) {
-      editor.value.commands.setContent(value, false)
+      editor.value.commands.setContent(value, false);
     }
-  }
-)
+  },
+);
 
 const is_main_navbar = computed(() => {
-  return !editor.value.isActive('table')
-})
+  return !editor.value.isActive("table");
+});
 
 onMounted(() => {
   editor.value = new Editor({
     // element: document.querySelector('.element'),
     content: ``,
     extensions: [
-      StarterKit, 
+      StarterKit,
       Highlight,
       TextAlign.configure({
-        types: ['heading', 'paragraph'],
+        types: ["heading", "paragraph"],
       }),
       Gapcursor,
       // Table.configure({
@@ -114,30 +114,31 @@ onMounted(() => {
     injectCSS: false,
     editorProps: {
       attributes: {
-        class: 'prose dark:prose-invert prose-sm sm:prose-base lg:prose-lg xl:prose-2xl m-5 focus:outline-none',
+        class:
+          "prose dark:prose-invert prose-sm sm:prose-base lg:prose-lg xl:prose-2xl m-5 focus:outline-none",
       },
     },
     onUpdate: () => {
       // emit('update:modelValue', editor.value?.getHTML())
-      valueChange.value = editor.value?.getHTML()
-    }
-  })
-})
+      valueChange.value = editor.value?.getHTML();
+    },
+  });
+});
 
 onBeforeUnmount(() => {
-  editor.value?.destroy()
+  editor.value?.destroy();
   // editor.value = null
-})
+});
 </script>
 
 <template>
-  <div v-if="editor" class="border border-gray-300 p-1 rounded-md ">
+  <div v-if="editor" class="rounded-md border border-gray-300 p-1">
     <div v-if="is_main_navbar" class="flex gap-1">
       <UTooltip text="Bold">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('bold') ? 'solid' : 'outline'"
-         @click="editor.chain().focus().toggleBold().run()"
+          color="primary"
+          :variant="editor.isActive('bold') ? 'solid' : 'outline'"
+          @click="editor.chain().focus().toggleBold().run()"
         >
           <Icon name="material-symbols:format-bold" />
         </UButton>
@@ -145,9 +146,9 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Italic">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('italic') ? 'solid' : 'outline'"
-         @click="editor.chain().focus().toggleItalic().run()"
+          color="primary"
+          :variant="editor.isActive('italic') ? 'solid' : 'outline'"
+          @click="editor.chain().focus().toggleItalic().run()"
         >
           <Icon name="material-symbols:format-italic" />
         </UButton>
@@ -155,9 +156,9 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Strike">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('strike') ? 'solid' : 'outline'"
-         @click="editor.chain().focus().toggleStrike().run()"
+          color="primary"
+          :variant="editor.isActive('strike') ? 'solid' : 'outline'"
+          @click="editor.chain().focus().toggleStrike().run()"
         >
           <Icon name="material-symbols:format-strikethrough" />
         </UButton>
@@ -165,23 +166,23 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Clear">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('clear') ? 'solid' : 'outline'"
-         @click="editor.chain().focus().unsetAllMarks().run()"
+          color="primary"
+          :variant="editor.isActive('clear') ? 'solid' : 'outline'"
+          @click="editor.chain().focus().unsetAllMarks().run()"
         >
           <Icon name="material-symbols:format-clear" />
         </UButton>
       </UTooltip>
 
-      <div class="flex justify-center items-center">
+      <div class="flex items-center justify-center">
         <Icon name="clarity:ellipsis-vertical-line" />
       </div>
 
       <UTooltip text="Paragraph">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('paragraph') ? 'solid' : 'outline'"
-         @click="editor.chain().focus().setParagraph().run()"
+          color="primary"
+          :variant="editor.isActive('paragraph') ? 'solid' : 'outline'"
+          @click="editor.chain().focus().setParagraph().run()"
         >
           <Icon name="material-symbols:format-paragraph" />
         </UButton>
@@ -189,9 +190,11 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Heading 1">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('heading', { level: 1 }) ? 'solid' : 'outline'"
-         @click="editor.chain().focus().toggleHeading({ level: 1 }).run()"
+          color="primary"
+          :variant="
+            editor.isActive('heading', { level: 1 }) ? 'solid' : 'outline'
+          "
+          @click="editor.chain().focus().toggleHeading({ level: 1 }).run()"
         >
           <Icon name="material-symbols:format-h1" />
         </UButton>
@@ -199,9 +202,11 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Heading 2">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('heading', { level: 2 }) ? 'solid' : 'outline'"
-         @click="editor.chain().focus().toggleHeading({ level: 2 }).run()"
+          color="primary"
+          :variant="
+            editor.isActive('heading', { level: 2 }) ? 'solid' : 'outline'
+          "
+          @click="editor.chain().focus().toggleHeading({ level: 2 }).run()"
         >
           <Icon name="material-symbols:format-h2" />
         </UButton>
@@ -209,9 +214,11 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Heading 3">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('heading', { level: 3 }) ? 'solid' : 'outline'"
-         @click="editor.chain().focus().toggleHeading({ level: 3 }).run()"
+          color="primary"
+          :variant="
+            editor.isActive('heading', { level: 3 }) ? 'solid' : 'outline'
+          "
+          @click="editor.chain().focus().toggleHeading({ level: 3 }).run()"
         >
           <Icon name="material-symbols:format-h3" />
         </UButton>
@@ -219,9 +226,11 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Heading 4">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('heading', { level: 4 }) ? 'solid' : 'outline'"
-         @click="editor.chain().focus().toggleHeading({ level: 4 }).run()"
+          color="primary"
+          :variant="
+            editor.isActive('heading', { level: 4 }) ? 'solid' : 'outline'
+          "
+          @click="editor.chain().focus().toggleHeading({ level: 4 }).run()"
         >
           <Icon name="material-symbols:format-h4" />
         </UButton>
@@ -229,9 +238,11 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Heading 5">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('heading', { level: 5 }) ? 'solid' : 'outline'"
-         @click="editor.chain().focus().toggleHeading({ level: 5 }).run()"
+          color="primary"
+          :variant="
+            editor.isActive('heading', { level: 5 }) ? 'solid' : 'outline'
+          "
+          @click="editor.chain().focus().toggleHeading({ level: 5 }).run()"
         >
           <Icon name="material-symbols:format-h5" />
         </UButton>
@@ -239,23 +250,25 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Heading 6">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('heading', { level: 6 }) ? 'solid' : 'outline'"
-         @click="editor.chain().focus().toggleHeading({ level: 6 }).run()"
+          color="primary"
+          :variant="
+            editor.isActive('heading', { level: 6 }) ? 'solid' : 'outline'
+          "
+          @click="editor.chain().focus().toggleHeading({ level: 6 }).run()"
         >
           <Icon name="material-symbols:format-h6" />
         </UButton>
       </UTooltip>
 
-      <div class="flex justify-center items-center">
+      <div class="flex items-center justify-center">
         <Icon name="clarity:ellipsis-vertical-line" />
       </div>
 
       <UTooltip text="Bullet List">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('bulletList') ? 'solid' : 'outline'"
-         @click="editor.chain().focus().toggleBulletList().run()"
+          color="primary"
+          :variant="editor.isActive('bulletList') ? 'solid' : 'outline'"
+          @click="editor.chain().focus().toggleBulletList().run()"
         >
           <Icon name="material-symbols:format-list-bulleted" />
         </UButton>
@@ -263,23 +276,23 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Order List">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('orderedList') ? 'solid' : 'outline'"
-         @click="editor.chain().focus().toggleOrderedList().run()"
+          color="primary"
+          :variant="editor.isActive('orderedList') ? 'solid' : 'outline'"
+          @click="editor.chain().focus().toggleOrderedList().run()"
         >
           <Icon name="material-symbols:format-list-numbered" />
         </UButton>
       </UTooltip>
 
-      <div class="flex justify-center items-center">
+      <div class="flex items-center justify-center">
         <Icon name="clarity:ellipsis-vertical-line" />
       </div>
 
       <UTooltip text="Code">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('code') ? 'solid' : 'outline'"
-         @click="editor.chain().focus().toggleCode().run()"
+          color="primary"
+          :variant="editor.isActive('code') ? 'solid' : 'outline'"
+          @click="editor.chain().focus().toggleCode().run()"
         >
           <Icon name="material-symbols:code" />
         </UButton>
@@ -287,9 +300,9 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Code Block">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('codeBlock') ? 'solid' : 'outline'"
-         @click="editor.chain().focus().toggleCodeBlock().run()"
+          color="primary"
+          :variant="editor.isActive('codeBlock') ? 'solid' : 'outline'"
+          @click="editor.chain().focus().toggleCodeBlock().run()"
         >
           <Icon name="material-symbols:code" />
         </UButton>
@@ -297,23 +310,23 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Horizontal Rule">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('horizontalRule') ? 'solid' : 'outline'"
-         @click="editor.chain().focus().setHorizontalRule().run()"
+          color="primary"
+          :variant="editor.isActive('horizontalRule') ? 'solid' : 'outline'"
+          @click="editor.chain().focus().setHorizontalRule().run()"
         >
           <Icon name="material-symbols:horizontal-rule" />
         </UButton>
       </UTooltip>
 
-      <div class="flex justify-center items-center">
+      <div class="flex items-center justify-center">
         <Icon name="clarity:ellipsis-vertical-line" />
       </div>
 
       <UTooltip text="Highlight">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('highlight') ? 'solid' : 'outline'"
-         @click="editor.chain().focus().toggleHighlight().run()"
+          color="primary"
+          :variant="editor.isActive('highlight') ? 'solid' : 'outline'"
+          @click="editor.chain().focus().toggleHighlight().run()"
         >
           <Icon name="material-symbols:highlight" />
         </UButton>
@@ -321,23 +334,25 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Blockquote">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('blockquote') ? 'solid' : 'outline'"
-         @click="editor.chain().focus().toggleBlockquote().run()"
+          color="primary"
+          :variant="editor.isActive('blockquote') ? 'solid' : 'outline'"
+          @click="editor.chain().focus().toggleBlockquote().run()"
         >
           <Icon name="material-symbols:format-quote" />
         </UButton>
       </UTooltip>
 
-      <div class="flex justify-center items-center">
+      <div class="flex items-center justify-center">
         <Icon name="clarity:ellipsis-vertical-line" />
       </div>
 
       <UTooltip text="Align Left">
         <UButton
-         color="primary" 
-         :variant="editor.isActive({ textAlign: 'left' }) ? 'solid' : 'outline'"
-         @click="editor.chain().focus().setTextAlign('left').run()"
+          color="primary"
+          :variant="
+            editor.isActive({ textAlign: 'left' }) ? 'solid' : 'outline'
+          "
+          @click="editor.chain().focus().setTextAlign('left').run()"
         >
           <Icon name="material-symbols:format-align-left" />
         </UButton>
@@ -345,9 +360,11 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Align Center">
         <UButton
-         color="primary" 
-         :variant="editor.isActive({ textAlign: 'center' }) ? 'solid' : 'outline'"
-         @click="editor.chain().focus().setTextAlign('center').run()"
+          color="primary"
+          :variant="
+            editor.isActive({ textAlign: 'center' }) ? 'solid' : 'outline'
+          "
+          @click="editor.chain().focus().setTextAlign('center').run()"
         >
           <Icon name="material-symbols:format-align-center" />
         </UButton>
@@ -355,9 +372,11 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Align Right">
         <UButton
-         color="primary" 
-         :variant="editor.isActive({ textAlign: 'right' }) ? 'solid' : 'outline'"
-         @click="editor.chain().focus().setTextAlign('right').run()"
+          color="primary"
+          :variant="
+            editor.isActive({ textAlign: 'right' }) ? 'solid' : 'outline'
+          "
+          @click="editor.chain().focus().setTextAlign('right').run()"
         >
           <Icon name="material-symbols:format-align-right" />
         </UButton>
@@ -365,35 +384,43 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Align Justify">
         <UButton
-         color="primary" 
-         :variant="editor.isActive({ textAlign: 'justify' }) ? 'solid' : 'outline'"
-         @click="editor.chain().focus().setTextAlign('justify').run()"
+          color="primary"
+          :variant="
+            editor.isActive({ textAlign: 'justify' }) ? 'solid' : 'outline'
+          "
+          @click="editor.chain().focus().setTextAlign('justify').run()"
         >
           <Icon name="material-symbols:format-align-justify" />
         </UButton>
       </UTooltip>
 
-      <div class="flex justify-center items-center">
+      <div class="flex items-center justify-center">
         <Icon name="clarity:ellipsis-vertical-line" />
       </div>
 
       <UTooltip text="Table">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('table') ? 'solid' : 'outline'"
-         @click="editor.commands.insertTable({ rows: 3, cols: 3, withHeaderRow: true })"
+          color="primary"
+          :variant="editor.isActive('table') ? 'solid' : 'outline'"
+          @click="
+            editor.commands.insertTable({
+              rows: 3,
+              cols: 3,
+              withHeaderRow: true,
+            })
+          "
         >
           <Icon name="material-symbols:table" />
         </UButton>
       </UTooltip>
-      
-      <hr class="separator">
+
+      <hr class="separator" />
 
       <UTooltip text="Undo">
         <UButton
-         color="primary" 
-         :disabled="!editor.can().chain().focus().undo().run()"
-         @click="editor.chain().focus().undo().run()"
+          color="primary"
+          :disabled="!editor.can().chain().focus().undo().run()"
+          @click="editor.chain().focus().undo().run()"
         >
           <Icon name="material-symbols:undo" />
         </UButton>
@@ -401,9 +428,9 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Redo">
         <UButton
-         color="primary" 
-         :disabled="!editor.can().chain().focus().redo().run()"
-         @click="editor.chain().focus().redo().run()"
+          color="primary"
+          :disabled="!editor.can().chain().focus().redo().run()"
+          @click="editor.chain().focus().redo().run()"
         >
           <Icon name="material-symbols:redo" />
         </UButton>
@@ -412,9 +439,9 @@ onBeforeUnmount(() => {
     <div v-if="editor.isActive('table')" id="table_nav" class="flex gap-1">
       <UTooltip text="Bold">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('bold') ? 'solid' : 'outline'"
-         @click="editor.chain().focus().toggleBold().run()"
+          color="primary"
+          :variant="editor.isActive('bold') ? 'solid' : 'outline'"
+          @click="editor.chain().focus().toggleBold().run()"
         >
           <Icon name="material-symbols:format-bold" />
         </UButton>
@@ -422,9 +449,9 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Italic">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('italic') ? 'solid' : 'outline'"
-         @click="editor.chain().focus().toggleItalic().run()"
+          color="primary"
+          :variant="editor.isActive('italic') ? 'solid' : 'outline'"
+          @click="editor.chain().focus().toggleItalic().run()"
         >
           <Icon name="material-symbols:format-italic" />
         </UButton>
@@ -432,9 +459,9 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Strike">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('strike') ? 'solid' : 'outline'"
-         @click="editor.chain().focus().toggleStrike().run()"
+          color="primary"
+          :variant="editor.isActive('strike') ? 'solid' : 'outline'"
+          @click="editor.chain().focus().toggleStrike().run()"
         >
           <Icon name="material-symbols:format-strikethrough" />
         </UButton>
@@ -442,23 +469,25 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Clear">
         <UButton
-         color="primary" 
-         :variant="editor.isActive('clear') ? 'solid' : 'outline'"
-         @click="editor.chain().focus().unsetAllMarks().run()"
+          color="primary"
+          :variant="editor.isActive('clear') ? 'solid' : 'outline'"
+          @click="editor.chain().focus().unsetAllMarks().run()"
         >
           <Icon name="material-symbols:format-clear" />
         </UButton>
       </UTooltip>
 
-      <div class="flex justify-center items-center">
+      <div class="flex items-center justify-center">
         <Icon name="clarity:ellipsis-vertical-line" />
       </div>
 
       <UTooltip text="Align Left">
         <UButton
-         color="primary" 
-         :variant="editor.isActive({ textAlign: 'left' }) ? 'solid' : 'outline'"
-         @click="editor.chain().focus().setTextAlign('left').run()"
+          color="primary"
+          :variant="
+            editor.isActive({ textAlign: 'left' }) ? 'solid' : 'outline'
+          "
+          @click="editor.chain().focus().setTextAlign('left').run()"
         >
           <Icon name="material-symbols:format-align-left" />
         </UButton>
@@ -466,9 +495,11 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Align Center">
         <UButton
-         color="primary" 
-         :variant="editor.isActive({ textAlign: 'center' }) ? 'solid' : 'outline'"
-         @click="editor.chain().focus().setTextAlign('center').run()"
+          color="primary"
+          :variant="
+            editor.isActive({ textAlign: 'center' }) ? 'solid' : 'outline'
+          "
+          @click="editor.chain().focus().setTextAlign('center').run()"
         >
           <Icon name="material-symbols:format-align-center" />
         </UButton>
@@ -476,9 +507,11 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Align Right">
         <UButton
-         color="primary" 
-         :variant="editor.isActive({ textAlign: 'right' }) ? 'solid' : 'outline'"
-         @click="editor.chain().focus().setTextAlign('right').run()"
+          color="primary"
+          :variant="
+            editor.isActive({ textAlign: 'right' }) ? 'solid' : 'outline'
+          "
+          @click="editor.chain().focus().setTextAlign('right').run()"
         >
           <Icon name="material-symbols:format-align-right" />
         </UButton>
@@ -486,24 +519,26 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Align Justify">
         <UButton
-         color="primary" 
-         :variant="editor.isActive({ textAlign: 'justify' }) ? 'solid' : 'outline'"
-         @click="editor.chain().focus().setTextAlign('justify').run()"
+          color="primary"
+          :variant="
+            editor.isActive({ textAlign: 'justify' }) ? 'solid' : 'outline'
+          "
+          @click="editor.chain().focus().setTextAlign('justify').run()"
         >
           <Icon name="material-symbols:format-align-justify" />
         </UButton>
       </UTooltip>
 
-      <div class="flex justify-center items-center">
+      <div class="flex items-center justify-center">
         <Icon name="clarity:ellipsis-vertical-line" />
       </div>
 
       <UTooltip text="Add Column Before">
         <UButton
-         color="primary" 
-         variant="outline"
-         :disabled="!editor.can().chain().focus().addColumnBefore().run()"
-         @click="editor.chain().focus().addColumnBefore().run()"
+          color="primary"
+          variant="outline"
+          :disabled="!editor.can().chain().focus().addColumnBefore().run()"
+          @click="editor.chain().focus().addColumnBefore().run()"
         >
           <Icon name="mdi:table-column-plus-before" />
         </UButton>
@@ -511,10 +546,10 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Add Column After">
         <UButton
-         color="primary" 
-         variant="outline"
-         :disabled="!editor.can().chain().focus().addColumnAfter().run()"
-         @click="editor.chain().focus().addColumnAfter().run()"
+          color="primary"
+          variant="outline"
+          :disabled="!editor.can().chain().focus().addColumnAfter().run()"
+          @click="editor.chain().focus().addColumnAfter().run()"
         >
           <Icon name="mdi:table-column-plus-after" />
         </UButton>
@@ -522,10 +557,10 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Delete Column">
         <UButton
-         color="primary" 
-         variant="outline"
-         :disabled="!editor.can().chain().focus().deleteColumn().run()"
-         @click="editor.chain().focus().deleteColumn().run()"
+          color="primary"
+          variant="outline"
+          :disabled="!editor.can().chain().focus().deleteColumn().run()"
+          @click="editor.chain().focus().deleteColumn().run()"
         >
           <Icon name="mdi:table-column-remove" />
         </UButton>
@@ -533,10 +568,10 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Add Row Before">
         <UButton
-         color="primary" 
-         variant="outline"
-         :disabled="!editor.can().chain().focus().addRowBefore().run()"
-         @click="editor.chain().focus().addRowBefore().run()"
+          color="primary"
+          variant="outline"
+          :disabled="!editor.can().chain().focus().addRowBefore().run()"
+          @click="editor.chain().focus().addRowBefore().run()"
         >
           <Icon name="mdi:table-row-plus-before" />
         </UButton>
@@ -544,10 +579,10 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Add Row After">
         <UButton
-         color="primary" 
-         variant="outline"
-         :disabled="!editor.can().chain().focus().addRowAfter().run()"
-         @click="editor.chain().focus().addRowAfter().run()"
+          color="primary"
+          variant="outline"
+          :disabled="!editor.can().chain().focus().addRowAfter().run()"
+          @click="editor.chain().focus().addRowAfter().run()"
         >
           <Icon name="mdi:table-row-plus-after" />
         </UButton>
@@ -555,10 +590,10 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Delete Row">
         <UButton
-         color="primary" 
-         variant="outline"
-         :disabled="!editor.can().chain().focus().deleteRow().run()"
-         @click="editor.chain().focus().deleteRow().run()"
+          color="primary"
+          variant="outline"
+          :disabled="!editor.can().chain().focus().deleteRow().run()"
+          @click="editor.chain().focus().deleteRow().run()"
         >
           <Icon name="mdi:table-row-remove" />
         </UButton>
@@ -566,10 +601,10 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Delete Table">
         <UButton
-         color="primary" 
-         variant="outline"
-         :disabled="!editor.can().chain().focus().deleteTable().run()"
-         @click="editor.chain().focus().deleteTable().run()"
+          color="primary"
+          variant="outline"
+          :disabled="!editor.can().chain().focus().deleteTable().run()"
+          @click="editor.chain().focus().deleteTable().run()"
         >
           <Icon name="mdi:table-remove" />
         </UButton>
@@ -577,10 +612,10 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Merge Cells">
         <UButton
-         color="primary" 
-         variant="outline"
-         :disabled="!editor.can().chain().focus().mergeCells().run()"
-         @click="editor.chain().focus().mergeCells().run()"
+          color="primary"
+          variant="outline"
+          :disabled="!editor.can().chain().focus().mergeCells().run()"
+          @click="editor.chain().focus().mergeCells().run()"
         >
           <Icon name="mdi:table-merge-cells" />
         </UButton>
@@ -588,10 +623,10 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Split Cell">
         <UButton
-         color="primary" 
-         variant="outline"
-         :disabled="!editor.can().chain().focus().splitCell().run()"
-         @click="editor.chain().focus().splitCell().run()"
+          color="primary"
+          variant="outline"
+          :disabled="!editor.can().chain().focus().splitCell().run()"
+          @click="editor.chain().focus().splitCell().run()"
         >
           <Icon name="mdi:table-split-cell" />
         </UButton>
@@ -599,10 +634,10 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Toggle Header Column">
         <UButton
-         color="primary" 
-         variant="outline"
-         :disabled="!editor.can().chain().focus().toggleHeaderColumn().run()"
-         @click="editor.chain().focus().toggleHeaderColumn().run()"
+          color="primary"
+          variant="outline"
+          :disabled="!editor.can().chain().focus().toggleHeaderColumn().run()"
+          @click="editor.chain().focus().toggleHeaderColumn().run()"
         >
           <Icon name="jam:table-left-header" />
         </UButton>
@@ -610,10 +645,10 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Toggle Header Row">
         <UButton
-         color="primary" 
-         variant="outline"
-         :disabled="!editor.can().chain().focus().toggleHeaderRow().run()"
-         @click="editor.chain().focus().toggleHeaderRow().run()"
+          color="primary"
+          variant="outline"
+          :disabled="!editor.can().chain().focus().toggleHeaderRow().run()"
+          @click="editor.chain().focus().toggleHeaderRow().run()"
         >
           <Icon name="jam:table-top-header" />
         </UButton>
@@ -621,12 +656,14 @@ onBeforeUnmount(() => {
 
       <UTooltip text="Toggle Header Cell">
         <UButton
-         color="primary" 
-         variant="outline"
-         :disabled="!editor.can().chain().focus().toggleHeaderCell().run()"
-         @click="editor.chain().focus().toggleHeaderCell().run()"
+          color="primary"
+          variant="outline"
+          :disabled="!editor.can().chain().focus().toggleHeaderCell().run()"
+          @click="editor.chain().focus().toggleHeaderCell().run()"
         >
-          <Icon name="streamline:computer-keyboard-wireless-remote-device-computer-wireless-electronics-qwerty-keyboard-bluetooth" />
+          <Icon
+            name="streamline:computer-keyboard-wireless-remote-device-computer-wireless-electronics-qwerty-keyboard-bluetooth"
+          />
         </UButton>
       </UTooltip>
     </div>
@@ -672,7 +709,10 @@ onBeforeUnmount(() => {
       z-index: 2;
       position: absolute;
       content: "";
-      left: 0; right: 0; top: 0; bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
       background: rgba(200, 200, 255, 0.4);
       pointer-events: none;
     }
@@ -702,6 +742,4 @@ onBeforeUnmount(() => {
   cursor: ew-resize;
   cursor: col-resize;
 }
-
-
 </style>

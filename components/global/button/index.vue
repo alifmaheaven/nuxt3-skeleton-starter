@@ -2,8 +2,8 @@
   <ClientOnly>
     <button
       :class="{
-        [`${props.class} ${props.buttonClass}`] : true,
-        'cursor-not-allowed opacity-50' : !!isLoading,
+        [`${props.class} ${props.buttonClass}`]: true,
+        'cursor-not-allowed opacity-50': !!isLoading,
       }"
       :style="props.style || props.buttonStyle"
       :type="props.type || props.buttonType"
@@ -11,7 +11,9 @@
       @click="$emit('click')"
     >
       <slot v-if="!!!isLoading"></slot>
-      <span v-if="!!isLoading"><Icon name="eos-icons:hourglass" /> Loading...</span>
+      <span v-if="!!isLoading"
+        ><Icon name="eos-icons:hourglass" /> Loading...</span
+      >
     </button>
   </ClientOnly>
 </template>

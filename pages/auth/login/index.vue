@@ -64,14 +64,14 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
           <div
             class="absolute -top-7 left-0 right-0 m-auto inline-flex h-48 w-48 items-center justify-center rounded-xl bg-transparent p-3.5"
           >
-          <ClientOnly>
-            <Vue3Lottie
-              animation-link="/animation/think_doubt.json"
-              :height="500"
-              :width="500"
-              :loop="true"
-            />
-          </ClientOnly>
+            <ClientOnly>
+              <Vue3Lottie
+                animation-link="/animation/think_doubt.json"
+                :height="500"
+                :width="500"
+                :loop="true"
+              />
+            </ClientOnly>
           </div>
         </div>
         <div
@@ -132,7 +132,7 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
           label="Button"
           :trailing="false"
         />
-        
+
         <div
           class="flex h-[52px] flex-col items-center justify-start gap-3 self-stretch"
         >

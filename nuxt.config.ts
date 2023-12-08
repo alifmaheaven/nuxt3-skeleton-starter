@@ -33,8 +33,8 @@ export default defineNuxtConfig({
   ui: {
     global: true,
     icons: {
-      dynamic: true
-    }
+      dynamic: true,
+    },
   },
   ssr: true,
   nitro: {
