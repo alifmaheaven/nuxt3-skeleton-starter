@@ -124,6 +124,7 @@ const getData = () => {
         Berikut ringkasan informasi terakhir tentang aktivitas tanda tangan Anda
       </div>
     </div>
+    <GlobalInputTiptapeditor />
     <div class="flex flex-row">
       <div class="basis-1/2 p-1">
         <div

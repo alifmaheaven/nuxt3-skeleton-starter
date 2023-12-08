@@ -10,7 +10,6 @@
       :disabled="isLoading"
       @click="$emit('click')"
     >
-      <slot></slot>
       <slot v-if="!!!isLoading"></slot>
       <!-- <span v-if="!!isLoading"><Icon name="eos-icons:hourglass" /> Loading...</span> -->
       <LoadingIcon
