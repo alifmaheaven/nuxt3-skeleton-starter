@@ -17,7 +17,7 @@ export const usecrudExampleUsingPinia = defineStore("crudExampleUsingPinia", {
     meta: (state) => state.meta_data,
   },
   actions: {
-    getData(params) {
+    get(params) {
       // or you can useAjax from composables/useAjax.js
       return new Promise((resolve, reject) => {
         this.rows_data = [];
@@ -31,22 +31,21 @@ export const usecrudExampleUsingPinia = defineStore("crudExampleUsingPinia", {
               ...params,
             },
           })
-          .then((result) => {
-            this.rows_data = result.data.data;
-            this.meta_data.pages = result.data.meta[0].paginator.pages;
-            this.meta_data.current_page =
-              result.data.meta[0].paginator.current_page;
-            this.meta_data.count = result.data.meta[0].paginator.count;
-            resolve(result.data.data);
+          .then((response) => {
+            this.rows_data = response.data.data;
+            this.meta_data.pages = response.data.meta[0].paginator.pages;
+            this.meta_data.current_page = response.data.meta[0].paginator.current_page;
+            this.meta_data.count = response.data.meta[0].paginator.count;
+            resolve(response);
           })
-          .catch((err) => {
+          .catch((error) => {
             this.rows_data = [];
             this.meta_data.pages = 1;
-            reject(err);
+            reject(error);
           });
       });
     },
-    createData(values) {
+    create(values) {
       return new Promise((resolve, reject) => {
         // or you can useAjax from composables/useAjax.js
         useNuxtApp()
@@ -63,7 +62,7 @@ export const usecrudExampleUsingPinia = defineStore("crudExampleUsingPinia", {
           });
       });
     },
-    updateData(values) {
+    update(values) {
       // or you can useAjax from composables/useAjax.js
       return new Promise((resolve, reject) => {
         useNuxtApp()
@@ -72,15 +71,15 @@ export const usecrudExampleUsingPinia = defineStore("crudExampleUsingPinia", {
             method: "POST",
             data: values,
           })
-          .then((result) => {
-            resolve(result.data.data);
+          .then((response) => {
+            resolve(response);
           })
-          .catch((err) => {
-            reject(err);
+          .catch((error) => {
+            reject(error);
           });
       });
     },
-    deleteData(values) {
+    delete(values) {
       // or you can useAjax from composables/useAjax.js
       return new Promise((resolve, reject) => {
         useNuxtApp()
@@ -89,11 +88,11 @@ export const usecrudExampleUsingPinia = defineStore("crudExampleUsingPinia", {
             method: "DELETE",
             data: values,
           })
-          .then((result) => {
-            resolve(result.data.data);
+          .then((response) => {
+            resolve(response);
           })
-          .catch((err) => {
-            reject(err);
+          .catch((error) => {
+            reject(error);
           });
       });
     },
