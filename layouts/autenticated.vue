@@ -131,11 +131,11 @@ const sub_menu = computed(() => {
                 class="my-4 flex justify-center"
               >
                 <nuxt-link
-                  :to="value_of_menu_sidebar.link"
+                  :to="value_of_menu_sidebar?.link"
                   class="inline-flex h-12 w-12 items-start justify-start gap-2 rounded-md p-3"
                 >
                   <Icon
-                    :name="value_of_menu_sidebar.icon"
+                    :name="value_of_menu_sidebar?.icon"
                     class="relative h-6 w-6"
                   />
                 </nuxt-link>
@@ -178,14 +178,14 @@ const sub_menu = computed(() => {
               <div
                 class="self-stretch text-base font-medium leading-normal text-gray-900"
               >
-                {{ sub_menu.name }}
+                {{ sub_menu?.name }}
               </div>
               <div
                 class="flex h-[84px] flex-col items-start justify-start gap-1 self-stretch"
               >
                 <nuxt-link
-                  v-for="value_of_sub_menu_sidebar in sub_menu.sub_menu"
-                  :to="value_of_sub_menu_sidebar.link"
+                  v-for="value_of_sub_menu_sidebar in sub_menu?.sub_menu"
+                  :to="value_of_sub_menu_sidebar?.link"
                   class="inline-flex items-center justify-start gap-2 self-stretch rounded-md bg-white px-3 py-2"
                 >
                   <div
@@ -195,17 +195,17 @@ const sub_menu = computed(() => {
                     <div
                       class="text-base font-semibold leading-normal text-slate-700"
                     >
-                      {{ value_of_sub_menu_sidebar.name }}
+                      {{ value_of_sub_menu_sidebar?.name }}
                     </div>
                   </div>
                   <div
-                    v-if="value_of_sub_menu_sidebar.label"
+                    v-if="value_of_sub_menu_sidebar?.label"
                     class="flex items-center justify-start rounded-2xl border border-gray-200 bg-gray-50 px-2 py-0.5"
                   >
                     <div
                       class="text-center text-xs font-medium leading-[18px] text-slate-700"
                     >
-                      {{ value_of_sub_menu_sidebar.label }}
+                      {{ value_of_sub_menu_sidebar?.label }}
                     </div>
                   </div>
                 </nuxt-link>
