@@ -1,5 +1,5 @@
 export default defineAppConfig({
   ui: {
-    primary: "primary_for_nuxtui",
+    primary: "custom_primary_color",
   },
 });

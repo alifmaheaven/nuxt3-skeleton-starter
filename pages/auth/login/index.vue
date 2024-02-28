@@ -119,7 +119,7 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
           class="flex min-h-min flex-col items-start justify-start gap-3 self-stretch"
         >
           <GlobalButton
-            class="bg-primary hover:border-primary hover:text-primary inline-flex items-center justify-center gap-2 self-stretch rounded-lg border px-5 py-3 text-base font-semibold leading-normal text-light shadow hover:bg-slate-50 hover:shadow-slate-300"
+            class="bg-primary-500s hover:border-primary hover:text-primary inline-flex items-center justify-center gap-2 self-stretch rounded-lg border px-5 py-3 text-base font-semibold leading-normal text-light shadow hover:bg-slate-50 hover:shadow-slate-300"
             type="submit"
           >
             Masuk

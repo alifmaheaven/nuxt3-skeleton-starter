@@ -3,6 +3,8 @@ import defaultTheme from "tailwindcss/defaultTheme";
 import colors from "tailwindcss/colors";
 const tailwindForms = require("@tailwindcss/forms");
 
+// https://uicolors.app color pallet
+
 export default <Partial<Config>>{
   mode: "jit",
   darkMode: "class",
@@ -31,31 +33,19 @@ export default <Partial<Config>>{
         "8xl": "90rem",
       },
       colors: {
-        primary: {
-          default: "#e31b54",
-          50: "#ffcdd2",
-          100: "#ef9a9a",
-          200: "#e57373",
-          300: "#ef5350",
-          400: "#f44336",
-          500: "#e31b54",
-          600: "#e53935",
-          700: "#d32f2f",
-          800: "#c62828",
-          900: "#b71c1c",
-        },
-        primary_for_nuxtui: {
-          default: "#e31b54",
-          50: "#ffcdd2",
-          100: "#ef9a9a",
-          200: "#e57373",
-          300: "#ef5350",
-          400: "#f44336",
-          500: "#e31b54",
-          600: "#e53935",
-          700: "#d32f2f",
-          800: "#c62828",
-          900: "#b71c1c",
+        custom_primary_color: {
+          default: "#f37480",
+          50: '#fef2f2',
+          100: '#fee5e6',
+          200: '#fbd0d3',
+          300: '#f8a9af',
+          400: '#f37480',
+          500: '#ea495d',
+          600: '#d62845',
+          700: '#b51b39',
+          800: '#971a36',
+          900: '#821934',
+          950: '#480918',
         },
         secondary: colors.gray,
         success: colors.emerald,
