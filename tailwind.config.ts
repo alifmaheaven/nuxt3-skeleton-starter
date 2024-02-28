@@ -94,6 +94,8 @@ export default <Partial<Config>>{
       },
       fontFamily: {
         sans: ["Nunito", ...defaultTheme.fontFamily.sans],
+        inter: ["Inter Variable"],
+        bitstream: ["Bitstream Iowan Old Style"],
       },
       container: {
         center: true,

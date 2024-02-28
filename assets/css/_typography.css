@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Bitstream Iowan Old Style";
+  src:
+    url("/fonts/IowanOldStyleBT-Roman.woff2") format("woff2"),
+    url("/fonts/IowanOldStyleBT-Roman.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter Variable';
+  src: url('/fonts/InterVariable.woff2') format('woff2'),
+      url('/fonts/InterVariable.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

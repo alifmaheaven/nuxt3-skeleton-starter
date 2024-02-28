@@ -90,7 +90,7 @@ const submitLogin = handleSubmit(async (values, { resetForm }) => {
               Login
             </div>
             <div
-              class="self-stretch text-center text-base font-normal leading-normal text-slate-600"
+              class="self-stretch text-center text-base font-normal leading-normal text-slate-600 font-inter"
             >
               Mohon masukkan kredensial Anda di bawah ini
             </div>
